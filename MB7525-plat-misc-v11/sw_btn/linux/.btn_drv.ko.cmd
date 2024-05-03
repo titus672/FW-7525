@@ -1,0 +1,1 @@
+cmd_/tmp/8865ut/sw_btn/linux/btn_drv.ko := ld -r -m elf_i386 -T /usr/src/kernels/2.6.35.6-45.fc14.i686/scripts/module-common.lds --build-id -o /tmp/8865ut/sw_btn/linux/btn_drv.ko /tmp/8865ut/sw_btn/linux/btn_drv.o /tmp/8865ut/sw_btn/linux/btn_drv.mod.o

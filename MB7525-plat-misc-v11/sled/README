@@ -1,0 +1,141 @@
+Lanner Platform Miscellaneous Utility
+Status LED Program 
+================================================
+
+Code structure:V1.0
+
+Contents
+========
+
+- In This Release
+- Building 
+- Installation
+- Usage
+- history
+- License
+
+
+In This Release
+===============
+
+This file describes the code structure of Lanner platform status LED 
+program.  This package provides program(DOS/Linux/FreeBSD) and driver
+(Linux/FreeBSD) for Lanner platform-specific function.
+Separated makefile available as well.(Makefile.dos, Makefile.linux, 
+Makefile.freebsd)
+
+For DOS environment, Use DJGPP as compiler., use DJGPP and Makefile.dos.
+
+For Linux, supports kernel versions 2.4.x and 2.6.x and Makefile.linux. 
+
+For FreeBSD, it is tested under FreeBSD 8.0. 
+
+This release provide 2 ways(Defined in Makefile) to access Lanner platform
+devices:
+
+1. DIRECT_IO_ACCESS=0(Default):
+
+   To access Lanner miscellaneous devices through lanner driver.
+   Lanner driver is available in bin sub-directory after make.
+   This driver is only supported as a loadable module at this time. Lanner is
+   not supplying patches against the kernel source to allow for static linking
+   of the driver.
+
+   Note: This mode is enabled by set DIRECT_IO_ACCESS=0 in Makefile.
+
+2. DIRECT_IO_ACCESS=1:
+
+   To manipulate Lanner miscellaneous device by userland application direct
+   accessing. This mode JUST FOR providing quick way for user to realize
+   Lannner platform specific function. This mode supported on DOS and Linux.
+
+   Note: This mode is enabled by set DIRECT_IO_ACCESS=1 in Makefile.
+
+
+
+Building
+========
+
+To build, 3 steps to accomplish it:
+
+1. Identify current OS and select proper Makefile. 
+   Copy Makefile.(os) to Makefile.
+
+2. Select access mode(DIRECT_IO_ACCESS=[0|1] by edit Makefile.
+
+3. Just type make to build, once completed, bin sub-directory contains.
+
+
+
+Installation
+============
+
+To installation, depend on what's access mode you set:
+
+If DIRECT_IO_ACCESS=1, no driver is need. Just execute executable program in
+bin sub-directory to manipulate LED function.
+
+If DIRECT_IO_ACCESS=0 , driver is needed. 
+
+For Linux:
+	Insert module and create node in /dev as below example:
+	#insmod sled_drv.[k]o
+	#mknod /dev/sled_drv c 240 0
+
+For FreeBSD:
+	Insert module as below example:
+
+	#kldload -v ./sled_drv.ko
+
+
+Usage
+=====
+Once build completed, application(and driver) is available in bin sub-directory.
+Just run "sled_tst" for Status LED test.
+Note for Linux/FreeBSD user: insmod driver if necessary.
+
+
+History
+=======
+See history.txt for details
+
+
+License
+=======
+
+Lanner platform miscellaneous utility.
+Copyright(c) 2010 Lanner Electronics Inc.
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+1. Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer,
+   without modification.
+2. Redistributions in binary form must reproduce at minimum a disclaimer
+   similar to the "NO WARRANTY" disclaimer below ("Disclaimer") and any
+   redistribution must be conditioned upon including a substantially
+   similar Disclaimer requirement for further binary redistribution.
+3. Neither the names of the above-listed copyright holders nor the names
+   of any contributors may be used to endorse or promote products derived
+   from this software without specific prior written permission.
+
+Alternatively, this software may be distributed under the terms of the
+GNU General Public License ("GPL") version 2 as published by the Free
+Software Foundation.
+
+NO WARRANTY
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF NONINFRINGEMENT, MERCHANTIBILITY
+AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
+THE COPYRIGHT HOLDERS OR CONTRIBUTORS BE LIABLE FOR SPECIAL, EXEMPLARY,
+OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
+IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
+THE POSSIBILITY OF SUCH DAMAGES.
+
+

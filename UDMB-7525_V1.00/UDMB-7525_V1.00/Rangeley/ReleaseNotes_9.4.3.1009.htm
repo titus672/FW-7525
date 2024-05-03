@@ -1,0 +1,1424 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 14">
+<meta name=Originator content="Microsoft Word 14">
+<link rel=File-List href="ReleaseNotes_9.4.3.1009_files/filelist.xml">
+<link rel=Edit-Time-Data href="ReleaseNotes_9.4.3.1009_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Intel® Chipset Device Software</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>De Leon, Gary</o:Author>
+  <o:LastAuthor>Chen, Stacy YC</o:LastAuthor>
+  <o:Revision>3</o:Revision>
+  <o:TotalTime>192</o:TotalTime>
+  <o:Created>2013-06-11T10:41:00Z</o:Created>
+  <o:LastSaved>2013-07-29T09:06:00Z</o:LastSaved>
+  <o:Pages>2</o:Pages>
+  <o:Words>638</o:Words>
+  <o:Characters>3640</o:Characters>
+  <o:Company>Intel Corporation</o:Company>
+  <o:Lines>30</o:Lines>
+  <o:Paragraphs>8</o:Paragraphs>
+  <o:CharactersWithSpaces>4270</o:CharactersWithSpaces>
+  <o:Version>14.00</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<link rel=themeData href="ReleaseNotes_9.4.3.1009_files/themedata.thmx">
+<link rel=colorSchemeMapping
+href="ReleaseNotes_9.4.3.1009_files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>83</w:Zoom>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>ZH-TW</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:DontVertAlignCellWithSp/>
+   <w:DontBreakConstrainedForcedTables/>
+   <w:DontVertAlignInTxbx/>
+   <w:Word11KerningPairs/>
+   <w:CachedColBalance/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+  DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="267">
+  <w:LsdException Locked="false" Priority="0" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 9"/>
+  <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" Priority="10" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" Priority="11" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" Priority="22" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" Priority="59" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Table Grid"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:PMingLiU;
+	panose-1:2 2 5 0 0 0 0 0 0 0;
+	mso-font-alt:PMingLiU;
+	mso-font-charset:136;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-1610611969 684719354 22 0 1048577 0;}
+@font-face
+	{font-family:PMingLiU;
+	panose-1:2 2 5 0 0 0 0 0 0 0;
+	mso-font-alt:PMingLiU;
+	mso-font-charset:136;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-1610611969 684719354 22 0 1048577 0;}
+@font-face
+	{font-family:PMingLiU;
+	panose-1:2 2 5 0 0 0 0 0 0 0;
+	mso-font-charset:136;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-1610611969 684719354 22 0 1048577 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:PMingLiU;
+	mso-fareast-theme-font:minor-fareast;}
+p
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:PMingLiU;
+	mso-fareast-theme-font:minor-fareast;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-noshow:yes;
+	mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:PMingLiU;
+	mso-fareast-theme-font:minor-fareast;}
+p.msolistparagraphcxspfirst, li.msolistparagraphcxspfirst, div.msolistparagraphcxspfirst
+	{mso-style-name:msolistparagraphcxspfirst;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:PMingLiU;
+	mso-fareast-theme-font:minor-fareast;}
+p.msolistparagraphcxspmiddle, li.msolistparagraphcxspmiddle, div.msolistparagraphcxspmiddle
+	{mso-style-name:msolistparagraphcxspmiddle;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:PMingLiU;
+	mso-fareast-theme-font:minor-fareast;}
+p.msolistparagraphcxsplast, li.msolistparagraphcxsplast, div.msolistparagraphcxsplast
+	{mso-style-name:msolistparagraphcxsplast;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:PMingLiU;
+	mso-fareast-theme-font:minor-fareast;}
+p.msochpdefault, li.msochpdefault, div.msochpdefault
+	{mso-style-name:msochpdefault;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:PMingLiU;
+	mso-fareast-theme-font:minor-fareast;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-size:10.0pt;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	mso-ascii-font-family:"Times New Roman";
+	mso-hansi-font-family:"Times New Roman";
+	mso-font-kerning:0pt;}
+@page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:36.0pt;
+	mso-footer-margin:36.0pt;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:324284080;
+	mso-list-template-ids:-1923463194;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1
+	{mso-list-id:915893597;
+	mso-list-template-ids:-1805515236;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level2
+	{mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level3
+	{mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level4
+	{mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level5
+	{mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level6
+	{mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level7
+	{mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level8
+	{mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level9
+	{mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2
+	{mso-list-id:1366907447;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1780675584 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F06C;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:42.0pt;
+	text-indent:-24.0pt;
+	font-family:Wingdings;}
+@list l2:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:\F06E;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:66.0pt;
+	text-indent:-24.0pt;
+	font-family:Wingdings;}
+@list l2:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F075;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:90.0pt;
+	text-indent:-24.0pt;
+	font-family:Wingdings;}
+@list l2:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F06C;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:114.0pt;
+	text-indent:-24.0pt;
+	font-family:Wingdings;}
+@list l2:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:\F06E;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:138.0pt;
+	text-indent:-24.0pt;
+	font-family:Wingdings;}
+@list l2:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F075;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:162.0pt;
+	text-indent:-24.0pt;
+	font-family:Wingdings;}
+@list l2:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F06C;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:186.0pt;
+	text-indent:-24.0pt;
+	font-family:Wingdings;}
+@list l2:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:\F06E;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:210.0pt;
+	text-indent:-24.0pt;
+	font-family:Wingdings;}
+@list l2:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F075;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:234.0pt;
+	text-indent:-24.0pt;
+	font-family:Wingdings;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1026"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=ZH-TW style='tab-interval:36.0pt'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p><b><span lang=EN-US style='font-size:24.0pt;font-family:"Arial","sans-serif";
+color:blue'>Intel<sup>®</sup> Chipset Device Software <o:p></o:p></span></b></p>
+
+<p><b><span lang=EN-US style='font-size:24.0pt;font-family:"Arial","sans-serif";
+color:blue'>9.4.3.1009&nbsp;PC Release for <span class=SpellE>Avoton</span><br>
+Release Notes<o:p></o:p></span></b></p>
+
+<div class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='mso-fareast-font-family:"Times New Roman"'>
+
+<hr size=2 width="100%" noshade style='color:black' align=center>
+
+</span></div>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><b><span lang=EN-US
+style='font-family:"Arial","sans-serif";color:blue'>July 29, 2013</span></b></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><b><i><span lang=EN-US
+style='font-family:"Arial","sans-serif";color:blue'><br>
+&nbsp;&nbsp;&nbsp; Microsoft Windows* 2000</span></i></b></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><b><i><span lang=EN-US
+style='font-family:"Arial","sans-serif";color:blue'>&nbsp;&nbsp;&nbsp;
+Microsoft Windows* XP</span></i></b></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><b><i><span lang=EN-US
+style='font-family:"Arial","sans-serif";color:blue'>&nbsp;&nbsp;&nbsp; Microsoft
+Windows* XP Professional x64 Edition</span></i></b></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><b><i><span lang=EN-US
+style='font-family:"Arial","sans-serif";color:blue'>&nbsp;&nbsp;&nbsp;
+Microsoft Windows* Server 2003</span></i></b></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><b><i><span lang=EN-US
+style='font-family:"Arial","sans-serif";color:blue'>&nbsp;&nbsp;&nbsp;
+Microsoft Windows* Server 2003 x64 Edition</span></i></b></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><b><i><span lang=EN-US
+style='font-family:"Arial","sans-serif";color:blue'>&nbsp;&nbsp;&nbsp;
+Microsoft Windows* Vista</span></i></b></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><b><i><span lang=EN-US
+style='font-family:"Arial","sans-serif";color:blue'>&nbsp;&nbsp;&nbsp;
+Microsoft Windows* Vista x64 Edition</span></i></b></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><b><i><span lang=EN-US
+style='font-family:"Arial","sans-serif";color:blue'>&nbsp;&nbsp;&nbsp;
+Microsoft Windows* Server 2008</span></i></b></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><b><i><span lang=EN-US
+style='font-family:"Arial","sans-serif";color:blue'>&nbsp;&nbsp;&nbsp;
+Microsoft Windows* Server 2008 x64 Edition</span></i></b></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><b><i><span lang=EN-US
+style='font-family:"Arial","sans-serif";color:blue'>&nbsp;&nbsp;&nbsp;
+Microsoft Windows 7</span></i></b></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><b><i><span lang=EN-US
+style='font-family:"Arial","sans-serif";color:blue'>&nbsp;&nbsp;&nbsp;
+Microsoft Windows 7 x64 Edition</span></i></b></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><b><i><span lang=EN-US
+style='font-family:"Arial","sans-serif";color:blue'>&nbsp;&nbsp;&nbsp;
+Microsoft Windows Server 2008 R2 SP2</span></i></b></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><b><i><span lang=EN-US
+style='font-family:"Arial","sans-serif";color:blue'>&nbsp;&nbsp;&nbsp;
+Microsoft Windows 8</span></i></b></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><b><i><span lang=EN-US
+style='font-family:"Arial","sans-serif";color:blue'>&nbsp;&nbsp;&nbsp;
+Microsoft Windows Server 2012</span></i></b></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><b><i><span lang=EN-US
+style='font-family:"Arial","sans-serif";color:blue'>&nbsp;&nbsp;&nbsp;
+Microsoft Windows 8.1</span></i></b><span lang=EN-US><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><b><i><span lang=EN-US
+style='font-family:"Arial","sans-serif";color:blue'>&nbsp;&nbsp;&nbsp;
+Microsoft Windows Server 2012 R2</span></i></b><span lang=EN-US><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><b><i><span lang=EN-US
+style='font-family:"Arial","sans-serif";color:blue'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></i></b></p>
+
+<p style='margin-bottom:12.0pt'><b><span lang=EN-US style='font-size:10.0pt;
+font-family:"Arial","sans-serif"'>DISCLAIMER</span></b><span lang=EN-US
+style='font-size:10.0pt;font-family:"Arial","sans-serif"'>: Information in this
+document is provided in connection with Intel® products. Intel Corporation may
+have patents or pending patent applications, trademarks, copyrights, or other
+intellectual property rights that relate to the presented subject matter. The
+furnishing of documents and other materials and information does not provide
+any license, express or implied, by estoppel or otherwise, to any such patents,
+trademarks, copyrights, or other intellectual property rights. Except as
+provided in Intel's Terms and Conditions of Sale for such products, Intel assumes
+no liability whatsoever, and Intel disclaims any express or implied warranty
+relating to sale and/or use of Intel products, including liability or
+warranties relating to fitness for a particular purpose, merchantability or
+infringement of any patent, copyright or other intellectual property right.
+Intel products are not intended for use in medical, <span class=SpellE>life
+saving</span>, life sustaining, critical control or safety systems, or in
+nuclear facility applications. Intel may make changes to specifications and
+product descriptions at any time, without notice. Contact your local Intel
+sales office or your distributor to obtain the latest specifications and before
+placing your product order.<br>
+<br>
+* Intel is a trademark or registered trademark of Intel Corporation or its subsidiaries
+in the United States and other countries.<br>
+* Other brands and names are the property of their respective owners. <br>
+<br>
+Copyright © Intel Corporation 2013</span><span lang=EN-US style='font-size:
+7.5pt;font-family:"Arial","sans-serif"'><br>
+<br>
+</span><span lang=EN-US style='font-size:10.0pt;font-family:"Arial","sans-serif"'>Notice:
+The Intel® Chipset Device Software may contain design defects or errors
+described as &quot;known issues&quot; which may cause the product to deviate
+from expected performance. Current characterized known issues are documented in
+this update.</span></p>
+
+<p style='margin-bottom:12.0pt'><a name="Revision_History"><span lang=EN-US
+style='font-size:18.0pt;font-family:"Arial","sans-serif";color:blue'>Revision
+History</span></a></p>
+
+<div class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='mso-fareast-font-family:"Times New Roman"'>
+
+<hr size=2 width="100%" noshade style='color:black' align=center>
+
+</span></div>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0cm 0cm 0cm 0cm'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;height:16.5pt'>
+  <td width="26%" valign=top style='width:26.1%;border:solid windowtext 1.0pt;
+  padding:0cm 0cm 0cm 0cm;height:16.5pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  lang=EN-US style='font-size:14.0pt;font-family:"Arial","sans-serif";
+  color:blue'>Date</span></b></p>
+  </td>
+  <td width="36%" valign=top style='width:36.14%;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 0cm 0cm 0cm;height:16.5pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  lang=EN-US style='font-size:14.0pt;font-family:"Arial","sans-serif";
+  color:blue'>Driver Revision</span></b></p>
+  </td>
+  <td width="37%" style='width:37.76%;border:solid windowtext 1.0pt;border-left:
+  none;padding:0cm 0cm 0cm 0cm;height:16.5pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  lang=EN-US style='font-size:14.0pt;font-family:"Arial","sans-serif";
+  color:blue'>Draft/Changes</span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;height:16.5pt'>
+  <td width="26%" valign=top style='width:26.1%;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext 1.0pt;padding:0cm 0cm 0cm 0cm;
+  height:16.5pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>July 2013<o:p></o:p></span></p>
+  </td>
+  <td width="36%" valign=top style='width:36.14%;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext 1.0pt;padding:0cm 0cm 0cm 0cm;height:
+  16.5pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>9.4.3.1009<o:p></o:p></span></p>
+  </td>
+  <td width="37%" style='width:37.76%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext 1.0pt;padding:0cm 0cm 0cm 0cm;height:
+  16.5pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>PC 9.4.3.1009<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;height:16.5pt'>
+  <td width="26%" valign=top style='width:26.1%;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext 1.0pt;padding:0cm 0cm 0cm 0cm;
+  height:16.5pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>June 2013<o:p></o:p></span></p>
+  </td>
+  <td width="36%" valign=top style='width:36.14%;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext 1.0pt;padding:0cm 0cm 0cm 0cm;height:
+  16.5pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>9.4.3.1007<o:p></o:p></span></p>
+  </td>
+  <td width="37%" style='width:37.76%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext 1.0pt;padding:0cm 0cm 0cm 0cm;height:
+  16.5pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>Beta 9.4.3.1007<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3;height:16.5pt'>
+  <td width="26%" valign=top style='width:26.1%;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext 1.0pt;padding:0cm 0cm 0cm 0cm;
+  height:16.5pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>March 2013<o:p></o:p></span></p>
+  </td>
+  <td width="36%" valign=top style='width:36.14%;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext 1.0pt;padding:0cm 0cm 0cm 0cm;height:
+  16.5pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>9.4.3.1005<o:p></o:p></span></p>
+  </td>
+  <td width="37%" style='width:37.76%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext 1.0pt;padding:0cm 0cm 0cm 0cm;height:
+  16.5pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>Alpha 9.4.3.1005<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4;mso-yfti-lastrow:yes;height:11.25pt'>
+  <td width="26%" valign=top style='width:26.1%;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 0cm 0cm 0cm;height:11.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>February 2013<o:p></o:p></span></p>
+  </td>
+  <td width="36%" valign=top style='width:36.14%;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 0cm 0cm 0cm;height:11.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>9.4.3.1003<o:p></o:p></span></p>
+  </td>
+  <td width="37%" style='width:37.76%;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 0cm 0cm 0cm;height:11.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>Alpha 9.4.3.1003<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span lang=EN-US style='font-size:18.0pt;font-family:"Arial","sans-serif";
+color:blue'>Intel®</span><span lang=EN-US style='font-size:24.0pt;font-family:
+"Arial","sans-serif";color:blue'> </span><span lang=EN-US style='font-size:
+18.0pt;font-family:"Arial","sans-serif";color:blue'>Chipset Device Software
+Support</span></p>
+
+<p><span lang=EN-US style='font-family:"Arial","sans-serif"'>The Intel® Chipset
+Device Software contains support for the following Intel Chipsets:</span></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo3;tab-stops:list 36.0pt'><span
+     class=SpellE><span lang=EN-US style='font-family:"Arial","sans-serif";
+     mso-fareast-font-family:"Times New Roman"'>Centerton</span></span><span
+     lang=EN-US style='font-family:"Arial","sans-serif";mso-fareast-font-family:
+     "Times New Roman"'><o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo3;tab-stops:list 36.0pt'><span
+     class=SpellE><span lang=EN-US style='font-family:"Arial","sans-serif";
+     mso-fareast-font-family:"Times New Roman"'>Avoton</span></span><span
+     lang=EN-US style='mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></li>
+</ul>
+
+<p><span lang=EN-US style='font-size:18.0pt;font-family:"Arial","sans-serif";
+color:blue'>Supported Operating Systems</span></p>
+
+<p><span lang=EN-US style='font-family:"Arial","sans-serif"'>The Intel® Chipset
+Device Software is validated on the following Microsoft operating
+systems.&nbsp;&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-left:42.0pt;text-indent:-24.0pt;
+mso-list:l2 level1 lfo5'><![if !supportLists]><span lang=EN-US
+style='font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings'><span style='mso-list:Ignore'>l<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-US style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:"Times New Roman"'>Microsoft* Windows* Server 2003<o:p></o:p></span></p>
+
+<p class=MsoListParagraph style='margin-left:42.0pt;text-indent:-24.0pt;
+mso-list:l2 level1 lfo5'><![if !supportLists]><span lang=EN-US
+style='font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings'><span style='mso-list:Ignore'>l<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-US style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:"Times New Roman"'>Microsoft Windows Server 2003 x64 <o:p></o:p></span></p>
+
+<p class=MsoListParagraph style='margin-left:42.0pt;text-indent:-24.0pt;
+mso-list:l2 level1 lfo5'><![if !supportLists]><span lang=EN-US
+style='font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings'><span style='mso-list:Ignore'>l<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-US style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:"Times New Roman"'>Microsoft Windows Server 2008<o:p></o:p></span></p>
+
+<p class=MsoListParagraph style='margin-left:42.0pt;text-indent:-24.0pt;
+mso-list:l2 level1 lfo5'><![if !supportLists]><span lang=EN-US
+style='font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings'><span style='mso-list:Ignore'>l<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-US style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:"Times New Roman"'>Microsoft Windows Server 2008 x64 <o:p></o:p></span></p>
+
+<p class=MsoListParagraph style='margin-left:42.0pt;text-indent:-24.0pt;
+mso-list:l2 level1 lfo5'><![if !supportLists]><span lang=EN-US
+style='font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings'><span style='mso-list:Ignore'>l<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-US style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:"Times New Roman"'>Microsoft Windows XP<o:p></o:p></span></p>
+
+<p class=MsoListParagraph style='margin-left:42.0pt;text-indent:-24.0pt;
+mso-list:l2 level1 lfo5'><![if !supportLists]><span lang=EN-US
+style='font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings'><span style='mso-list:Ignore'>l<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-US style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:"Times New Roman"'>Microsoft Windows XP Professional
+x64&nbsp; <o:p></o:p></span></p>
+
+<p class=MsoListParagraph style='margin-left:42.0pt;text-indent:-24.0pt;
+mso-list:l2 level1 lfo5'><![if !supportLists]><span lang=EN-US
+style='font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings'><span style='mso-list:Ignore'>l<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-US style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:"Times New Roman"'>Microsoft Windows 2000<o:p></o:p></span></p>
+
+<p class=MsoListParagraph style='margin-left:42.0pt;text-indent:-24.0pt;
+mso-list:l2 level1 lfo5'><![if !supportLists]><span lang=EN-US
+style='font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings'><span style='mso-list:Ignore'>l<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-US style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:"Times New Roman"'>Microsoft Windows Vista<o:p></o:p></span></p>
+
+<p class=MsoListParagraph style='margin-left:42.0pt;text-indent:-24.0pt;
+mso-list:l2 level1 lfo5'><![if !supportLists]><span lang=EN-US
+style='font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings'><span style='mso-list:Ignore'>l<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-US style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:"Times New Roman"'>Microsoft Windows Vista x64&nbsp; <o:p></o:p></span></p>
+
+<p class=MsoListParagraph style='margin-left:42.0pt;text-indent:-24.0pt;
+mso-list:l2 level1 lfo5'><![if !supportLists]><span lang=EN-US
+style='font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings'><span style='mso-list:Ignore'>l<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-US style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:"Times New Roman"'>Microsoft Windows 7<o:p></o:p></span></p>
+
+<p class=MsoListParagraph style='margin-left:42.0pt;text-indent:-24.0pt;
+mso-list:l2 level1 lfo5'><![if !supportLists]><span lang=EN-US
+style='font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings'><span style='mso-list:Ignore'>l<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-US style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:"Times New Roman"'>Microsoft Windows 7 x64 <o:p></o:p></span></p>
+
+<p class=MsoListParagraph style='margin-left:42.0pt;text-indent:-24.0pt;
+mso-list:l2 level1 lfo5'><![if !supportLists]><span lang=EN-US
+style='font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings'><span style='mso-list:Ignore'>l<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-US style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:"Times New Roman"'>Microsoft Windows 2008 R2 SP2<o:p></o:p></span></p>
+
+<p class=MsoListParagraph style='margin-left:42.0pt;text-indent:-24.0pt;
+mso-list:l2 level1 lfo5'><![if !supportLists]><span lang=EN-US
+style='font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings'><span style='mso-list:Ignore'>l<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-US style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:"Times New Roman"'>Microsoft Windows 8</span></p>
+
+<p class=MsoListParagraph style='margin-left:42.0pt;text-indent:-24.0pt;
+mso-list:l2 level1 lfo5'><![if !supportLists]><span lang=EN-US
+style='font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings'><span style='mso-list:Ignore'>l<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-US style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:"Times New Roman"'>Microsoft Windows Server 2012</span><span
+lang=EN-US style='mso-fareast-font-family:"Times New Roman"'> </span></p>
+
+<p class=MsoListParagraph style='margin-left:42.0pt;text-indent:-24.0pt;
+mso-list:l2 level1 lfo5'><![if !supportLists]><span lang=EN-US
+style='font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings'><span style='mso-list:Ignore'>l<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-US style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:"Times New Roman"'>Microsoft Windows 8.1</span><span
+lang=EN-US><o:p></o:p></span></p>
+
+<p class=MsoListParagraph style='margin-left:42.0pt;text-indent:-24.0pt;
+mso-list:l2 level1 lfo5'><![if !supportLists]><span lang=EN-US
+style='font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings'><span style='mso-list:Ignore'>l<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-US style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:"Times New Roman"'>Microsoft Windows Server 2012</span><span
+lang=EN-US style='mso-fareast-font-family:"Times New Roman"'> R2</span><span
+lang=EN-US><o:p></o:p></span></p>
+
+<p class=MsoListParagraph style='margin-left:42.0pt'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<p><span lang=EN-US style='font-size:18.0pt;font-family:"Arial","sans-serif";
+color:blue'>New Features&nbsp;<o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=1 cellpadding=0 style='mso-cellspacing:1.8pt;
+ mso-yfti-tbllook:1184;mso-padding-alt:0cm 0cm 0cm 0cm'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;height:15.75pt'>
+  <td width=797 colspan=2 style='width:597.6pt;background:#548DD4;padding:.75pt .75pt .75pt .75pt;
+  height:15.75pt'>
+  <p class=MsoNormal style='line-height:12.0pt'><b><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>Features Added in 9.4.3.1009 – July
+  29, 2013<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;height:15.75pt'>
+  <td width=42 style='width:31.8pt;padding:.75pt .75pt .75pt .75pt;height:15.75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  lang=EN-US style='font-family:"Arial","sans-serif"'>ID</span></b><span
+  lang=EN-US><o:p></o:p></span></p>
+  </td>
+  <td width=752 style='width:564.0pt;padding:.75pt .75pt .75pt .75pt;
+  height:15.75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='font-family:"Arial","sans-serif"'>Description
+  </span></b><span lang=EN-US><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;height:15.75pt'>
+  <td width=42 style='width:31.8pt;padding:.75pt .75pt .75pt .75pt;height:15.75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:13.5pt;color:black'>1<o:p></o:p></span></p>
+  </td>
+  <td width=752 style='width:564.0pt;padding:.75pt .75pt .75pt .75pt;
+  height:15.75pt'>
+  <p class=MsoNormal style='mso-line-height-alt:12.0pt'><span lang=EN-US
+  style='font-size:13.5pt;color:black'>Updated readme milestone to PC.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3;height:15.75pt'>
+  <td width=42 style='width:31.8pt;padding:.75pt .75pt .75pt .75pt;height:15.75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:13.5pt;color:black'>2<o:p></o:p></span></p>
+  </td>
+  <td width=752 style='width:564.0pt;padding:.75pt .75pt .75pt .75pt;
+  height:15.75pt'>
+  <p class=MsoNormal style='mso-line-height-alt:12.0pt'><span lang=EN-US
+  style='font-size:13.5pt;color:black'>Windows 8.1 certification added.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4;height:15.75pt'>
+  <td width=42 style='width:31.8pt;padding:.75pt .75pt .75pt .75pt;height:15.75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:13.5pt;color:black'>3<o:p></o:p></span></p>
+  </td>
+  <td width=752 style='width:564.0pt;padding:.75pt .75pt .75pt .75pt;
+  height:15.75pt'>
+  <p class=MsoNormal style='mso-line-height-alt:12.0pt'><span class=SpellE><span
+  lang=EN-US style='font-size:13.5pt;color:black'>Mup</span></span><span
+  lang=EN-US style='font-size:13.5pt;color:black'> updated to specification
+  2.4.1.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5;height:15.75pt'>
+  <td width=797 colspan=2 style='width:597.6pt;background:#548DD4;padding:.75pt .75pt .75pt .75pt;
+  height:15.75pt'>
+  <p class=MsoNormal style='line-height:12.0pt'><b><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>Features Added in 9.4.3.1007 – June
+  11, 2013<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6;height:15.75pt'>
+  <td width=42 style='width:31.8pt;padding:.75pt .75pt .75pt .75pt;height:15.75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  lang=EN-US style='font-family:"Arial","sans-serif"'>ID</span></b></p>
+  </td>
+  <td width=752 style='width:564.0pt;padding:.75pt .75pt .75pt .75pt;
+  height:15.75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='font-family:"Arial","sans-serif"'>Description
+  </span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7;height:15.75pt'>
+  <td width=42 style='width:31.8pt;padding:.75pt .75pt .75pt .75pt;height:15.75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:13.5pt;color:black'>1<o:p></o:p></span></p>
+  </td>
+  <td width=752 style='width:564.0pt;padding:.75pt .75pt .75pt .75pt;
+  height:15.75pt'>
+  <p class=MsoNormal style='text-indent:6.75pt;mso-char-indent-count:.5;
+  mso-line-height-alt:12.0pt'><span lang=EN-US style='font-size:13.5pt;
+  color:black'>Updated readme to Beta milestone<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:8;height:15.75pt'>
+  <td width=42 style='width:31.8pt;padding:.75pt .75pt .75pt .75pt;height:15.75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:13.5pt;color:black'>2<o:p></o:p></span></p>
+  </td>
+  <td width=752 style='width:564.0pt;padding:.75pt .75pt .75pt .75pt;
+  height:15.75pt'>
+  <p class=MsoNormal style='text-indent:6.75pt;mso-char-indent-count:.5;
+  mso-line-height-alt:12.0pt'><span lang=EN-US style='font-size:13.5pt;
+  color:black'>Fixed bug: Manufacturer and Provider not “Intel”<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:9;height:15.75pt'>
+  <td width=42 style='width:31.8pt;padding:.75pt .75pt .75pt .75pt;height:15.75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:13.5pt;color:black'>3<o:p></o:p></span></p>
+  </td>
+  <td width=752 style='width:564.0pt;padding:.75pt .75pt .75pt .75pt;
+  height:15.75pt'>
+  <p class=MsoNormal style='text-indent:6.75pt;mso-char-indent-count:.5;
+  mso-line-height-alt:12.0pt'><span lang=EN-US style='font-size:13.5pt;
+  color:black'>Updated to finalized branding strings.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:10;height:15.75pt'>
+  <td width=42 style='width:31.8pt;padding:.75pt .75pt .75pt .75pt;height:15.75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:13.5pt;color:black'>4<o:p></o:p></span></p>
+  </td>
+  <td width=752 style='width:564.0pt;padding:.75pt .75pt .75pt .75pt;
+  height:15.75pt'>
+  <p class=MsoNormal style='text-indent:6.75pt;mso-char-indent-count:.5;
+  mso-line-height-alt:12.0pt'><span lang=EN-US style='font-size:13.5pt;
+  color:black'>Converted 9.4.3 baseline <span class=SpellE>inf</span> files to
+  Unicode.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:11;height:15.75pt'>
+  <td width=42 style='width:31.8pt;padding:.75pt .75pt .75pt .75pt;height:15.75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  lang=EN-US>5<o:p></o:p></span></b></p>
+  </td>
+  <td width=752 style='width:564.0pt;padding:.75pt .75pt .75pt .75pt;
+  height:15.75pt'>
+  <p class=MsoNormal style='text-indent:6.75pt;mso-char-indent-count:.5'><span
+  lang=EN-US style='font-size:13.5pt;color:black'>Fixed AHCI Rollback issue</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:12;height:15.75pt'>
+  <td width=797 colspan=2 style='width:597.6pt;background:#548DD4;padding:.75pt .75pt .75pt .75pt;
+  height:15.75pt'>
+  <p class=MsoNormal style='line-height:12.0pt'><b><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>Features Added in 9.4.3.1005 – March
+  29, 2013<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:13;height:15.75pt'>
+  <td width=42 style='width:31.8pt;padding:.75pt .75pt .75pt .75pt;height:15.75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  lang=EN-US style='font-family:"Arial","sans-serif"'>ID</span></b></p>
+  </td>
+  <td width=752 style='width:564.0pt;padding:.75pt .75pt .75pt .75pt;
+  height:15.75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='font-family:"Arial","sans-serif"'>Description
+  </span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:14;height:15.75pt'>
+  <td width=42 style='width:31.8pt;padding:.75pt .75pt .75pt .75pt;height:15.75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  lang=EN-US>1<o:p></o:p></span></b></p>
+  </td>
+  <td width=752 style='width:564.0pt;padding:.75pt .75pt .75pt .75pt;
+  height:15.75pt'>
+  <p class=MsoNormal style='margin-left:12.3pt'><span lang=EN-US
+  style='font-size:13.5pt;color:black'>Updated device 1F38 to load ISA driver</span><span
+  lang=EN-US style='font-family:"Arial","sans-serif"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:15;height:15.75pt'>
+  <td width=42 style='width:31.8pt;padding:.75pt .75pt .75pt .75pt;height:15.75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  lang=EN-US>2<o:p></o:p></span></b></p>
+  </td>
+  <td width=752 style='width:564.0pt;padding:.75pt .75pt .75pt .75pt;
+  height:15.75pt'>
+  <p class=MsoNormal style='margin-left:12.3pt'><span lang=EN-US
+  style='font-size:13.5pt;color:black'>Fixed Readme<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:16;height:15.75pt'>
+  <td width=42 style='width:31.8pt;padding:.75pt .75pt .75pt .75pt;height:15.75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  lang=EN-US>3<o:p></o:p></span></b></p>
+  </td>
+  <td width=752 style='width:564.0pt;padding:.75pt .75pt .75pt .75pt;
+  height:15.75pt'>
+  <p class=MsoNormal style='margin-left:12.3pt'><span lang=EN-US
+  style='font-size:13.5pt;color:black'>Fixed AHCI Rollback issue</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:17;height:15.75pt'>
+  <td width=797 colspan=2 style='width:597.6pt;background:#548DD4;padding:.75pt .75pt .75pt .75pt;
+  height:15.75pt'>
+  <p class=MsoNormal style='line-height:12.0pt'><b><span lang=EN-US
+  style='font-family:"Arial","sans-serif"'>Features Added in 9.4.3.1003 –
+  February 07, 2013</span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:18;height:15.75pt'>
+  <td width=42 style='width:31.8pt;padding:.75pt .75pt .75pt .75pt;height:15.75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  lang=EN-US style='font-family:"Arial","sans-serif"'>ID</span></b></p>
+  </td>
+  <td width=752 style='width:564.0pt;padding:.75pt .75pt .75pt .75pt;
+  height:15.75pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='font-family:"Arial","sans-serif"'>Description
+  </span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:19;height:15.75pt'>
+  <td width=42 style='width:31.8pt;padding:.75pt .75pt .75pt .75pt;height:15.75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  lang=EN-US>1<o:p></o:p></span></b></p>
+  </td>
+  <td width=752 style='width:564.0pt;padding:.75pt .75pt .75pt .75pt;
+  height:15.75pt'>
+  <p class=MsoNormal style='margin-left:12.3pt'><span lang=EN-US
+  style='font-size:13.5pt;color:black'>Updated RCEC and <span class=SpellE>nCPM</span>
+  with null driver.</span><span lang=EN-US style='font-family:"Arial","sans-serif"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:20;height:15.75pt'>
+  <td width=42 style='width:31.8pt;padding:.75pt .75pt .75pt .75pt;height:15.75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  lang=EN-US>2<o:p></o:p></span></b></p>
+  </td>
+  <td width=752 style='width:564.0pt;padding:.75pt .75pt .75pt .75pt;
+  height:15.75pt'>
+  <p class=MsoNormal style='margin-left:12.3pt'><span lang=EN-US
+  style='font-size:13.5pt;color:black'>Separated RCEC into its own <span
+  class=SpellE>inf</span> file.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:21;height:15.75pt'>
+  <td width=42 style='width:31.8pt;padding:.75pt .75pt .75pt .75pt;height:15.75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  lang=EN-US>3<o:p></o:p></span></b></p>
+  </td>
+  <td width=752 style='width:564.0pt;padding:.75pt .75pt .75pt .75pt;
+  height:15.75pt'>
+  <p class=MsoNormal style='margin-left:12.3pt'><span lang=EN-US
+  style='font-size:13.5pt;color:black'>Fixed device mismatch in <span
+  class=SpellE>SMBus</span> <span class=SpellE>inf</span> file.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:22;height:15.75pt'>
+  <td width=42 style='width:31.8pt;padding:.75pt .75pt .75pt .75pt;height:15.75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  lang=EN-US>4<o:p></o:p></span></b></p>
+  </td>
+  <td width=752 style='width:564.0pt;padding:.75pt .75pt .75pt .75pt;
+  height:15.75pt'>
+  <p class=MsoNormal style='margin-left:12.3pt'><span class=SpellE><span
+  lang=EN-US style='font-size:13.5pt;color:black'>Avoton</span></span><span
+  lang=EN-US style='font-size:13.5pt;color:black'> device ID updates.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:23;mso-yfti-lastrow:yes;height:15.75pt'>
+  <td width=42 style='width:31.8pt;padding:.75pt .75pt .75pt .75pt;height:15.75pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  lang=EN-US>5<o:p></o:p></span></b></p>
+  </td>
+  <td width=752 style='width:564.0pt;padding:.75pt .75pt .75pt .75pt;
+  height:15.75pt'>
+  <p class=MsoNormal style='margin-left:12.3pt'><span lang=EN-US
+  style='font-size:13.5pt;color:black'>Extracted storage devices from core</span><span
+  lang=EN-US>.</span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span lang=EN-US style='font-size:18.0pt;font-family:"Arial","sans-serif";
+color:blue'>&nbsp;</span></p>
+
+<p><b><span lang=EN-US style='font-size:14.0pt;font-family:"Arial","sans-serif";
+color:blue'>Software Sightings and/or Known Issues</span></b></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width="91%"
+ style='width:91.0%;mso-cellspacing:0cm;border:outset black 1.0pt;mso-yfti-tbllook:
+ 1184;mso-padding-alt:0cm 0cm 0cm 0cm'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;height:11.25pt'>
+  <td width="4%" style='width:4.34%;border:inset black 1.0pt;padding:0cm 0cm 0cm 0cm;
+  height:11.25pt'>
+  <p class=MsoNormal align=center style='text-align:center;line-height:11.25pt'><b><span
+  lang=EN-US style='font-size:10.0pt;font-family:"Arial","sans-serif"'>ID</span></b></p>
+  </td>
+  <td width="95%" style='width:95.66%;border:inset black 1.0pt;padding:0cm 0cm 0cm 0cm;
+  height:11.25pt'>
+  <p class=MsoNormal style='line-height:11.25pt'><b><span lang=EN-US
+  style='font-size:10.0pt;font-family:"Arial","sans-serif"'>Information</span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes;height:48.75pt'>
+  <td width="4%" valign=top style='width:4.34%;border:solid windowtext 1.0pt;
+  padding:0cm 0cm 0cm 0cm;height:48.75pt'></td>
+  <td width="95%" valign=top style='width:95.66%;border:inset black 1.0pt;
+  padding:0cm 0cm 0cm 0cm;height:48.75pt'></td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+Help for Setup Command-Line Options
+
+     -?			displays this help dialog
+     -a			extracts all driver files
+     -aonly		extracts driver files that match the system hardware
+     -b			reboots the system after setup is complete
+     -f2 <path>		changes the default log path
+     -l <number>		specifies the language of the setup dialogs
+     -nowel		does not display the welcome dialog
+     -nolic		does not display the license agreement dialog
+     -noread		does not display the readme dialog
+     -overide		overwrites the IDE driver
+     -overall		overwrites all drivers
+     -overwrite		ignores the overwrite warning
+     -p <path>		changes the default install path
+     -s			does not display any setup dialogs

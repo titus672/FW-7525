@@ -1,0 +1,5 @@
+Version history
+
+Version	Date						Description
+======= =============== ====================================================================================
+V1.1	2011/11/10	Change green string to amber string and red string to green string for h/w request.

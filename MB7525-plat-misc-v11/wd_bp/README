@@ -1,0 +1,227 @@
+Lanner Platform Miscellaneous Utility
+Watchdog/Bypass Program 
+================================================
+
+Code structure:V1.0
+
+Contents
+========
+
+- In This Release
+- Building 
+- Installation
+- Usage
+- Q&A
+- history
+- License
+
+
+In This Release
+===============
+
+This file describes the code structure of Lanner platform watchdog/bypass 
+program.  This package provides program(DOS/Linux/FreeBSD) and driver
+(Linux/FreeBSD) for Lanner platform-specific function.
+Separated makefile available as well.(Makefile.dos, Makefile.linux,
+Makefile.freebsd)
+
+For DOS environment, Use DJGPP as compiler., use DJGPP and Makefile.dos.
+
+For Linux, supports kernel versions 2.4.x and 2.6.x and Makefile.linux.
+
+For FreeBSD, it is tested under FreeBSD 8.0.
+
+
+This release provide 2 ways(Defined in Makefile) to access Lanner platform
+devices:
+
+1. DIRECT_IO_ACCESS=0(Default):
+
+   To access Lanner miscellaneous devices through lanner driver.
+   Lanner driver is available in bin sub-directory after make.
+   This driver is only supported as a loadable module at this time. Lanner is
+   not supplying patches against the kernel source to allow for static linking
+   of the driver.
+
+   Note: This mode is enabled by set DIRECT_IO_ACCESS=0 in Makefile.
+
+2. DIRECT_IO_ACCESS=1:
+
+   To manipulate Lanner miscellaneous device by userland application direct
+   accessing. This mode JUST FOR providing quick way for user to realize
+   Lannner platform specific function. This mode supported on DOS and Linux.
+
+   Note: This mode is enabled by set DIRECT_IO_ACCESS=1 in Makefile.
+
+
+
+Building
+========
+
+To build, 3 steps to accomplish it:
+
+1. Identify current OS and select proper Makefile. 
+   Copy Makefile.(os) to Makefile.
+
+2. Select access mode(DIRECT_IO_ACCESS=[0|1] by edit Makefile.
+
+3. Just type make to build, once completed, bin sub-directory contains.
+
+
+
+Installation
+============
+
+To installation, depend on what's access mode you set:
+
+If DIRECT_IO_ACCESS=1, no driver is need. Just execute executable program in
+bin sub-directory to handle watchdog/bypass function.
+
+
+If DIRECT_IO_ACCESS=0 , driver is needed.
+For Linux:
+        Insert module and create node in /dev as below example:
+        #insmod wd_drv.[k]o
+        #mknod /dev/wd_drv c 241 0
+
+For FreeBSD:
+        Insert module as below example:
+        #kldload -v ./wd_drv.ko
+
+
+
+
+Usage
+=====
+Once build completed, application(and driver) is available in bin sub-directory.
+
+The command usage will be printout when you execute wd_test without any argument.
+Below list usage:
+
+        wd_tst --srbe [1|2](Set Pair 1/2 Runtime Bypass Enabled)
+        wd_tst --srbd [1|2](Set Pair 1/2 Runtime Bypass Disabled)
+        wd_tst --sobe [1|2](Set Pair 1/2 Off-mode Bypass Enabled)
+        wd_tst --sobd [1|2](Set Pair 1/2 Off-mode Bypass Disabled)
+        wd_tst --swtsb (Set Watchdog Timeout State to Bypass)
+        wd_tst --swtsr (Set Watchdog Timeout State to Reset)
+        wd_tst --swt xxx (Set Watchdog Timer 1-255 seconds)
+        wd_tst[*] --start (Start Watchdog Timer)
+        wd_tst --stop (Stop Watchdog Timer)
+
+Note [*]: wd_tst --start is not presented if DIRECT_IO_ACCESS=1, watchdog timer
+	  will start automatically once "./wd_tst --swt xxx" is executed.
+
+
+Physical Pair mapping:
++---------------------------------------------------------+
+|                                                         |
+|  +---------+  +-----+  +----------+  +----------+       |
+|  | console |  | USB |  |  Pair1   |  |  Pair 2  |       |
+|  +---------+  +-----+  +----------+  +----------+       |
+|                                                         |
++---------------------------------------------------------+
+
+Note for Linux user: insmod driver if necessary.
+
+Q&A:
+====
+Q:
+  Can I expect Lan-bypass enabled when system is in power-off mode?
+A:
+  Yes, just run below command before you poweroff the system.
+  #wd_tst --sobe [1|2]
+
+
+Q:
+  Can I force Lan bypass by my program?
+A:
+  Yes, run below command to force pair 1 bypass
+  #wd_tst --srbe 1
+
+Q:
+  How can I disable Lan bypass?
+A:
+  Run below command to switch back pair 1 bypass:
+  #wd_tst --srbd 1
+
+
+Q:
+ What's the procedure to set watchdog timer and start it?
+A:
+ Well, first thing is to consider that what's state you expect when watchdog timer expired.
+ For example, I want to set watchdog timer to 10 seconds, if ,unfortunately, SW could not
+ re-trigger timer within 10 seconds, I expect system reset. Set by below commands:
+
+ #wd_tst --swtsr
+ #wd_tst --swt 10
+ #wd_tst[*] --start
+
+Note[*]: wd_tst --start not presented if DIRECT_IO_ACCESS=1, watchdog timer 
+	 will start automatically once "./wd_tst --swt xxx" is executed.
+
+
+Q:
+ How can I re-trigger watchdog timer?
+A:
+ a) For DIRECT_IO_ACCESS=0
+    Just run below command:
+    #wd_tst --start
+
+ b) For DIRECT_IO_ACCESS=1
+    Just run set timer again:
+    #wd_tst --swt xxx again
+
+
+Q:
+ How can I stop watchdog timer?
+A:
+ Just run below command:
+ #wd_test --stop
+
+
+
+History
+=======
+See history.txt for details
+
+
+License
+=======
+
+Lanner platform miscellaneous utility.
+Copyright(c) 2010 Lanner Electronics Inc.
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+1. Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer,
+   without modification.
+2. Redistributions in binary form must reproduce at minimum a disclaimer
+   similar to the "NO WARRANTY" disclaimer below ("Disclaimer") and any
+   redistribution must be conditioned upon including a substantially
+   similar Disclaimer requirement for further binary redistribution.
+3. Neither the names of the above-listed copyright holders nor the names
+   of any contributors may be used to endorse or promote products derived
+   from this software without specific prior written permission.
+
+Alternatively, this software may be distributed under the terms of the
+GNU General Public License ("GPL") version 2 as published by the Free
+Software Foundation.
+
+NO WARRANTY
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF NONINFRINGEMENT, MERCHANTIBILITY
+AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
+THE COPYRIGHT HOLDERS OR CONTRIBUTORS BE LIABLE FOR SPECIAL, EXEMPLARY,
+OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
+IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
+THE POSSIBILITY OF SUCH DAMAGES.
+
+
+

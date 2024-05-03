@@ -1,0 +1,3867 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--Created With CreateMup.exe Version 06.05.2013.1414-->
+<MUPDefinition xmlns="http://schemas.dell.com/openmanage/cm/2/0/mupdefinition.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.dell.com/openmanage/cm/2/0/mupdefinition.xsd mupdefinition.xsd">
+  <packageinformation>
+    <installertype>installshield installscript</installertype>
+    <packagegrouping>single_package</packagegrouping>
+    <packagingtype>zip</packagingtype>
+    <releasetype>DRVR</releasetype>
+    <mupspecificationversion>2.4.1</mupspecificationversion>
+    <version>9.4.3.1008</version>
+    <name>Intel(R) Chipset INF</name>
+    <supportedoperatingsystems>
+      <osidentifier name="XP" architecture="x64" />
+      <osidentifier name="XP" architecture="x86" />
+      <osidentifier name="W2K3" architecture="x64" />
+      <osidentifier name="W2K3" architecture="x86" />
+      <osidentifier name="Vista" architecture="x64" />
+      <osidentifier name="Vista" architecture="x86" />
+      <osidentifier name="W2K8" architecture="x64" />
+      <osidentifier name="W2K8" architecture="x86" />
+      <osidentifier name="Windows7" architecture="x64" />
+      <osidentifier name="Windows7" architecture="x86" />
+      <osidentifier name="Windows8" architecture="x64" />
+      <osidentifier name="Windows8" architecture="x86" />
+      <osidentifier name="Windows8.1" architecture="x64" />
+      <osidentifier name="Windows8.1" architecture="x86" />
+    </supportedoperatingsystems>
+  </packageinformation>
+  <executable>
+    <executablename>setup.exe</executablename>
+  </executable>
+  <behaviors>
+    <!--
+    <behavior name="freshinstall">
+      Not Supported By the Installer.... Conditional
+      <vendoroption>
+        <optionvalue switch="/" requiresvalue="false" />
+      </vendoroption>
+    </behavior>
+-->
+    <!-- Driver only package
+    <behavior name="driveronly">
+      <vendoroption>
+        <optionvalue switch="/" requiresvalue="false">noIMSS</optionvalue>
+      </vendoroption>
+    </behavior>
+    <behavior name="applicationonly">
+      <vendoroption>
+        <optionvalue switch="/" requiresvalue="false">nodrv</optionvalue>
+      </vendoroption>
+    </behavior>
+-->
+    <behavior name="extractdrivers">
+      <vendoroption>
+        <container>
+          <containervalue switch="/" requiresvalue="false" valuedelimiter=" " enclose="&quot;">v</containervalue>
+          <optionvalue switch="" requiresvalue="true" valuedelimiter="=">ExtractDrivers</optionvalue>
+        </container>
+      </vendoroption>
+    </behavior>
+    <behavior name="attended" />
+    <behavior name="help">
+      <vendoroption>
+        <optionvalue switch="/" requiresvalue="false">?</optionvalue>
+      </vendoroption>
+    </behavior>
+    <behavior name="unattended">
+      <vendoroption>
+        <optionvalue switch="/" requiresvalue="false">s</optionvalue>
+      </vendoroption>
+      <!-- The DUP will Restart the system
+      <vendoroption>
+        <optionvalue switch="/" requiresvalue="false">b</optionvalue>
+      </vendoroption>
+-->
+    </behavior>
+  </behaviors>
+  <parameters>
+    <parametermapping name="force">
+      <vendoroption>
+        <optionvalue switch="/" requiresvalue="false">overwrite</optionvalue>
+      </vendoroption>
+    </parametermapping>
+    <parametermapping name="logfile">
+      <vendoroption>
+        <optionvalue switch="/" requiresvalue="true" valuedelimiter="" enclose="&quot;">f2</optionvalue>
+      </vendoroption>
+    </parametermapping>
+  </parameters>
+  <returncodes>
+    <returncodemapping name="REBOOTING_SYSTEM">
+      <vendorreturncode>15</vendorreturncode>
+    </returncodemapping>
+    <returncodemapping name="PASSWORD_REQUIRED">
+      <vendorreturncode>2</vendorreturncode>
+    </returncodemapping>
+    <returncodemapping name="NO_DOWNGRADE">
+      <!--Always able to DownGrade, Installer Doesn't need to support-->
+      <vendorreturncode>9999</vendorreturncode>
+    </returncodemapping>
+    <returncodemapping name="REBOOT_UPDATE_PENDING">
+      <!--Installer only Reboots Once, Installer Doesn't need to support-->
+      <vendorreturncode>9999</vendorreturncode>
+    </returncodemapping>
+    <returncodemapping name="DEP_SOFT_ERROR">
+      <vendorreturncode>7</vendorreturncode>
+    </returncodemapping>
+    <returncodemapping name="DEP_HARD_ERROR">
+      <vendorreturncode>5</vendorreturncode>
+    </returncodemapping>
+    <returncodemapping name="SUCCESS">
+      <vendorreturncode>0</vendorreturncode>
+    </returncodemapping>
+    <returncodemapping name="ERROR">
+      <vendorreturncode>10</vendorreturncode>
+    </returncodemapping>
+    <returncodemapping name="REBOOT_REQUIRED">
+      <vendorreturncode>14</vendorreturncode>
+    </returncodemapping>
+    <returncodemapping name="ERROR_INSTALL_PLATFORM_UNSUPPORTED">
+      <vendorreturncode>3</vendorreturncode>
+    </returncodemapping>
+    <returncodemapping name="UNKNOWN_OPTION">
+      <vendorreturncode>1</vendorreturncode>
+    </returncodemapping>
+    <returncodemapping name="ERROR">
+      <vendorreturncode>9</vendorreturncode>
+    </returncodemapping>
+    <returncodemapping name="ERROR">
+      <vendorreturncode>6</vendorreturncode>
+    </returncodemapping>
+    <returncodemapping name="ERROR">
+      <vendorreturncode>4</vendorreturncode>
+    </returncodemapping>
+  </returncodes>
+  <inventorymetadata>
+    <extractdriversidentifier>
+      <pnpids>
+        <pnpdevice>
+          <!--filename: \WIN7\AvotAhci.inf-->
+          <driverversion>9.4.3.1008</driverversion>
+          <pciinfo vendorID="8086" deviceID="1F22" />
+          <pciinfo vendorID="8086" deviceID="1F23" />
+          <pciinfo vendorID="8086" deviceID="1F32" />
+          <pciinfo vendorID="8086" deviceID="1F33" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\AvotCore.inf-->
+          <driverversion>9.4.3.1008</driverversion>
+          <pciinfo vendorID="8086" deviceID="1F00" />
+          <pciinfo vendorID="8086" deviceID="1F01" />
+          <pciinfo vendorID="8086" deviceID="1F02" />
+          <pciinfo vendorID="8086" deviceID="1F03" />
+          <pciinfo vendorID="8086" deviceID="1F04" />
+          <pciinfo vendorID="8086" deviceID="1F05" />
+          <pciinfo vendorID="8086" deviceID="1F06" />
+          <pciinfo vendorID="8086" deviceID="1F07" />
+          <pciinfo vendorID="8086" deviceID="1F08" />
+          <pciinfo vendorID="8086" deviceID="1F09" />
+          <pciinfo vendorID="8086" deviceID="1F0A" />
+          <pciinfo vendorID="8086" deviceID="1F0B" />
+          <pciinfo vendorID="8086" deviceID="1F0C" />
+          <pciinfo vendorID="8086" deviceID="1F0D" />
+          <pciinfo vendorID="8086" deviceID="1F0E" />
+          <pciinfo vendorID="8086" deviceID="1F0F" />
+          <pciinfo vendorID="8086" deviceID="1F10" />
+          <pciinfo vendorID="8086" deviceID="1F11" />
+          <pciinfo vendorID="8086" deviceID="1F12" />
+          <pciinfo vendorID="8086" deviceID="1F13" />
+          <pciinfo vendorID="8086" deviceID="1F14" />
+          <pciinfo vendorID="8086" deviceID="1F18" />
+          <pciinfo vendorID="8086" deviceID="1F19" />
+          <pciinfo vendorID="8086" deviceID="1F38" />
+          <pciinfo vendorID="8086" deviceID="1F39" />
+          <pciinfo vendorID="8086" deviceID="1F3A" />
+          <pciinfo vendorID="8086" deviceID="1F3B" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\AvotIDE.inf-->
+          <driverversion>9.4.3.1008</driverversion>
+          <pciinfo vendorID="8086" deviceID="1F20" />
+          <pciinfo vendorID="8086" deviceID="1F21" />
+          <pciinfo vendorID="8086" deviceID="1F30" />
+          <pciinfo vendorID="8086" deviceID="1F31" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\AvotIDE2.inf-->
+          <driverversion>9.4.3.1008</driverversion>
+          <pciinfo vendorID="8086" deviceID="1F20" />
+          <pciinfo vendorID="8086" deviceID="1F21" />
+          <pciinfo vendorID="8086" deviceID="1F30" />
+          <pciinfo vendorID="8086" deviceID="1F31" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\AvotRCEC.inf-->
+          <driverversion>9.4.3.1008</driverversion>
+          <pciinfo vendorID="8086" deviceID="1F16" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\AvotSMB.inf-->
+          <driverversion>9.4.3.1008</driverversion>
+          <pciinfo vendorID="8086" deviceID="1F15" />
+          <pciinfo vendorID="8086" deviceID="1F3C" />
+          <pciinfo vendorID="8086" deviceID="1F3D" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\AvotUSB.inf-->
+          <driverversion>9.4.3.1008</driverversion>
+          <pciinfo vendorID="8086" deviceID="1F2C" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\cdvcore.inf-->
+          <driverversion>9.2.2.1038</driverversion>
+          <pciinfo vendorID="8086" deviceID="0BF0" />
+          <pciinfo vendorID="8086" deviceID="0BF1" />
+          <pciinfo vendorID="8086" deviceID="0BF2" />
+          <pciinfo vendorID="8086" deviceID="0BF3" />
+          <pciinfo vendorID="8086" deviceID="0BF4" />
+          <pciinfo vendorID="8086" deviceID="0BF5" />
+          <pciinfo vendorID="8086" deviceID="0BF6" />
+          <pciinfo vendorID="8086" deviceID="0BF7" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\CentCore.inf-->
+          <driverversion>9.4.3.1008</driverversion>
+          <pciinfo vendorID="8086" deviceID="0C4E" />
+          <pciinfo vendorID="8086" deviceID="0C55" />
+          <pciinfo vendorID="8086" deviceID="0C56" />
+          <pciinfo vendorID="8086" deviceID="0C70" />
+          <pciinfo vendorID="8086" deviceID="0C71" />
+          <pciinfo vendorID="8086" deviceID="0C72" />
+          <pciinfo vendorID="8086" deviceID="0C73" />
+          <pciinfo vendorID="8086" deviceID="0C74" />
+          <pciinfo vendorID="8086" deviceID="0C75" />
+          <pciinfo vendorID="8086" deviceID="0C76" />
+          <pciinfo vendorID="8086" deviceID="0C77" />
+          <pciinfo vendorID="8086" deviceID="0C78" />
+          <pciinfo vendorID="8086" deviceID="0C79" />
+          <pciinfo vendorID="8086" deviceID="0C7A" />
+          <pciinfo vendorID="8086" deviceID="0C7B" />
+          <pciinfo vendorID="8086" deviceID="0C7C" />
+          <pciinfo vendorID="8086" deviceID="0C7D" />
+          <pciinfo vendorID="8086" deviceID="0C7E" />
+          <pciinfo vendorID="8086" deviceID="0C7F" />
+          <pciinfo vendorID="8086" deviceID="0C54" />
+          <pciinfo vendorID="8086" deviceID="0C46" />
+          <pciinfo vendorID="8086" deviceID="0C47" />
+          <pciinfo vendorID="8086" deviceID="0C48" />
+          <pciinfo vendorID="8086" deviceID="0C49" />
+          <pciinfo vendorID="8086" deviceID="0C60" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\CentSMB.inf-->
+          <driverversion>9.4.3.1008</driverversion>
+          <pciinfo vendorID="8086" deviceID="0C59" />
+          <pciinfo vendorID="8086" deviceID="0C5A" />
+          <pciinfo vendorID="8086" deviceID="0C5B" />
+          <pciinfo vendorID="8086" deviceID="0C5C" />
+          <pciinfo vendorID="8086" deviceID="0C5D" />
+          <pciinfo vendorID="8086" deviceID="0C5E" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\CentURT.inf-->
+          <driverversion>9.4.0.1021</driverversion>
+          <pciinfo vendorID="8086" deviceID="0C5F" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\cougahci.inf-->
+          <driverversion>9.2.0.1034</driverversion>
+          <pciinfo vendorID="8086" deviceID="1C02" />
+          <pciinfo vendorID="8086" deviceID="1C03" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\cougcore.inf-->
+          <driverversion>9.2.0.1034</driverversion>
+          <pciinfo vendorID="8086" deviceID="1C24" />
+          <pciinfo vendorID="8086" deviceID="1C25" />
+          <pciinfo vendorID="8086" deviceID="1C10" />
+          <pciinfo vendorID="8086" deviceID="1C12" />
+          <pciinfo vendorID="8086" deviceID="1C14" />
+          <pciinfo vendorID="8086" deviceID="1C16" />
+          <pciinfo vendorID="8086" deviceID="1C18" />
+          <pciinfo vendorID="8086" deviceID="1C1A" />
+          <pciinfo vendorID="8086" deviceID="1C1C" />
+          <pciinfo vendorID="8086" deviceID="1C1E" />
+          <pciinfo vendorID="8086" deviceID="1C40" />
+          <pciinfo vendorID="8086" deviceID="1C41" />
+          <pciinfo vendorID="8086" deviceID="1C42" />
+          <pciinfo vendorID="8086" deviceID="1C43" />
+          <pciinfo vendorID="8086" deviceID="1C44" />
+          <pciinfo vendorID="8086" deviceID="1C46" />
+          <pciinfo vendorID="8086" deviceID="1C47" />
+          <pciinfo vendorID="8086" deviceID="1C49" />
+          <pciinfo vendorID="8086" deviceID="1C4A" />
+          <pciinfo vendorID="8086" deviceID="1C4B" />
+          <pciinfo vendorID="8086" deviceID="1C4C" />
+          <pciinfo vendorID="8086" deviceID="1C4D" />
+          <pciinfo vendorID="8086" deviceID="1C4E" />
+          <pciinfo vendorID="8086" deviceID="1C4F" />
+          <pciinfo vendorID="8086" deviceID="1C50" />
+          <pciinfo vendorID="8086" deviceID="1C52" />
+          <pciinfo vendorID="8086" deviceID="1C54" />
+          <pciinfo vendorID="8086" deviceID="1C56" />
+          <pciinfo vendorID="8086" deviceID="1C58" />
+          <pciinfo vendorID="8086" deviceID="1C59" />
+          <pciinfo vendorID="8086" deviceID="1C5A" />
+          <pciinfo vendorID="8086" deviceID="1C5C" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\cougide.inf-->
+          <driverversion>9.2.0.1034</driverversion>
+          <pciinfo vendorID="8086" deviceID="1C00" />
+          <pciinfo vendorID="8086" deviceID="1C01" />
+          <pciinfo vendorID="8086" deviceID="1C08" />
+          <pciinfo vendorID="8086" deviceID="1C09" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\cougsmb.inf-->
+          <driverversion>9.2.0.1034</driverversion>
+          <pciinfo vendorID="8086" deviceID="1C22" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\cougusb.inf-->
+          <driverversion>9.2.0.1034</driverversion>
+          <pciinfo vendorID="8086" deviceID="1C26" />
+          <pciinfo vendorID="8086" deviceID="1C2D" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\couide2.inf-->
+          <driverversion>9.2.0.1034</driverversion>
+          <pciinfo vendorID="8086" deviceID="1C00" />
+          <pciinfo vendorID="8086" deviceID="1C01" />
+          <pciinfo vendorID="8086" deviceID="1C08" />
+          <pciinfo vendorID="8086" deviceID="1C09" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\CrysWell.inf-->
+          <driverversion>9.4.0.1021</driverversion>
+          <pciinfo vendorID="8086" deviceID="0D00" />
+          <pciinfo vendorID="8086" deviceID="0D01" />
+          <pciinfo vendorID="8086" deviceID="0D05" />
+          <pciinfo vendorID="8086" deviceID="0D09" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\DH89xxCC-ahci.inf-->
+          <driverversion>9.2.2.1038</driverversion>
+          <pciinfo vendorID="8086" deviceID="2323" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\DH89xxCC-cor.inf-->
+          <driverversion>9.2.2.1038</driverversion>
+          <pciinfo vendorID="8086" deviceID="2332" />
+          <pciinfo vendorID="8086" deviceID="2360" />
+          <pciinfo vendorID="8086" deviceID="2364" />
+          <pciinfo vendorID="8086" deviceID="2365" />
+          <pciinfo vendorID="8086" deviceID="0434" />
+          <pciinfo vendorID="8086" deviceID="043E" />
+          <pciinfo vendorID="8086" deviceID="2342" />
+          <pciinfo vendorID="8086" deviceID="2343" />
+          <pciinfo vendorID="8086" deviceID="2344" />
+          <pciinfo vendorID="8086" deviceID="2345" />
+          <pciinfo vendorID="8086" deviceID="2346" />
+          <pciinfo vendorID="8086" deviceID="2347" />
+          <pciinfo vendorID="8086" deviceID="2348" />
+          <pciinfo vendorID="8086" deviceID="2349" />
+          <pciinfo vendorID="8086" deviceID="2310" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\DH89xxCC-id2.inf-->
+          <driverversion>9.2.2.1038</driverversion>
+          <pciinfo vendorID="8086" deviceID="2321" />
+          <pciinfo vendorID="8086" deviceID="2326" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\DH89xxCC-ide.inf-->
+          <driverversion>9.2.2.1038</driverversion>
+          <pciinfo vendorID="8086" deviceID="2321" />
+          <pciinfo vendorID="8086" deviceID="2326" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\DH89xxCC-ME.inf-->
+          <driverversion>9.2.2.1038</driverversion>
+          <pciinfo vendorID="8086" deviceID="2364" />
+          <pciinfo vendorID="8086" deviceID="2365" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\DH89xxCC-smb.inf-->
+          <driverversion>9.2.2.1038</driverversion>
+          <pciinfo vendorID="8086" deviceID="2330" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\DH89xxCC-usb.inf-->
+          <driverversion>9.2.2.1038</driverversion>
+          <pciinfo vendorID="8086" deviceID="2334" />
+          <pciinfo vendorID="8086" deviceID="2335" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\Haswell.inf-->
+          <driverversion>9.4.0.1021</driverversion>
+          <pciinfo vendorID="8086" deviceID="0C00" />
+          <pciinfo vendorID="8086" deviceID="0C04" />
+          <pciinfo vendorID="8086" deviceID="0C08" />
+          <pciinfo vendorID="8086" deviceID="0C01" />
+          <pciinfo vendorID="8086" deviceID="0C05" />
+          <pciinfo vendorID="8086" deviceID="0C09" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\HaswellE.inf-->
+          <driverversion>9.4.2.1011</driverversion>
+          <pciinfo vendorID="8086" deviceID="2F00" />
+          <pciinfo vendorID="8086" deviceID="2F01" />
+          <pciinfo vendorID="8086" deviceID="2F02" />
+          <pciinfo vendorID="8086" deviceID="2F03" />
+          <pciinfo vendorID="8086" deviceID="2F04" />
+          <pciinfo vendorID="8086" deviceID="2F05" />
+          <pciinfo vendorID="8086" deviceID="2F06" />
+          <pciinfo vendorID="8086" deviceID="2F07" />
+          <pciinfo vendorID="8086" deviceID="2F08" />
+          <pciinfo vendorID="8086" deviceID="2F09" />
+          <pciinfo vendorID="8086" deviceID="2F0A" />
+          <pciinfo vendorID="8086" deviceID="2F0B" />
+          <pciinfo vendorID="8086" deviceID="2F1D" />
+          <pciinfo vendorID="8086" deviceID="2F1E" />
+          <pciinfo vendorID="8086" deviceID="2F1F" />
+          <pciinfo vendorID="8086" deviceID="2F20" />
+          <pciinfo vendorID="8086" deviceID="2F21" />
+          <pciinfo vendorID="8086" deviceID="2F22" />
+          <pciinfo vendorID="8086" deviceID="2F23" />
+          <pciinfo vendorID="8086" deviceID="2F24" />
+          <pciinfo vendorID="8086" deviceID="2F25" />
+          <pciinfo vendorID="8086" deviceID="2F26" />
+          <pciinfo vendorID="8086" deviceID="2F27" />
+          <pciinfo vendorID="8086" deviceID="2F28" />
+          <pciinfo vendorID="8086" deviceID="2F29" />
+          <pciinfo vendorID="8086" deviceID="2F2A" />
+          <pciinfo vendorID="8086" deviceID="2F2C" />
+          <pciinfo vendorID="8086" deviceID="2F2E" />
+          <pciinfo vendorID="8086" deviceID="2F2F" />
+          <pciinfo vendorID="8086" deviceID="2F30" />
+          <pciinfo vendorID="8086" deviceID="2F32" />
+          <pciinfo vendorID="8086" deviceID="2F33" />
+          <pciinfo vendorID="8086" deviceID="2F34" />
+          <pciinfo vendorID="8086" deviceID="2F36" />
+          <pciinfo vendorID="8086" deviceID="2F37" />
+          <pciinfo vendorID="8086" deviceID="2F38" />
+          <pciinfo vendorID="8086" deviceID="2F39" />
+          <pciinfo vendorID="8086" deviceID="2F3A" />
+          <pciinfo vendorID="8086" deviceID="2F3E" />
+          <pciinfo vendorID="8086" deviceID="2F3F" />
+          <pciinfo vendorID="8086" deviceID="2F40" />
+          <pciinfo vendorID="8086" deviceID="2F41" />
+          <pciinfo vendorID="8086" deviceID="2F43" />
+          <pciinfo vendorID="8086" deviceID="2F45" />
+          <pciinfo vendorID="8086" deviceID="2F46" />
+          <pciinfo vendorID="8086" deviceID="2F47" />
+          <pciinfo vendorID="8086" deviceID="2F60" />
+          <pciinfo vendorID="8086" deviceID="2F68" />
+          <pciinfo vendorID="8086" deviceID="2F6A" />
+          <pciinfo vendorID="8086" deviceID="2F6B" />
+          <pciinfo vendorID="8086" deviceID="2F6C" />
+          <pciinfo vendorID="8086" deviceID="2F6D" />
+          <pciinfo vendorID="8086" deviceID="2F6E" />
+          <pciinfo vendorID="8086" deviceID="2F6F" />
+          <pciinfo vendorID="8086" deviceID="2F70" />
+          <pciinfo vendorID="8086" deviceID="2F71" />
+          <pciinfo vendorID="8086" deviceID="2F76" />
+          <pciinfo vendorID="8086" deviceID="2F78" />
+          <pciinfo vendorID="8086" deviceID="2F79" />
+          <pciinfo vendorID="8086" deviceID="2F7D" />
+          <pciinfo vendorID="8086" deviceID="2F7E" />
+          <pciinfo vendorID="8086" deviceID="2F80" />
+          <pciinfo vendorID="8086" deviceID="2F81" />
+          <pciinfo vendorID="8086" deviceID="2F83" />
+          <pciinfo vendorID="8086" deviceID="2F85" />
+          <pciinfo vendorID="8086" deviceID="2F86" />
+          <pciinfo vendorID="8086" deviceID="2F87" />
+          <pciinfo vendorID="8086" deviceID="2F88" />
+          <pciinfo vendorID="8086" deviceID="2F8A" />
+          <pciinfo vendorID="8086" deviceID="2F90" />
+          <pciinfo vendorID="8086" deviceID="2F93" />
+          <pciinfo vendorID="8086" deviceID="2F95" />
+          <pciinfo vendorID="8086" deviceID="2F96" />
+          <pciinfo vendorID="8086" deviceID="2F98" />
+          <pciinfo vendorID="8086" deviceID="2F99" />
+          <pciinfo vendorID="8086" deviceID="2F9A" />
+          <pciinfo vendorID="8086" deviceID="2F9C" />
+          <pciinfo vendorID="8086" deviceID="2FA0" />
+          <pciinfo vendorID="8086" deviceID="2FA8" />
+          <pciinfo vendorID="8086" deviceID="2FAA" />
+          <pciinfo vendorID="8086" deviceID="2FAB" />
+          <pciinfo vendorID="8086" deviceID="2FAC" />
+          <pciinfo vendorID="8086" deviceID="2FAD" />
+          <pciinfo vendorID="8086" deviceID="2FAE" />
+          <pciinfo vendorID="8086" deviceID="2FAF" />
+          <pciinfo vendorID="8086" deviceID="2FB0" />
+          <pciinfo vendorID="8086" deviceID="2FB1" />
+          <pciinfo vendorID="8086" deviceID="2FB2" />
+          <pciinfo vendorID="8086" deviceID="2FB3" />
+          <pciinfo vendorID="8086" deviceID="2FB4" />
+          <pciinfo vendorID="8086" deviceID="2FB5" />
+          <pciinfo vendorID="8086" deviceID="2FB6" />
+          <pciinfo vendorID="8086" deviceID="2FB7" />
+          <pciinfo vendorID="8086" deviceID="2FB8" />
+          <pciinfo vendorID="8086" deviceID="2FB9" />
+          <pciinfo vendorID="8086" deviceID="2FBA" />
+          <pciinfo vendorID="8086" deviceID="2FBB" />
+          <pciinfo vendorID="8086" deviceID="2FBC" />
+          <pciinfo vendorID="8086" deviceID="2FBD" />
+          <pciinfo vendorID="8086" deviceID="2FBE" />
+          <pciinfo vendorID="8086" deviceID="2FBF" />
+          <pciinfo vendorID="8086" deviceID="2FC0" />
+          <pciinfo vendorID="8086" deviceID="2FC1" />
+          <pciinfo vendorID="8086" deviceID="2FC2" />
+          <pciinfo vendorID="8086" deviceID="2FC3" />
+          <pciinfo vendorID="8086" deviceID="2FC4" />
+          <pciinfo vendorID="8086" deviceID="2FC5" />
+          <pciinfo vendorID="8086" deviceID="2FD0" />
+          <pciinfo vendorID="8086" deviceID="2FD1" />
+          <pciinfo vendorID="8086" deviceID="2FD2" />
+          <pciinfo vendorID="8086" deviceID="2FD3" />
+          <pciinfo vendorID="8086" deviceID="2FD4" />
+          <pciinfo vendorID="8086" deviceID="2FD5" />
+          <pciinfo vendorID="8086" deviceID="2FD6" />
+          <pciinfo vendorID="8086" deviceID="2FD7" />
+          <pciinfo vendorID="8086" deviceID="2FE0" />
+          <pciinfo vendorID="8086" deviceID="2FE1" />
+          <pciinfo vendorID="8086" deviceID="2FE2" />
+          <pciinfo vendorID="8086" deviceID="2FE3" />
+          <pciinfo vendorID="8086" deviceID="2FE4" />
+          <pciinfo vendorID="8086" deviceID="2FE5" />
+          <pciinfo vendorID="8086" deviceID="2FE6" />
+          <pciinfo vendorID="8086" deviceID="2FE7" />
+          <pciinfo vendorID="8086" deviceID="2FE8" />
+          <pciinfo vendorID="8086" deviceID="2FE9" />
+          <pciinfo vendorID="8086" deviceID="2FEA" />
+          <pciinfo vendorID="8086" deviceID="2FEB" />
+          <pciinfo vendorID="8086" deviceID="2FEC" />
+          <pciinfo vendorID="8086" deviceID="2FED" />
+          <pciinfo vendorID="8086" deviceID="2FEE" />
+          <pciinfo vendorID="8086" deviceID="2FEF" />
+          <pciinfo vendorID="8086" deviceID="2FF0" />
+          <pciinfo vendorID="8086" deviceID="2FF1" />
+          <pciinfo vendorID="8086" deviceID="2FF2" />
+          <pciinfo vendorID="8086" deviceID="2FF3" />
+          <pciinfo vendorID="8086" deviceID="2FF4" />
+          <pciinfo vendorID="8086" deviceID="2FF5" />
+          <pciinfo vendorID="8086" deviceID="2FF6" />
+          <pciinfo vendorID="8086" deviceID="2FF7" />
+          <pciinfo vendorID="8086" deviceID="2FF8" />
+          <pciinfo vendorID="8086" deviceID="2FF9" />
+          <pciinfo vendorID="8086" deviceID="2FFA" />
+          <pciinfo vendorID="8086" deviceID="2FFB" />
+          <pciinfo vendorID="8086" deviceID="2FFC" />
+          <pciinfo vendorID="8086" deviceID="2FFD" />
+          <pciinfo vendorID="8086" deviceID="2FFE" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\ibexahci.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="2821" />
+          <pciinfo vendorID="8086" deviceID="2824" />
+          <pciinfo vendorID="8086" deviceID="2829" />
+          <pciinfo vendorID="8086" deviceID="2922" />
+          <pciinfo vendorID="8086" deviceID="2923" />
+          <pciinfo vendorID="8086" deviceID="2929" />
+          <pciinfo vendorID="8086" deviceID="3A02" />
+          <pciinfo vendorID="8086" deviceID="3A03" />
+          <pciinfo vendorID="8086" deviceID="3A22" />
+          <pciinfo vendorID="8086" deviceID="3A23" />
+          <pciinfo vendorID="8086" deviceID="3B22" />
+          <pciinfo vendorID="8086" deviceID="3B23" />
+          <pciinfo vendorID="8086" deviceID="3B29" />
+          <pciinfo vendorID="8086" deviceID="3B2F" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\ibexcore.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="3B53" />
+          <pciinfo vendorID="8086" deviceID="0051" />
+          <pciinfo vendorID="8086" deviceID="3B42" />
+          <pciinfo vendorID="8086" deviceID="3B44" />
+          <pciinfo vendorID="8086" deviceID="3B46" />
+          <pciinfo vendorID="8086" deviceID="3B48" />
+          <pciinfo vendorID="8086" deviceID="3B4A" />
+          <pciinfo vendorID="8086" deviceID="3B4C" />
+          <pciinfo vendorID="8086" deviceID="3B4E" />
+          <pciinfo vendorID="8086" deviceID="3B50" />
+          <pciinfo vendorID="8086" deviceID="3B00" />
+          <pciinfo vendorID="8086" deviceID="3B01" />
+          <pciinfo vendorID="8086" deviceID="3B02" />
+          <pciinfo vendorID="8086" deviceID="3B03" />
+          <pciinfo vendorID="8086" deviceID="3B04" />
+          <pciinfo vendorID="8086" deviceID="3B05" />
+          <pciinfo vendorID="8086" deviceID="3B06" />
+          <pciinfo vendorID="8086" deviceID="3B07" />
+          <pciinfo vendorID="8086" deviceID="3B08" />
+          <pciinfo vendorID="8086" deviceID="3B09" />
+          <pciinfo vendorID="8086" deviceID="3B0A" />
+          <pciinfo vendorID="8086" deviceID="3B0B" />
+          <pciinfo vendorID="8086" deviceID="3B0C" />
+          <pciinfo vendorID="8086" deviceID="3B0D" />
+          <pciinfo vendorID="8086" deviceID="3B0E" />
+          <pciinfo vendorID="8086" deviceID="3B0F" />
+          <pciinfo vendorID="8086" deviceID="3B10" />
+          <pciinfo vendorID="8086" deviceID="3B11" />
+          <pciinfo vendorID="8086" deviceID="3B12" />
+          <pciinfo vendorID="8086" deviceID="3B13" />
+          <pciinfo vendorID="8086" deviceID="3B14" />
+          <pciinfo vendorID="8086" deviceID="3B15" />
+          <pciinfo vendorID="8086" deviceID="3B16" />
+          <pciinfo vendorID="8086" deviceID="3B17" />
+          <pciinfo vendorID="8086" deviceID="3B18" />
+          <pciinfo vendorID="8086" deviceID="3B19" />
+          <pciinfo vendorID="8086" deviceID="3B1A" />
+          <pciinfo vendorID="8086" deviceID="3B1B" />
+          <pciinfo vendorID="8086" deviceID="3B1C" />
+          <pciinfo vendorID="8086" deviceID="3B1D" />
+          <pciinfo vendorID="8086" deviceID="3B1E" />
+          <pciinfo vendorID="8086" deviceID="3B1F" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\ibexid2.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="2920" />
+          <pciinfo vendorID="8086" deviceID="2921" />
+          <pciinfo vendorID="8086" deviceID="2926" />
+          <pciinfo vendorID="8086" deviceID="2928" />
+          <pciinfo vendorID="8086" deviceID="292D" />
+          <pciinfo vendorID="8086" deviceID="3A00" />
+          <pciinfo vendorID="8086" deviceID="3A06" />
+          <pciinfo vendorID="8086" deviceID="3A20" />
+          <pciinfo vendorID="8086" deviceID="3A26" />
+          <pciinfo vendorID="8086" deviceID="3B20" />
+          <pciinfo vendorID="8086" deviceID="3B21" />
+          <pciinfo vendorID="8086" deviceID="3B2D" />
+          <pciinfo vendorID="8086" deviceID="3B2E" />
+          <pciinfo vendorID="8086" deviceID="3B26" />
+          <pciinfo vendorID="8086" deviceID="3B28" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\ibexide.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="2920" />
+          <pciinfo vendorID="8086" deviceID="2921" />
+          <pciinfo vendorID="8086" deviceID="2926" />
+          <pciinfo vendorID="8086" deviceID="2928" />
+          <pciinfo vendorID="8086" deviceID="292D" />
+          <pciinfo vendorID="8086" deviceID="3A00" />
+          <pciinfo vendorID="8086" deviceID="3A06" />
+          <pciinfo vendorID="8086" deviceID="3A20" />
+          <pciinfo vendorID="8086" deviceID="3A26" />
+          <pciinfo vendorID="8086" deviceID="3B20" />
+          <pciinfo vendorID="8086" deviceID="3B21" />
+          <pciinfo vendorID="8086" deviceID="3B2D" />
+          <pciinfo vendorID="8086" deviceID="3B2E" />
+          <pciinfo vendorID="8086" deviceID="3B26" />
+          <pciinfo vendorID="8086" deviceID="3B28" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\ibexsmb.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="283E" />
+          <pciinfo vendorID="8086" deviceID="2930" />
+          <pciinfo vendorID="8086" deviceID="3A30" />
+          <pciinfo vendorID="8086" deviceID="3A60" />
+          <pciinfo vendorID="8086" deviceID="3B30" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\ibexusb.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="3B34" />
+          <pciinfo vendorID="8086" deviceID="3B36" />
+          <pciinfo vendorID="8086" deviceID="3B37" />
+          <pciinfo vendorID="8086" deviceID="3B38" />
+          <pciinfo vendorID="8086" deviceID="3B39" />
+          <pciinfo vendorID="8086" deviceID="3B3A" />
+          <pciinfo vendorID="8086" deviceID="3B3B" />
+          <pciinfo vendorID="8086" deviceID="3B3C" />
+          <pciinfo vendorID="8086" deviceID="3B3E" />
+          <pciinfo vendorID="8086" deviceID="3B3F" />
+          <pciinfo vendorID="8086" deviceID="3B40" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\ich78id2.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="27C0" />
+          <pciinfo vendorID="8086" deviceID="27C4" />
+          <pciinfo vendorID="8086" deviceID="27DF" />
+          <pciinfo vendorID="8086" deviceID="2820" />
+          <pciinfo vendorID="8086" deviceID="2825" />
+          <pciinfo vendorID="8086" deviceID="2828" />
+          <pciinfo vendorID="8086" deviceID="2850" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\ich78ide.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="27C0" />
+          <pciinfo vendorID="8086" deviceID="27C4" />
+          <pciinfo vendorID="8086" deviceID="27DF" />
+          <pciinfo vendorID="8086" deviceID="2820" />
+          <pciinfo vendorID="8086" deviceID="2825" />
+          <pciinfo vendorID="8086" deviceID="2828" />
+          <pciinfo vendorID="8086" deviceID="2850" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\ich78usb.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="27C8" />
+          <pciinfo vendorID="8086" deviceID="27C9" />
+          <pciinfo vendorID="8086" deviceID="27CA" />
+          <pciinfo vendorID="8086" deviceID="27CB" />
+          <pciinfo vendorID="8086" deviceID="27CC" />
+          <pciinfo vendorID="8086" deviceID="2830" />
+          <pciinfo vendorID="8086" deviceID="2831" />
+          <pciinfo vendorID="8086" deviceID="2832" />
+          <pciinfo vendorID="8086" deviceID="2834" />
+          <pciinfo vendorID="8086" deviceID="2835" />
+          <pciinfo vendorID="8086" deviceID="2836" />
+          <pciinfo vendorID="8086" deviceID="283A" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\ich7core.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="27DA" />
+          <pciinfo vendorID="8086" deviceID="27D0" />
+          <pciinfo vendorID="8086" deviceID="27D2" />
+          <pciinfo vendorID="8086" deviceID="27D4" />
+          <pciinfo vendorID="8086" deviceID="27D6" />
+          <pciinfo vendorID="8086" deviceID="27E0" />
+          <pciinfo vendorID="8086" deviceID="27E2" />
+          <pciinfo vendorID="8086" deviceID="27B0" />
+          <pciinfo vendorID="8086" deviceID="27B8" />
+          <pciinfo vendorID="8086" deviceID="27B9" />
+          <pciinfo vendorID="8086" deviceID="27BD" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\IntelCP2.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="2C50" />
+          <pciinfo vendorID="8086" deviceID="2C51" />
+          <pciinfo vendorID="8086" deviceID="2C52" />
+          <pciinfo vendorID="8086" deviceID="2C53" />
+          <pciinfo vendorID="8086" deviceID="2C54" />
+          <pciinfo vendorID="8086" deviceID="2C55" />
+          <pciinfo vendorID="8086" deviceID="2C56" />
+          <pciinfo vendorID="8086" deviceID="2C57" />
+          <pciinfo vendorID="8086" deviceID="2C81" />
+          <pciinfo vendorID="8086" deviceID="2C90" />
+          <pciinfo vendorID="8086" deviceID="2C91" />
+          <pciinfo vendorID="8086" deviceID="2C98" />
+          <pciinfo vendorID="8086" deviceID="2C99" />
+          <pciinfo vendorID="8086" deviceID="2C9C" />
+          <pciinfo vendorID="8086" deviceID="2CA0" />
+          <pciinfo vendorID="8086" deviceID="2CA1" />
+          <pciinfo vendorID="8086" deviceID="2CA2" />
+          <pciinfo vendorID="8086" deviceID="2CA3" />
+          <pciinfo vendorID="8086" deviceID="2CA8" />
+          <pciinfo vendorID="8086" deviceID="2CA9" />
+          <pciinfo vendorID="8086" deviceID="2CAA" />
+          <pciinfo vendorID="8086" deviceID="2CAB" />
+          <pciinfo vendorID="8086" deviceID="D130" />
+          <pciinfo vendorID="8086" deviceID="D131" />
+          <pciinfo vendorID="8086" deviceID="D132" />
+          <pciinfo vendorID="8086" deviceID="D133" />
+          <pciinfo vendorID="8086" deviceID="D134" />
+          <pciinfo vendorID="8086" deviceID="D135" />
+          <pciinfo vendorID="8086" deviceID="D136" />
+          <pciinfo vendorID="8086" deviceID="D137" />
+          <pciinfo vendorID="8086" deviceID="D138" />
+          <pciinfo vendorID="8086" deviceID="D139" />
+          <pciinfo vendorID="8086" deviceID="D13A" />
+          <pciinfo vendorID="8086" deviceID="D13B" />
+          <pciinfo vendorID="8086" deviceID="D150" />
+          <pciinfo vendorID="8086" deviceID="D151" />
+          <pciinfo vendorID="8086" deviceID="D155" />
+          <pciinfo vendorID="8086" deviceID="D156" />
+          <pciinfo vendorID="8086" deviceID="D157" />
+          <pciinfo vendorID="8086" deviceID="D158" />
+          <pciinfo vendorID="8086" deviceID="27BC" />
+          <pciinfo vendorID="8086" deviceID="A000" />
+          <pciinfo vendorID="8086" deviceID="A010" />
+          <pciinfo vendorID="8086" deviceID="0040" />
+          <pciinfo vendorID="8086" deviceID="0041" />
+          <pciinfo vendorID="8086" deviceID="0043" />
+          <pciinfo vendorID="8086" deviceID="0044" />
+          <pciinfo vendorID="8086" deviceID="0045" />
+          <pciinfo vendorID="8086" deviceID="0047" />
+          <pciinfo vendorID="8086" deviceID="0048" />
+          <pciinfo vendorID="8086" deviceID="0050" />
+          <pciinfo vendorID="8086" deviceID="2C61" />
+          <pciinfo vendorID="8086" deviceID="2C62" />
+          <pciinfo vendorID="8086" deviceID="2D01" />
+          <pciinfo vendorID="8086" deviceID="2D10" />
+          <pciinfo vendorID="8086" deviceID="2D11" />
+          <pciinfo vendorID="8086" deviceID="2D12" />
+          <pciinfo vendorID="8086" deviceID="2D13" />
+          <pciinfo vendorID="8086" deviceID="0049" />
+          <pciinfo vendorID="8086" deviceID="004B" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\IntelIOH.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="3400" />
+          <pciinfo vendorID="8086" deviceID="3401" />
+          <pciinfo vendorID="8086" deviceID="3402" />
+          <pciinfo vendorID="8086" deviceID="3403" />
+          <pciinfo vendorID="8086" deviceID="3404" />
+          <pciinfo vendorID="8086" deviceID="3405" />
+          <pciinfo vendorID="8086" deviceID="3406" />
+          <pciinfo vendorID="8086" deviceID="3407" />
+          <pciinfo vendorID="8086" deviceID="3408" />
+          <pciinfo vendorID="8086" deviceID="3409" />
+          <pciinfo vendorID="8086" deviceID="340A" />
+          <pciinfo vendorID="8086" deviceID="340B" />
+          <pciinfo vendorID="8086" deviceID="340C" />
+          <pciinfo vendorID="8086" deviceID="340D" />
+          <pciinfo vendorID="8086" deviceID="340E" />
+          <pciinfo vendorID="8086" deviceID="340F" />
+          <pciinfo vendorID="8086" deviceID="3410" />
+          <pciinfo vendorID="8086" deviceID="3411" />
+          <pciinfo vendorID="8086" deviceID="3418" />
+          <pciinfo vendorID="8086" deviceID="3419" />
+          <pciinfo vendorID="8086" deviceID="3420" />
+          <pciinfo vendorID="8086" deviceID="3421" />
+          <pciinfo vendorID="8086" deviceID="3422" />
+          <pciinfo vendorID="8086" deviceID="3423" />
+          <pciinfo vendorID="8086" deviceID="3424" />
+          <pciinfo vendorID="8086" deviceID="3425" />
+          <pciinfo vendorID="8086" deviceID="3426" />
+          <pciinfo vendorID="8086" deviceID="3427" />
+          <pciinfo vendorID="8086" deviceID="3428" />
+          <pciinfo vendorID="8086" deviceID="342D" />
+          <pciinfo vendorID="8086" deviceID="342E" />
+          <pciinfo vendorID="8086" deviceID="342F" />
+          <pciinfo vendorID="8086" deviceID="3438" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\IvyBridg.inf-->
+          <driverversion>9.3.0.1028</driverversion>
+          <pciinfo vendorID="8086" deviceID="0150" />
+          <pciinfo vendorID="8086" deviceID="0154" />
+          <pciinfo vendorID="8086" deviceID="0158" />
+          <pciinfo vendorID="8086" deviceID="015C" />
+          <pciinfo vendorID="8086" deviceID="0151" />
+          <pciinfo vendorID="8086" deviceID="0155" />
+          <pciinfo vendorID="8086" deviceID="0159" />
+          <pciinfo vendorID="8086" deviceID="015D" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\IvyTown.inf-->
+          <driverversion>9.4.0.1021</driverversion>
+          <pciinfo vendorID="8086" deviceID="0E00" />
+          <pciinfo vendorID="8086" deviceID="0E01" />
+          <pciinfo vendorID="8086" deviceID="0E02" />
+          <pciinfo vendorID="8086" deviceID="0E03" />
+          <pciinfo vendorID="8086" deviceID="0E04" />
+          <pciinfo vendorID="8086" deviceID="0E05" />
+          <pciinfo vendorID="8086" deviceID="0E06" />
+          <pciinfo vendorID="8086" deviceID="0E07" />
+          <pciinfo vendorID="8086" deviceID="0E08" />
+          <pciinfo vendorID="8086" deviceID="0E09" />
+          <pciinfo vendorID="8086" deviceID="0E0A" />
+          <pciinfo vendorID="8086" deviceID="0E0B" />
+          <pciinfo vendorID="8086" deviceID="0E1C" />
+          <pciinfo vendorID="8086" deviceID="0E1D" />
+          <pciinfo vendorID="8086" deviceID="0E1E" />
+          <pciinfo vendorID="8086" deviceID="0E1F" />
+          <pciinfo vendorID="8086" deviceID="0E20" />
+          <pciinfo vendorID="8086" deviceID="0E21" />
+          <pciinfo vendorID="8086" deviceID="0E22" />
+          <pciinfo vendorID="8086" deviceID="0E23" />
+          <pciinfo vendorID="8086" deviceID="0E24" />
+          <pciinfo vendorID="8086" deviceID="0E25" />
+          <pciinfo vendorID="8086" deviceID="0E26" />
+          <pciinfo vendorID="8086" deviceID="0E27" />
+          <pciinfo vendorID="8086" deviceID="0E28" />
+          <pciinfo vendorID="8086" deviceID="0E29" />
+          <pciinfo vendorID="8086" deviceID="0E2A" />
+          <pciinfo vendorID="8086" deviceID="0E2C" />
+          <pciinfo vendorID="8086" deviceID="0E2E" />
+          <pciinfo vendorID="8086" deviceID="0E2F" />
+          <pciinfo vendorID="8086" deviceID="0E30" />
+          <pciinfo vendorID="8086" deviceID="0E32" />
+          <pciinfo vendorID="8086" deviceID="0E33" />
+          <pciinfo vendorID="8086" deviceID="0E34" />
+          <pciinfo vendorID="8086" deviceID="0E36" />
+          <pciinfo vendorID="8086" deviceID="0E37" />
+          <pciinfo vendorID="8086" deviceID="0E38" />
+          <pciinfo vendorID="8086" deviceID="0E3A" />
+          <pciinfo vendorID="8086" deviceID="0E3E" />
+          <pciinfo vendorID="8086" deviceID="0E3F" />
+          <pciinfo vendorID="8086" deviceID="0E40" />
+          <pciinfo vendorID="8086" deviceID="0E41" />
+          <pciinfo vendorID="8086" deviceID="0E43" />
+          <pciinfo vendorID="8086" deviceID="0E44" />
+          <pciinfo vendorID="8086" deviceID="0E60" />
+          <pciinfo vendorID="8086" deviceID="0E68" />
+          <pciinfo vendorID="8086" deviceID="0E6A" />
+          <pciinfo vendorID="8086" deviceID="0E6B" />
+          <pciinfo vendorID="8086" deviceID="0E6C" />
+          <pciinfo vendorID="8086" deviceID="0E6D" />
+          <pciinfo vendorID="8086" deviceID="0E71" />
+          <pciinfo vendorID="8086" deviceID="0E79" />
+          <pciinfo vendorID="8086" deviceID="0E80" />
+          <pciinfo vendorID="8086" deviceID="0E81" />
+          <pciinfo vendorID="8086" deviceID="0E83" />
+          <pciinfo vendorID="8086" deviceID="0E84" />
+          <pciinfo vendorID="8086" deviceID="0E90" />
+          <pciinfo vendorID="8086" deviceID="0E93" />
+          <pciinfo vendorID="8086" deviceID="0E94" />
+          <pciinfo vendorID="8086" deviceID="0EA0" />
+          <pciinfo vendorID="8086" deviceID="0EA8" />
+          <pciinfo vendorID="8086" deviceID="0EAA" />
+          <pciinfo vendorID="8086" deviceID="0EAB" />
+          <pciinfo vendorID="8086" deviceID="0EAC" />
+          <pciinfo vendorID="8086" deviceID="0EAD" />
+          <pciinfo vendorID="8086" deviceID="0EB0" />
+          <pciinfo vendorID="8086" deviceID="0EB1" />
+          <pciinfo vendorID="8086" deviceID="0EB2" />
+          <pciinfo vendorID="8086" deviceID="0EB3" />
+          <pciinfo vendorID="8086" deviceID="0EB4" />
+          <pciinfo vendorID="8086" deviceID="0EB5" />
+          <pciinfo vendorID="8086" deviceID="0EB7" />
+          <pciinfo vendorID="8086" deviceID="0EC0" />
+          <pciinfo vendorID="8086" deviceID="0EC1" />
+          <pciinfo vendorID="8086" deviceID="0EC2" />
+          <pciinfo vendorID="8086" deviceID="0EC3" />
+          <pciinfo vendorID="8086" deviceID="0EC4" />
+          <pciinfo vendorID="8086" deviceID="0EC8" />
+          <pciinfo vendorID="8086" deviceID="0EC9" />
+          <pciinfo vendorID="8086" deviceID="0ECA" />
+          <pciinfo vendorID="8086" deviceID="0ED8" />
+          <pciinfo vendorID="8086" deviceID="0ED9" />
+          <pciinfo vendorID="8086" deviceID="0EDC" />
+          <pciinfo vendorID="8086" deviceID="0EDD" />
+          <pciinfo vendorID="8086" deviceID="0EDE" />
+          <pciinfo vendorID="8086" deviceID="0EDF" />
+          <pciinfo vendorID="8086" deviceID="0EE0" />
+          <pciinfo vendorID="8086" deviceID="0EE1" />
+          <pciinfo vendorID="8086" deviceID="0EE2" />
+          <pciinfo vendorID="8086" deviceID="0EE3" />
+          <pciinfo vendorID="8086" deviceID="0EE4" />
+          <pciinfo vendorID="8086" deviceID="0EE5" />
+          <pciinfo vendorID="8086" deviceID="0EE6" />
+          <pciinfo vendorID="8086" deviceID="0EE7" />
+          <pciinfo vendorID="8086" deviceID="0EE8" />
+          <pciinfo vendorID="8086" deviceID="0EE9" />
+          <pciinfo vendorID="8086" deviceID="0EEA" />
+          <pciinfo vendorID="8086" deviceID="0EEB" />
+          <pciinfo vendorID="8086" deviceID="0EEC" />
+          <pciinfo vendorID="8086" deviceID="0EED" />
+          <pciinfo vendorID="8086" deviceID="0EEE" />
+          <pciinfo vendorID="8086" deviceID="0EF0" />
+          <pciinfo vendorID="8086" deviceID="0EF1" />
+          <pciinfo vendorID="8086" deviceID="0EF2" />
+          <pciinfo vendorID="8086" deviceID="0EF3" />
+          <pciinfo vendorID="8086" deviceID="0EF4" />
+          <pciinfo vendorID="8086" deviceID="0EF5" />
+          <pciinfo vendorID="8086" deviceID="0EF7" />
+          <pciinfo vendorID="8086" deviceID="0EF8" />
+          <pciinfo vendorID="8086" deviceID="0EF9" />
+          <pciinfo vendorID="8086" deviceID="0EFA" />
+          <pciinfo vendorID="8086" deviceID="0EFB" />
+          <pciinfo vendorID="8086" deviceID="0EFC" />
+          <pciinfo vendorID="8086" deviceID="0EFD" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\JakeTown.inf-->
+          <driverversion>9.2.3.1031</driverversion>
+          <pciinfo vendorID="8086" deviceID="3C00" />
+          <pciinfo vendorID="8086" deviceID="3C0D" />
+          <pciinfo vendorID="8086" deviceID="3C0E" />
+          <pciinfo vendorID="8086" deviceID="3C0F" />
+          <pciinfo vendorID="8086" deviceID="3C20" />
+          <pciinfo vendorID="8086" deviceID="3C21" />
+          <pciinfo vendorID="8086" deviceID="3C22" />
+          <pciinfo vendorID="8086" deviceID="3C23" />
+          <pciinfo vendorID="8086" deviceID="3C24" />
+          <pciinfo vendorID="8086" deviceID="3C25" />
+          <pciinfo vendorID="8086" deviceID="3C26" />
+          <pciinfo vendorID="8086" deviceID="3C27" />
+          <pciinfo vendorID="8086" deviceID="3C28" />
+          <pciinfo vendorID="8086" deviceID="3C2A" />
+          <pciinfo vendorID="8086" deviceID="3C2C" />
+          <pciinfo vendorID="8086" deviceID="3C2E" />
+          <pciinfo vendorID="8086" deviceID="3C2F" />
+          <pciinfo vendorID="8086" deviceID="3C40" />
+          <pciinfo vendorID="8086" deviceID="3C43" />
+          <pciinfo vendorID="8086" deviceID="3C44" />
+          <pciinfo vendorID="8086" deviceID="3C45" />
+          <pciinfo vendorID="8086" deviceID="3C46" />
+          <pciinfo vendorID="8086" deviceID="3C71" />
+          <pciinfo vendorID="8086" deviceID="3C80" />
+          <pciinfo vendorID="8086" deviceID="3C83" />
+          <pciinfo vendorID="8086" deviceID="3C84" />
+          <pciinfo vendorID="8086" deviceID="3C90" />
+          <pciinfo vendorID="8086" deviceID="3C93" />
+          <pciinfo vendorID="8086" deviceID="3C94" />
+          <pciinfo vendorID="8086" deviceID="3CA0" />
+          <pciinfo vendorID="8086" deviceID="3CA8" />
+          <pciinfo vendorID="8086" deviceID="3CAA" />
+          <pciinfo vendorID="8086" deviceID="3CAB" />
+          <pciinfo vendorID="8086" deviceID="3CAC" />
+          <pciinfo vendorID="8086" deviceID="3CAD" />
+          <pciinfo vendorID="8086" deviceID="3CAE" />
+          <pciinfo vendorID="8086" deviceID="3CB0" />
+          <pciinfo vendorID="8086" deviceID="3CB1" />
+          <pciinfo vendorID="8086" deviceID="3CB2" />
+          <pciinfo vendorID="8086" deviceID="3CB3" />
+          <pciinfo vendorID="8086" deviceID="3CB4" />
+          <pciinfo vendorID="8086" deviceID="3CB5" />
+          <pciinfo vendorID="8086" deviceID="3CB6" />
+          <pciinfo vendorID="8086" deviceID="3CB7" />
+          <pciinfo vendorID="8086" deviceID="3CB8" />
+          <pciinfo vendorID="8086" deviceID="3CC0" />
+          <pciinfo vendorID="8086" deviceID="3CC1" />
+          <pciinfo vendorID="8086" deviceID="3CC2" />
+          <pciinfo vendorID="8086" deviceID="3CD0" />
+          <pciinfo vendorID="8086" deviceID="3CE0" />
+          <pciinfo vendorID="8086" deviceID="3CE3" />
+          <pciinfo vendorID="8086" deviceID="3CE4" />
+          <pciinfo vendorID="8086" deviceID="3CE6" />
+          <pciinfo vendorID="8086" deviceID="3CE8" />
+          <pciinfo vendorID="8086" deviceID="3CE9" />
+          <pciinfo vendorID="8086" deviceID="3CEA" />
+          <pciinfo vendorID="8086" deviceID="3CEB" />
+          <pciinfo vendorID="8086" deviceID="3CEC" />
+          <pciinfo vendorID="8086" deviceID="3CED" />
+          <pciinfo vendorID="8086" deviceID="3CEE" />
+          <pciinfo vendorID="8086" deviceID="3CEF" />
+          <pciinfo vendorID="8086" deviceID="3CF4" />
+          <pciinfo vendorID="8086" deviceID="3CF5" />
+          <pciinfo vendorID="8086" deviceID="3CF6" />
+          <pciinfo vendorID="8086" deviceID="3C01" />
+          <pciinfo vendorID="8086" deviceID="3C02" />
+          <pciinfo vendorID="8086" deviceID="3C03" />
+          <pciinfo vendorID="8086" deviceID="3C04" />
+          <pciinfo vendorID="8086" deviceID="3C05" />
+          <pciinfo vendorID="8086" deviceID="3C06" />
+          <pciinfo vendorID="8086" deviceID="3C07" />
+          <pciinfo vendorID="8086" deviceID="3C08" />
+          <pciinfo vendorID="8086" deviceID="3C09" />
+          <pciinfo vendorID="8086" deviceID="3C0A" />
+          <pciinfo vendorID="8086" deviceID="3C0B" />
+          <pciinfo vendorID="8086" deviceID="3C41" />
+          <pciinfo vendorID="8086" deviceID="3C42" />
+          <pciinfo vendorID="8086" deviceID="3C86" />
+          <pciinfo vendorID="8086" deviceID="3C96" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\JasperFo.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="2C58" />
+          <pciinfo vendorID="8086" deviceID="2C59" />
+          <pciinfo vendorID="8086" deviceID="2C5A" />
+          <pciinfo vendorID="8086" deviceID="2C5B" />
+          <pciinfo vendorID="8086" deviceID="2C5C" />
+          <pciinfo vendorID="8086" deviceID="2C5D" />
+          <pciinfo vendorID="8086" deviceID="2C5E" />
+          <pciinfo vendorID="8086" deviceID="2C5F" />
+          <pciinfo vendorID="8086" deviceID="2CC1" />
+          <pciinfo vendorID="8086" deviceID="2CD0" />
+          <pciinfo vendorID="8086" deviceID="2CD1" />
+          <pciinfo vendorID="8086" deviceID="2CD4" />
+          <pciinfo vendorID="8086" deviceID="2CD5" />
+          <pciinfo vendorID="8086" deviceID="2CD8" />
+          <pciinfo vendorID="8086" deviceID="2CD9" />
+          <pciinfo vendorID="8086" deviceID="2CDA" />
+          <pciinfo vendorID="8086" deviceID="2CDC" />
+          <pciinfo vendorID="8086" deviceID="2CE0" />
+          <pciinfo vendorID="8086" deviceID="2CE1" />
+          <pciinfo vendorID="8086" deviceID="2CE2" />
+          <pciinfo vendorID="8086" deviceID="2CE3" />
+          <pciinfo vendorID="8086" deviceID="2CE8" />
+          <pciinfo vendorID="8086" deviceID="2CE9" />
+          <pciinfo vendorID="8086" deviceID="2CEA" />
+          <pciinfo vendorID="8086" deviceID="2CEB" />
+          <pciinfo vendorID="8086" deviceID="2CF0" />
+          <pciinfo vendorID="8086" deviceID="2CF1" />
+          <pciinfo vendorID="8086" deviceID="2CF2" />
+          <pciinfo vendorID="8086" deviceID="2CF3" />
+          <pciinfo vendorID="8086" deviceID="3700" />
+          <pciinfo vendorID="8086" deviceID="3701" />
+          <pciinfo vendorID="8086" deviceID="3702" />
+          <pciinfo vendorID="8086" deviceID="3703" />
+          <pciinfo vendorID="8086" deviceID="3704" />
+          <pciinfo vendorID="8086" deviceID="3705" />
+          <pciinfo vendorID="8086" deviceID="3706" />
+          <pciinfo vendorID="8086" deviceID="3707" />
+          <pciinfo vendorID="8086" deviceID="3708" />
+          <pciinfo vendorID="8086" deviceID="3709" />
+          <pciinfo vendorID="8086" deviceID="370A" />
+          <pciinfo vendorID="8086" deviceID="370B" />
+          <pciinfo vendorID="8086" deviceID="370C" />
+          <pciinfo vendorID="8086" deviceID="370D" />
+          <pciinfo vendorID="8086" deviceID="370E" />
+          <pciinfo vendorID="8086" deviceID="370F" />
+          <pciinfo vendorID="8086" deviceID="3710" />
+          <pciinfo vendorID="8086" deviceID="3711" />
+          <pciinfo vendorID="8086" deviceID="3712" />
+          <pciinfo vendorID="8086" deviceID="3713" />
+          <pciinfo vendorID="8086" deviceID="3714" />
+          <pciinfo vendorID="8086" deviceID="3715" />
+          <pciinfo vendorID="8086" deviceID="3716" />
+          <pciinfo vendorID="8086" deviceID="3717" />
+          <pciinfo vendorID="8086" deviceID="3718" />
+          <pciinfo vendorID="8086" deviceID="3719" />
+          <pciinfo vendorID="8086" deviceID="371A" />
+          <pciinfo vendorID="8086" deviceID="371B" />
+          <pciinfo vendorID="8086" deviceID="371D" />
+          <pciinfo vendorID="8086" deviceID="3720" />
+          <pciinfo vendorID="8086" deviceID="3721" />
+          <pciinfo vendorID="8086" deviceID="3722" />
+          <pciinfo vendorID="8086" deviceID="3723" />
+          <pciinfo vendorID="8086" deviceID="3724" />
+          <pciinfo vendorID="8086" deviceID="3725" />
+          <pciinfo vendorID="8086" deviceID="3726" />
+          <pciinfo vendorID="8086" deviceID="3727" />
+          <pciinfo vendorID="8086" deviceID="3728" />
+          <pciinfo vendorID="8086" deviceID="3729" />
+          <pciinfo vendorID="8086" deviceID="372A" />
+          <pciinfo vendorID="8086" deviceID="372B" />
+          <pciinfo vendorID="8086" deviceID="372C" />
+          <pciinfo vendorID="8086" deviceID="373F" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\LxLpAHCI.inf-->
+          <driverversion>9.4.0.1021</driverversion>
+          <pciinfo vendorID="8086" deviceID="9C02" />
+          <pciinfo vendorID="8086" deviceID="9C03" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\LxLpCore.inf-->
+          <driverversion>9.4.0.1021</driverversion>
+          <pciinfo vendorID="8086" deviceID="9C24" />
+          <pciinfo vendorID="8086" deviceID="9C23" />
+          <pciinfo vendorID="8086" deviceID="9C10" />
+          <pciinfo vendorID="8086" deviceID="9C11" />
+          <pciinfo vendorID="8086" deviceID="9C12" />
+          <pciinfo vendorID="8086" deviceID="9C13" />
+          <pciinfo vendorID="8086" deviceID="9C14" />
+          <pciinfo vendorID="8086" deviceID="9C15" />
+          <pciinfo vendorID="8086" deviceID="9C16" />
+          <pciinfo vendorID="8086" deviceID="9C17" />
+          <pciinfo vendorID="8086" deviceID="9C18" />
+          <pciinfo vendorID="8086" deviceID="9C19" />
+          <pciinfo vendorID="8086" deviceID="9C1A" />
+          <pciinfo vendorID="8086" deviceID="9C1B" />
+          <pciinfo vendorID="8086" deviceID="9C1C" />
+          <pciinfo vendorID="8086" deviceID="9C1D" />
+          <pciinfo vendorID="8086" deviceID="9C1E" />
+          <pciinfo vendorID="8086" deviceID="9C1F" />
+          <pciinfo vendorID="8086" deviceID="9C40" />
+          <pciinfo vendorID="8086" deviceID="9C41" />
+          <pciinfo vendorID="8086" deviceID="9C42" />
+          <pciinfo vendorID="8086" deviceID="9C43" />
+          <pciinfo vendorID="8086" deviceID="9C44" />
+          <pciinfo vendorID="8086" deviceID="9C45" />
+          <pciinfo vendorID="8086" deviceID="9C46" />
+          <pciinfo vendorID="8086" deviceID="9C47" />
+          <pciinfo vendorID="8086" deviceID="9C48" />
+          <pciinfo vendorID="8086" deviceID="9C49" />
+          <pciinfo vendorID="8086" deviceID="9C4A" />
+          <pciinfo vendorID="8086" deviceID="9C4B" />
+          <pciinfo vendorID="8086" deviceID="9C4C" />
+          <pciinfo vendorID="8086" deviceID="9C4D" />
+          <pciinfo vendorID="8086" deviceID="9C4E" />
+          <pciinfo vendorID="8086" deviceID="9C4F" />
+          <pciinfo vendorID="8086" deviceID="9C50" />
+          <pciinfo vendorID="8086" deviceID="9C51" />
+          <pciinfo vendorID="8086" deviceID="9C52" />
+          <pciinfo vendorID="8086" deviceID="9C53" />
+          <pciinfo vendorID="8086" deviceID="9C54" />
+          <pciinfo vendorID="8086" deviceID="9C55" />
+          <pciinfo vendorID="8086" deviceID="9C56" />
+          <pciinfo vendorID="8086" deviceID="9C57" />
+          <pciinfo vendorID="8086" deviceID="9C58" />
+          <pciinfo vendorID="8086" deviceID="9C59" />
+          <pciinfo vendorID="8086" deviceID="9C5A" />
+          <pciinfo vendorID="8086" deviceID="9C5B" />
+          <pciinfo vendorID="8086" deviceID="9C5C" />
+          <pciinfo vendorID="8086" deviceID="9C5D" />
+          <pciinfo vendorID="8086" deviceID="9C5E" />
+          <pciinfo vendorID="8086" deviceID="9C5F" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\LxLpId2.inf-->
+          <driverversion>9.4.0.1021</driverversion>
+          <pciinfo vendorID="8086" deviceID="9C00" />
+          <pciinfo vendorID="8086" deviceID="9C01" />
+          <pciinfo vendorID="8086" deviceID="9C08" />
+          <pciinfo vendorID="8086" deviceID="9C09" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\LxLpIde.inf-->
+          <driverversion>9.4.0.1021</driverversion>
+          <pciinfo vendorID="8086" deviceID="9C00" />
+          <pciinfo vendorID="8086" deviceID="9C01" />
+          <pciinfo vendorID="8086" deviceID="9C08" />
+          <pciinfo vendorID="8086" deviceID="9C09" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\LxLpSens.inf-->
+          <driverversion>9.4.0.1022</driverversion>
+          <pnpidstring>
+            <ACPIID>8087</ACPIID>
+            <PnPProductID>33D1</PnPProductID>
+          </pnpidstring>
+          <pnpidstring>
+            <PNPID>INT</PNPID>
+            <PnPProductID>33D1</PnPProductID>
+          </pnpidstring>
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\LxLpSMB.inf-->
+          <driverversion>9.4.0.1021</driverversion>
+          <pciinfo vendorID="8086" deviceID="9C22" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\LxLpUSB.inf-->
+          <driverversion>9.4.0.1021</driverversion>
+          <pciinfo vendorID="8086" deviceID="9C26" />
+          <pciinfo vendorID="8086" deviceID="9C2D" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\LxLpUSB3.inf-->
+          <driverversion>9.4.0.1021</driverversion>
+          <pciinfo vendorID="8086" deviceID="9C31" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\LxPtAHCI.inf-->
+          <driverversion>9.4.0.1021</driverversion>
+          <pciinfo vendorID="8086" deviceID="8C02" />
+          <pciinfo vendorID="8086" deviceID="8C03" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\LxPtCore.inf-->
+          <driverversion>9.4.0.1021</driverversion>
+          <pciinfo vendorID="8086" deviceID="8C24" />
+          <pciinfo vendorID="8086" deviceID="8C23" />
+          <pciinfo vendorID="8086" deviceID="8C10" />
+          <pciinfo vendorID="8086" deviceID="8C11" />
+          <pciinfo vendorID="8086" deviceID="8C12" />
+          <pciinfo vendorID="8086" deviceID="8C13" />
+          <pciinfo vendorID="8086" deviceID="8C14" />
+          <pciinfo vendorID="8086" deviceID="8C15" />
+          <pciinfo vendorID="8086" deviceID="8C16" />
+          <pciinfo vendorID="8086" deviceID="8C17" />
+          <pciinfo vendorID="8086" deviceID="8C18" />
+          <pciinfo vendorID="8086" deviceID="8C19" />
+          <pciinfo vendorID="8086" deviceID="8C1A" />
+          <pciinfo vendorID="8086" deviceID="8C1B" />
+          <pciinfo vendorID="8086" deviceID="8C1C" />
+          <pciinfo vendorID="8086" deviceID="8C1D" />
+          <pciinfo vendorID="8086" deviceID="8C1E" />
+          <pciinfo vendorID="8086" deviceID="8C1F" />
+          <pciinfo vendorID="8086" deviceID="8C40" />
+          <pciinfo vendorID="8086" deviceID="8C41" />
+          <pciinfo vendorID="8086" deviceID="8C42" />
+          <pciinfo vendorID="8086" deviceID="8C43" />
+          <pciinfo vendorID="8086" deviceID="8C44" />
+          <pciinfo vendorID="8086" deviceID="8C45" />
+          <pciinfo vendorID="8086" deviceID="8C46" />
+          <pciinfo vendorID="8086" deviceID="8C47" />
+          <pciinfo vendorID="8086" deviceID="8C48" />
+          <pciinfo vendorID="8086" deviceID="8C49" />
+          <pciinfo vendorID="8086" deviceID="8C4A" />
+          <pciinfo vendorID="8086" deviceID="8C4B" />
+          <pciinfo vendorID="8086" deviceID="8C4C" />
+          <pciinfo vendorID="8086" deviceID="8C4D" />
+          <pciinfo vendorID="8086" deviceID="8C4E" />
+          <pciinfo vendorID="8086" deviceID="8C4F" />
+          <pciinfo vendorID="8086" deviceID="8C50" />
+          <pciinfo vendorID="8086" deviceID="8C51" />
+          <pciinfo vendorID="8086" deviceID="8C52" />
+          <pciinfo vendorID="8086" deviceID="8C53" />
+          <pciinfo vendorID="8086" deviceID="8C54" />
+          <pciinfo vendorID="8086" deviceID="8C55" />
+          <pciinfo vendorID="8086" deviceID="8C56" />
+          <pciinfo vendorID="8086" deviceID="8C57" />
+          <pciinfo vendorID="8086" deviceID="8C58" />
+          <pciinfo vendorID="8086" deviceID="8C59" />
+          <pciinfo vendorID="8086" deviceID="8C5A" />
+          <pciinfo vendorID="8086" deviceID="8C5B" />
+          <pciinfo vendorID="8086" deviceID="8C5C" />
+          <pciinfo vendorID="8086" deviceID="8C5D" />
+          <pciinfo vendorID="8086" deviceID="8C5E" />
+          <pciinfo vendorID="8086" deviceID="8C5F" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\LxPtId2.inf-->
+          <driverversion>9.4.0.1021</driverversion>
+          <pciinfo vendorID="8086" deviceID="8C00" />
+          <pciinfo vendorID="8086" deviceID="8C01" />
+          <pciinfo vendorID="8086" deviceID="8C08" />
+          <pciinfo vendorID="8086" deviceID="8C09" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\LxPtIde.inf-->
+          <driverversion>9.4.0.1021</driverversion>
+          <pciinfo vendorID="8086" deviceID="8C00" />
+          <pciinfo vendorID="8086" deviceID="8C01" />
+          <pciinfo vendorID="8086" deviceID="8C08" />
+          <pciinfo vendorID="8086" deviceID="8C09" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\LxPtSMB.inf-->
+          <driverversion>9.4.0.1021</driverversion>
+          <pciinfo vendorID="8086" deviceID="8C22" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\LxPtUSB.inf-->
+          <driverversion>9.4.0.1021</driverversion>
+          <pciinfo vendorID="8086" deviceID="8C26" />
+          <pciinfo vendorID="8086" deviceID="8C2D" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\LxPtUSB3.inf-->
+          <driverversion>9.4.0.1021</driverversion>
+          <pciinfo vendorID="8086" deviceID="8C31" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\NehalMEX.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="2B00" />
+          <pciinfo vendorID="8086" deviceID="2B02" />
+          <pciinfo vendorID="8086" deviceID="2B04" />
+          <pciinfo vendorID="8086" deviceID="2B08" />
+          <pciinfo vendorID="8086" deviceID="2B0C" />
+          <pciinfo vendorID="8086" deviceID="2B10" />
+          <pciinfo vendorID="8086" deviceID="2B13" />
+          <pciinfo vendorID="8086" deviceID="2B14" />
+          <pciinfo vendorID="8086" deviceID="2B16" />
+          <pciinfo vendorID="8086" deviceID="2B18" />
+          <pciinfo vendorID="8086" deviceID="2B1B" />
+          <pciinfo vendorID="8086" deviceID="2B1C" />
+          <pciinfo vendorID="8086" deviceID="2B1E" />
+          <pciinfo vendorID="8086" deviceID="2B20" />
+          <pciinfo vendorID="8086" deviceID="2B22" />
+          <pciinfo vendorID="8086" deviceID="2B24" />
+          <pciinfo vendorID="8086" deviceID="2B28" />
+          <pciinfo vendorID="8086" deviceID="2B2A" />
+          <pciinfo vendorID="8086" deviceID="2B2C" />
+          <pciinfo vendorID="8086" deviceID="2B30" />
+          <pciinfo vendorID="8086" deviceID="2B34" />
+          <pciinfo vendorID="8086" deviceID="2B38" />
+          <pciinfo vendorID="8086" deviceID="2B3C" />
+          <pciinfo vendorID="8086" deviceID="2B40" />
+          <pciinfo vendorID="8086" deviceID="2B42" />
+          <pciinfo vendorID="8086" deviceID="2B44" />
+          <pciinfo vendorID="8086" deviceID="2B46" />
+          <pciinfo vendorID="8086" deviceID="2B48" />
+          <pciinfo vendorID="8086" deviceID="2B4C" />
+          <pciinfo vendorID="8086" deviceID="2B50" />
+          <pciinfo vendorID="8086" deviceID="2B52" />
+          <pciinfo vendorID="8086" deviceID="2B54" />
+          <pciinfo vendorID="8086" deviceID="2B56" />
+          <pciinfo vendorID="8086" deviceID="2B58" />
+          <pciinfo vendorID="8086" deviceID="2B5A" />
+          <pciinfo vendorID="8086" deviceID="2B5C" />
+          <pciinfo vendorID="8086" deviceID="2B5E" />
+          <pciinfo vendorID="8086" deviceID="2B60" />
+          <pciinfo vendorID="8086" deviceID="2B62" />
+          <pciinfo vendorID="8086" deviceID="2B64" />
+          <pciinfo vendorID="8086" deviceID="2B66" />
+          <pciinfo vendorID="8086" deviceID="2C70" />
+          <pciinfo vendorID="8086" deviceID="2D81" />
+          <pciinfo vendorID="8086" deviceID="2D90" />
+          <pciinfo vendorID="8086" deviceID="2D91" />
+          <pciinfo vendorID="8086" deviceID="2D92" />
+          <pciinfo vendorID="8086" deviceID="2D93" />
+          <pciinfo vendorID="8086" deviceID="2D94" />
+          <pciinfo vendorID="8086" deviceID="2D95" />
+          <pciinfo vendorID="8086" deviceID="2D98" />
+          <pciinfo vendorID="8086" deviceID="2D99" />
+          <pciinfo vendorID="8086" deviceID="2D9A" />
+          <pciinfo vendorID="8086" deviceID="2D9C" />
+          <pciinfo vendorID="8086" deviceID="2DA0" />
+          <pciinfo vendorID="8086" deviceID="2DA1" />
+          <pciinfo vendorID="8086" deviceID="2DA2" />
+          <pciinfo vendorID="8086" deviceID="2DA3" />
+          <pciinfo vendorID="8086" deviceID="2DA8" />
+          <pciinfo vendorID="8086" deviceID="2DA9" />
+          <pciinfo vendorID="8086" deviceID="2DAA" />
+          <pciinfo vendorID="8086" deviceID="2DAB" />
+          <pciinfo vendorID="8086" deviceID="2DB0" />
+          <pciinfo vendorID="8086" deviceID="2DB1" />
+          <pciinfo vendorID="8086" deviceID="2DB2" />
+          <pciinfo vendorID="8086" deviceID="2DB3" />
+          <pciinfo vendorID="8086" deviceID="2B68" />
+          <pciinfo vendorID="8086" deviceID="2B6C" />
+          <pciinfo vendorID="8086" deviceID="2C9A" />
+          <pciinfo vendorID="8086" deviceID="0069" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\PantAHCI.inf-->
+          <driverversion>9.3.0.1028</driverversion>
+          <pciinfo vendorID="8086" deviceID="1E02" />
+          <pciinfo vendorID="8086" deviceID="1E03" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\PantCore.inf-->
+          <driverversion>9.3.0.1028</driverversion>
+          <pciinfo vendorID="8086" deviceID="1E24" />
+          <pciinfo vendorID="8086" deviceID="1E10" />
+          <pciinfo vendorID="8086" deviceID="1E12" />
+          <pciinfo vendorID="8086" deviceID="1E14" />
+          <pciinfo vendorID="8086" deviceID="1E16" />
+          <pciinfo vendorID="8086" deviceID="1E18" />
+          <pciinfo vendorID="8086" deviceID="1E1A" />
+          <pciinfo vendorID="8086" deviceID="1E1C" />
+          <pciinfo vendorID="8086" deviceID="1E1E" />
+          <pciinfo vendorID="8086" deviceID="1E25" />
+          <pciinfo vendorID="8086" deviceID="1E41" />
+          <pciinfo vendorID="8086" deviceID="1E42" />
+          <pciinfo vendorID="8086" deviceID="1E43" />
+          <pciinfo vendorID="8086" deviceID="1E44" />
+          <pciinfo vendorID="8086" deviceID="1E46" />
+          <pciinfo vendorID="8086" deviceID="1E47" />
+          <pciinfo vendorID="8086" deviceID="1E48" />
+          <pciinfo vendorID="8086" deviceID="1E49" />
+          <pciinfo vendorID="8086" deviceID="1E4A" />
+          <pciinfo vendorID="8086" deviceID="1E53" />
+          <pciinfo vendorID="8086" deviceID="1E55" />
+          <pciinfo vendorID="8086" deviceID="1E56" />
+          <pciinfo vendorID="8086" deviceID="1E57" />
+          <pciinfo vendorID="8086" deviceID="1E58" />
+          <pciinfo vendorID="8086" deviceID="1E59" />
+          <pciinfo vendorID="8086" deviceID="1E5B" />
+          <pciinfo vendorID="8086" deviceID="1E5D" />
+          <pciinfo vendorID="8086" deviceID="1E5E" />
+          <pciinfo vendorID="8086" deviceID="1E5F" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\PantId2.inf-->
+          <driverversion>9.3.0.1028</driverversion>
+          <pciinfo vendorID="8086" deviceID="1E00" />
+          <pciinfo vendorID="8086" deviceID="1E01" />
+          <pciinfo vendorID="8086" deviceID="1E08" />
+          <pciinfo vendorID="8086" deviceID="1E09" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\PantIDE.inf-->
+          <driverversion>9.3.0.1028</driverversion>
+          <pciinfo vendorID="8086" deviceID="1E00" />
+          <pciinfo vendorID="8086" deviceID="1E01" />
+          <pciinfo vendorID="8086" deviceID="1E08" />
+          <pciinfo vendorID="8086" deviceID="1E09" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\PantSMB.inf-->
+          <driverversion>9.3.0.1028</driverversion>
+          <pciinfo vendorID="8086" deviceID="1E22" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\PantUSB.inf-->
+          <driverversion>9.3.0.1028</driverversion>
+          <pciinfo vendorID="8086" deviceID="1E26" />
+          <pciinfo vendorID="8086" deviceID="1E2D" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\PantUSB3.inf-->
+          <driverversion>9.3.0.1028</driverversion>
+          <pciinfo vendorID="8086" deviceID="1E31" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\patahci.inf-->
+          <driverversion>9.2.3.1031</driverversion>
+          <pciinfo vendorID="8086" deviceID="1D02" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\patcore.inf-->
+          <driverversion>9.2.3.1031</driverversion>
+          <pciinfo vendorID="8086" deviceID="1D24" />
+          <pciinfo vendorID="8086" deviceID="1D73" />
+          <pciinfo vendorID="8086" deviceID="1D76" />
+          <pciinfo vendorID="8086" deviceID="1D77" />
+          <pciinfo vendorID="8086" deviceID="1D10" />
+          <pciinfo vendorID="8086" deviceID="1D11" />
+          <pciinfo vendorID="8086" deviceID="1D12" />
+          <pciinfo vendorID="8086" deviceID="1D13" />
+          <pciinfo vendorID="8086" deviceID="1D14" />
+          <pciinfo vendorID="8086" deviceID="1D15" />
+          <pciinfo vendorID="8086" deviceID="1D16" />
+          <pciinfo vendorID="8086" deviceID="1D17" />
+          <pciinfo vendorID="8086" deviceID="1D18" />
+          <pciinfo vendorID="8086" deviceID="1D19" />
+          <pciinfo vendorID="8086" deviceID="1D1A" />
+          <pciinfo vendorID="8086" deviceID="1D1B" />
+          <pciinfo vendorID="8086" deviceID="1D1C" />
+          <pciinfo vendorID="8086" deviceID="1D1D" />
+          <pciinfo vendorID="8086" deviceID="1D1E" />
+          <pciinfo vendorID="8086" deviceID="1D1F" />
+          <pciinfo vendorID="8086" deviceID="1D25" />
+          <pciinfo vendorID="8086" deviceID="1D3E" />
+          <pciinfo vendorID="8086" deviceID="1D3F" />
+          <pciinfo vendorID="8086" deviceID="1D74" />
+          <pciinfo vendorID="8086" deviceID="1D40" />
+          <pciinfo vendorID="8086" deviceID="1D41" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\patid2.inf-->
+          <driverversion>9.2.3.1031</driverversion>
+          <pciinfo vendorID="8086" deviceID="1D00" />
+          <pciinfo vendorID="8086" deviceID="1D08" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\patide.inf-->
+          <driverversion>9.2.3.1031</driverversion>
+          <pciinfo vendorID="8086" deviceID="1D00" />
+          <pciinfo vendorID="8086" deviceID="1D08" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\patsmb.inf-->
+          <driverversion>9.2.3.1031</driverversion>
+          <pciinfo vendorID="8086" deviceID="1D22" />
+          <pciinfo vendorID="8086" deviceID="1D70" />
+          <pciinfo vendorID="8086" deviceID="1D71" />
+          <pciinfo vendorID="8086" deviceID="1D72" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\patusb.inf-->
+          <driverversion>9.2.3.1031</driverversion>
+          <pciinfo vendorID="8086" deviceID="1D26" />
+          <pciinfo vendorID="8086" deviceID="1D2D" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\SNB2009.inf-->
+          <driverversion>9.2.0.1034</driverversion>
+          <pciinfo vendorID="8086" deviceID="0100" />
+          <pciinfo vendorID="8086" deviceID="0104" />
+          <pciinfo vendorID="8086" deviceID="0108" />
+          <pciinfo vendorID="8086" deviceID="0101" />
+          <pciinfo vendorID="8086" deviceID="0105" />
+          <pciinfo vendorID="8086" deviceID="0109" />
+          <pciinfo vendorID="8086" deviceID="010D" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\Tcreek.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="4114" />
+          <pciinfo vendorID="8086" deviceID="4115" />
+          <pciinfo vendorID="8086" deviceID="4116" />
+          <pciinfo vendorID="8086" deviceID="4117" />
+          <pciinfo vendorID="8086" deviceID="8183" />
+          <pciinfo vendorID="8086" deviceID="8180" />
+          <pciinfo vendorID="8086" deviceID="8181" />
+          <pciinfo vendorID="8086" deviceID="8184" />
+          <pciinfo vendorID="8086" deviceID="8185" />
+          <pciinfo vendorID="8086" deviceID="8186" />
+          <pciinfo vendorID="8086" deviceID="8800" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\Tcrkahci.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="880B" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\TcrkSD.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="8809" />
+          <pciinfo vendorID="8086" deviceID="880A" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\tcrkusb.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="8804" />
+          <pciinfo vendorID="8086" deviceID="8805" />
+          <pciinfo vendorID="8086" deviceID="8806" />
+          <pciinfo vendorID="8086" deviceID="880C" />
+          <pciinfo vendorID="8086" deviceID="880D" />
+          <pciinfo vendorID="8086" deviceID="880E" />
+          <pciinfo vendorID="8086" deviceID="8807" />
+          <pciinfo vendorID="8086" deviceID="880F" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\Wellahci.inf-->
+          <driverversion>9.4.2.1011</driverversion>
+          <pciinfo vendorID="8086" deviceID="8D02" />
+          <pciinfo vendorID="8086" deviceID="8D62" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\Wellcore.inf-->
+          <driverversion>9.4.2.1011</driverversion>
+          <pciinfo vendorID="8086" deviceID="8D10" />
+          <pciinfo vendorID="8086" deviceID="8D11" />
+          <pciinfo vendorID="8086" deviceID="8D12" />
+          <pciinfo vendorID="8086" deviceID="8D13" />
+          <pciinfo vendorID="8086" deviceID="8D14" />
+          <pciinfo vendorID="8086" deviceID="8D15" />
+          <pciinfo vendorID="8086" deviceID="8D16" />
+          <pciinfo vendorID="8086" deviceID="8D17" />
+          <pciinfo vendorID="8086" deviceID="8D18" />
+          <pciinfo vendorID="8086" deviceID="8D19" />
+          <pciinfo vendorID="8086" deviceID="8D1A" />
+          <pciinfo vendorID="8086" deviceID="8D1B" />
+          <pciinfo vendorID="8086" deviceID="8D1C" />
+          <pciinfo vendorID="8086" deviceID="8D1E" />
+          <pciinfo vendorID="8086" deviceID="8D1F" />
+          <pciinfo vendorID="8086" deviceID="8D24" />
+          <pciinfo vendorID="8086" deviceID="8D40" />
+          <pciinfo vendorID="8086" deviceID="8D41" />
+          <pciinfo vendorID="8086" deviceID="8D42" />
+          <pciinfo vendorID="8086" deviceID="8D43" />
+          <pciinfo vendorID="8086" deviceID="8D44" />
+          <pciinfo vendorID="8086" deviceID="8D45" />
+          <pciinfo vendorID="8086" deviceID="8D46" />
+          <pciinfo vendorID="8086" deviceID="8D47" />
+          <pciinfo vendorID="8086" deviceID="8D48" />
+          <pciinfo vendorID="8086" deviceID="8D49" />
+          <pciinfo vendorID="8086" deviceID="8D4A" />
+          <pciinfo vendorID="8086" deviceID="8D4B" />
+          <pciinfo vendorID="8086" deviceID="8D4C" />
+          <pciinfo vendorID="8086" deviceID="8D4D" />
+          <pciinfo vendorID="8086" deviceID="8D4E" />
+          <pciinfo vendorID="8086" deviceID="8D4F" />
+          <pciinfo vendorID="8086" deviceID="8D50" />
+          <pciinfo vendorID="8086" deviceID="8D51" />
+          <pciinfo vendorID="8086" deviceID="8D52" />
+          <pciinfo vendorID="8086" deviceID="8D53" />
+          <pciinfo vendorID="8086" deviceID="8D54" />
+          <pciinfo vendorID="8086" deviceID="8D55" />
+          <pciinfo vendorID="8086" deviceID="8D56" />
+          <pciinfo vendorID="8086" deviceID="8D57" />
+          <pciinfo vendorID="8086" deviceID="8D58" />
+          <pciinfo vendorID="8086" deviceID="8D59" />
+          <pciinfo vendorID="8086" deviceID="8D5A" />
+          <pciinfo vendorID="8086" deviceID="8D5B" />
+          <pciinfo vendorID="8086" deviceID="8D5C" />
+          <pciinfo vendorID="8086" deviceID="8D5D" />
+          <pciinfo vendorID="8086" deviceID="8D5E" />
+          <pciinfo vendorID="8086" deviceID="8D5F" />
+          <pciinfo vendorID="8086" deviceID="8D7C" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\Wellid2.inf-->
+          <driverversion>9.4.2.1011</driverversion>
+          <pciinfo vendorID="8086" deviceID="8D00" />
+          <pciinfo vendorID="8086" deviceID="8D08" />
+          <pciinfo vendorID="8086" deviceID="8D60" />
+          <pciinfo vendorID="8086" deviceID="8D68" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\Wellide.inf-->
+          <driverversion>9.4.2.1011</driverversion>
+          <pciinfo vendorID="8086" deviceID="8D00" />
+          <pciinfo vendorID="8086" deviceID="8D08" />
+          <pciinfo vendorID="8086" deviceID="8D60" />
+          <pciinfo vendorID="8086" deviceID="8D68" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\Wellsmb.inf-->
+          <driverversion>9.4.2.1011</driverversion>
+          <pciinfo vendorID="8086" deviceID="8D22" />
+          <pciinfo vendorID="8086" deviceID="8D7D" />
+          <pciinfo vendorID="8086" deviceID="8D7E" />
+          <pciinfo vendorID="8086" deviceID="8D7F" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\Wellusb.inf-->
+          <driverversion>9.4.2.1011</driverversion>
+          <pciinfo vendorID="8086" deviceID="8D26" />
+          <pciinfo vendorID="8086" deviceID="8D2D" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\whtpI2C.inf-->
+          <driverversion>9.2.2.1038</driverversion>
+          <pciinfo vendorID="8086" deviceID="0803" />
+          <pciinfo vendorID="8086" deviceID="0804" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\whtpI2C2.inf-->
+          <driverversion>9.2.2.1038</driverversion>
+          <pciinfo vendorID="8086" deviceID="0802" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\whtpoint.inf-->
+          <driverversion>9.2.2.1038</driverversion>
+          <pciinfo vendorID="8086" deviceID="4110" />
+          <pciinfo vendorID="8086" deviceID="0800" />
+          <pciinfo vendorID="8086" deviceID="0801" />
+          <pciinfo vendorID="8086" deviceID="080D" />
+          <pciinfo vendorID="8086" deviceID="0813" />
+          <pciinfo vendorID="8086" deviceID="0815" />
+          <pciinfo vendorID="8086" deviceID="0817" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\whtptsd.inf-->
+          <driverversion>9.2.2.1038</driverversion>
+          <pciinfo vendorID="8086" deviceID="0807" />
+          <pciinfo vendorID="8086" deviceID="0808" />
+          <pciinfo vendorID="8086" deviceID="0812" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\wptahci.inf-->
+          <driverversion>9.2.2.1038</driverversion>
+          <pciinfo vendorID="8086" deviceID="0816" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \WIN7\wptusb.inf-->
+          <driverversion>9.2.2.1038</driverversion>
+          <pciinfo vendorID="8086" deviceID="0806" />
+          <pciinfo vendorID="8086" deviceID="0811" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\2008s4el.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="2E00" />
+          <pciinfo vendorID="8086" deviceID="2E01" />
+          <pciinfo vendorID="8086" deviceID="2E09" />
+          <pciinfo vendorID="8086" deviceID="2E10" />
+          <pciinfo vendorID="8086" deviceID="2E11" />
+          <pciinfo vendorID="8086" deviceID="2E19" />
+          <pciinfo vendorID="8086" deviceID="2E20" />
+          <pciinfo vendorID="8086" deviceID="2E21" />
+          <pciinfo vendorID="8086" deviceID="2E29" />
+          <pciinfo vendorID="8086" deviceID="2E30" />
+          <pciinfo vendorID="8086" deviceID="2E31" />
+          <pciinfo vendorID="8086" deviceID="2E40" />
+          <pciinfo vendorID="8086" deviceID="2E41" />
+          <pciinfo vendorID="8086" deviceID="2E90" />
+          <pciinfo vendorID="8086" deviceID="2E91" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\5000XZVP.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="25C0" />
+          <pciinfo vendorID="8086" deviceID="25D0" />
+          <pciinfo vendorID="8086" deviceID="25D4" />
+          <pciinfo vendorID="8086" deviceID="25D8" />
+          <pciinfo vendorID="8086" deviceID="25E2" />
+          <pciinfo vendorID="8086" deviceID="25E3" />
+          <pciinfo vendorID="8086" deviceID="25E4" />
+          <pciinfo vendorID="8086" deviceID="25E5" />
+          <pciinfo vendorID="8086" deviceID="25E6" />
+          <pciinfo vendorID="8086" deviceID="25E7" />
+          <pciinfo vendorID="8086" deviceID="25F0" />
+          <pciinfo vendorID="8086" deviceID="25F1" />
+          <pciinfo vendorID="8086" deviceID="25F3" />
+          <pciinfo vendorID="8086" deviceID="25F5" />
+          <pciinfo vendorID="8086" deviceID="25F6" />
+          <pciinfo vendorID="8086" deviceID="25F7" />
+          <pciinfo vendorID="8086" deviceID="25F8" />
+          <pciinfo vendorID="8086" deviceID="25F9" />
+          <pciinfo vendorID="8086" deviceID="25FA" />
+          <pciinfo vendorID="8086" deviceID="3500" />
+          <pciinfo vendorID="8086" deviceID="3501" />
+          <pciinfo vendorID="8086" deviceID="3504" />
+          <pciinfo vendorID="8086" deviceID="3505" />
+          <pciinfo vendorID="8086" deviceID="350C" />
+          <pciinfo vendorID="8086" deviceID="350D" />
+          <pciinfo vendorID="8086" deviceID="3510" />
+          <pciinfo vendorID="8086" deviceID="3511" />
+          <pciinfo vendorID="8086" deviceID="3514" />
+          <pciinfo vendorID="8086" deviceID="3515" />
+          <pciinfo vendorID="8086" deviceID="3518" />
+          <pciinfo vendorID="8086" deviceID="3519" />
+          <pciinfo vendorID="8086" deviceID="2670" />
+          <pciinfo vendorID="8086" deviceID="269B" />
+          <pciinfo vendorID="8086" deviceID="2690" />
+          <pciinfo vendorID="8086" deviceID="2692" />
+          <pciinfo vendorID="8086" deviceID="2694" />
+          <pciinfo vendorID="8086" deviceID="2696" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\5400.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="4000" />
+          <pciinfo vendorID="8086" deviceID="4001" />
+          <pciinfo vendorID="8086" deviceID="4003" />
+          <pciinfo vendorID="8086" deviceID="4021" />
+          <pciinfo vendorID="8086" deviceID="4022" />
+          <pciinfo vendorID="8086" deviceID="4023" />
+          <pciinfo vendorID="8086" deviceID="4024" />
+          <pciinfo vendorID="8086" deviceID="4025" />
+          <pciinfo vendorID="8086" deviceID="4026" />
+          <pciinfo vendorID="8086" deviceID="4027" />
+          <pciinfo vendorID="8086" deviceID="4028" />
+          <pciinfo vendorID="8086" deviceID="4029" />
+          <pciinfo vendorID="8086" deviceID="402D" />
+          <pciinfo vendorID="8086" deviceID="402E" />
+          <pciinfo vendorID="8086" deviceID="4030" />
+          <pciinfo vendorID="8086" deviceID="4031" />
+          <pciinfo vendorID="8086" deviceID="4032" />
+          <pciinfo vendorID="8086" deviceID="4035" />
+          <pciinfo vendorID="8086" deviceID="4036" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\852.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="3580" />
+          <pciinfo vendorID="8086" deviceID="3584" />
+          <pciinfo vendorID="8086" deviceID="3585" />
+          <pciinfo vendorID="8086" deviceID="3581" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\855.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="3340" />
+          <pciinfo vendorID="8086" deviceID="3341" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\865.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="2570" />
+          <pciinfo vendorID="8086" deviceID="2571" />
+          <pciinfo vendorID="8086" deviceID="2573" />
+          <pciinfo vendorID="8086" deviceID="2576" />
+          <pciinfo vendorID="8086" deviceID="2578" />
+          <pciinfo vendorID="8086" deviceID="2579" />
+          <pciinfo vendorID="8086" deviceID="257B" />
+          <pciinfo vendorID="8086" deviceID="257E" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\915.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="2580" />
+          <pciinfo vendorID="8086" deviceID="2581" />
+          <pciinfo vendorID="8086" deviceID="2584" />
+          <pciinfo vendorID="8086" deviceID="2585" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\915M.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="2590" />
+          <pciinfo vendorID="8086" deviceID="2591" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\945.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="2770" />
+          <pciinfo vendorID="8086" deviceID="2771" />
+          <pciinfo vendorID="8086" deviceID="2774" />
+          <pciinfo vendorID="8086" deviceID="2775" />
+          <pciinfo vendorID="8086" deviceID="277C" />
+          <pciinfo vendorID="8086" deviceID="277A" />
+          <pciinfo vendorID="8086" deviceID="277D" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\945GM.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="27A0" />
+          <pciinfo vendorID="8086" deviceID="27A1" />
+          <pciinfo vendorID="8086" deviceID="27AC" />
+          <pciinfo vendorID="8086" deviceID="27AD" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\965g.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="2970" />
+          <pciinfo vendorID="8086" deviceID="2971" />
+          <pciinfo vendorID="8086" deviceID="2980" />
+          <pciinfo vendorID="8086" deviceID="2981" />
+          <pciinfo vendorID="8086" deviceID="2990" />
+          <pciinfo vendorID="8086" deviceID="2991" />
+          <pciinfo vendorID="8086" deviceID="29A0" />
+          <pciinfo vendorID="8086" deviceID="29A1" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\965m.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="2A00" />
+          <pciinfo vendorID="8086" deviceID="2A01" />
+          <pciinfo vendorID="8086" deviceID="2A10" />
+          <pciinfo vendorID="8086" deviceID="2A11" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\AvotAhci.inf-->
+          <driverversion>9.4.3.1008</driverversion>
+          <pciinfo vendorID="8086" deviceID="1F22" />
+          <pciinfo vendorID="8086" deviceID="1F23" />
+          <pciinfo vendorID="8086" deviceID="1F32" />
+          <pciinfo vendorID="8086" deviceID="1F33" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\AvotCore.inf-->
+          <driverversion>9.4.3.1008</driverversion>
+          <pciinfo vendorID="8086" deviceID="1F00" />
+          <pciinfo vendorID="8086" deviceID="1F01" />
+          <pciinfo vendorID="8086" deviceID="1F02" />
+          <pciinfo vendorID="8086" deviceID="1F03" />
+          <pciinfo vendorID="8086" deviceID="1F04" />
+          <pciinfo vendorID="8086" deviceID="1F05" />
+          <pciinfo vendorID="8086" deviceID="1F06" />
+          <pciinfo vendorID="8086" deviceID="1F07" />
+          <pciinfo vendorID="8086" deviceID="1F08" />
+          <pciinfo vendorID="8086" deviceID="1F09" />
+          <pciinfo vendorID="8086" deviceID="1F0A" />
+          <pciinfo vendorID="8086" deviceID="1F0B" />
+          <pciinfo vendorID="8086" deviceID="1F0C" />
+          <pciinfo vendorID="8086" deviceID="1F0D" />
+          <pciinfo vendorID="8086" deviceID="1F0E" />
+          <pciinfo vendorID="8086" deviceID="1F0F" />
+          <pciinfo vendorID="8086" deviceID="1F10" />
+          <pciinfo vendorID="8086" deviceID="1F11" />
+          <pciinfo vendorID="8086" deviceID="1F12" />
+          <pciinfo vendorID="8086" deviceID="1F13" />
+          <pciinfo vendorID="8086" deviceID="1F14" />
+          <pciinfo vendorID="8086" deviceID="1F18" />
+          <pciinfo vendorID="8086" deviceID="1F19" />
+          <pciinfo vendorID="8086" deviceID="1F38" />
+          <pciinfo vendorID="8086" deviceID="1F39" />
+          <pciinfo vendorID="8086" deviceID="1F3A" />
+          <pciinfo vendorID="8086" deviceID="1F3B" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\AvotIDE.inf-->
+          <driverversion>9.4.3.1008</driverversion>
+          <pciinfo vendorID="8086" deviceID="1F20" />
+          <pciinfo vendorID="8086" deviceID="1F21" />
+          <pciinfo vendorID="8086" deviceID="1F30" />
+          <pciinfo vendorID="8086" deviceID="1F31" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\AvotIDE2.inf-->
+          <driverversion>9.4.3.1008</driverversion>
+          <pciinfo vendorID="8086" deviceID="1F20" />
+          <pciinfo vendorID="8086" deviceID="1F21" />
+          <pciinfo vendorID="8086" deviceID="1F30" />
+          <pciinfo vendorID="8086" deviceID="1F31" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\AvotRCEC.inf-->
+          <driverversion>9.4.3.1008</driverversion>
+          <pciinfo vendorID="8086" deviceID="1F16" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\AvotSMB.inf-->
+          <driverversion>9.4.3.1008</driverversion>
+          <pciinfo vendorID="8086" deviceID="1F15" />
+          <pciinfo vendorID="8086" deviceID="1F3C" />
+          <pciinfo vendorID="8086" deviceID="1F3D" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\AvotUSB.inf-->
+          <driverversion>9.4.3.1008</driverversion>
+          <pciinfo vendorID="8086" deviceID="1F2C" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\cdvcore.inf-->
+          <driverversion>9.2.2.1038</driverversion>
+          <pciinfo vendorID="8086" deviceID="0BF0" />
+          <pciinfo vendorID="8086" deviceID="0BF1" />
+          <pciinfo vendorID="8086" deviceID="0BF2" />
+          <pciinfo vendorID="8086" deviceID="0BF3" />
+          <pciinfo vendorID="8086" deviceID="0BF4" />
+          <pciinfo vendorID="8086" deviceID="0BF5" />
+          <pciinfo vendorID="8086" deviceID="0BF6" />
+          <pciinfo vendorID="8086" deviceID="0BF7" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\CentCore.inf-->
+          <driverversion>9.4.3.1008</driverversion>
+          <pciinfo vendorID="8086" deviceID="0C4E" />
+          <pciinfo vendorID="8086" deviceID="0C55" />
+          <pciinfo vendorID="8086" deviceID="0C56" />
+          <pciinfo vendorID="8086" deviceID="0C70" />
+          <pciinfo vendorID="8086" deviceID="0C71" />
+          <pciinfo vendorID="8086" deviceID="0C72" />
+          <pciinfo vendorID="8086" deviceID="0C73" />
+          <pciinfo vendorID="8086" deviceID="0C74" />
+          <pciinfo vendorID="8086" deviceID="0C75" />
+          <pciinfo vendorID="8086" deviceID="0C76" />
+          <pciinfo vendorID="8086" deviceID="0C77" />
+          <pciinfo vendorID="8086" deviceID="0C78" />
+          <pciinfo vendorID="8086" deviceID="0C79" />
+          <pciinfo vendorID="8086" deviceID="0C7A" />
+          <pciinfo vendorID="8086" deviceID="0C7B" />
+          <pciinfo vendorID="8086" deviceID="0C7C" />
+          <pciinfo vendorID="8086" deviceID="0C7D" />
+          <pciinfo vendorID="8086" deviceID="0C7E" />
+          <pciinfo vendorID="8086" deviceID="0C7F" />
+          <pciinfo vendorID="8086" deviceID="0C54" />
+          <pciinfo vendorID="8086" deviceID="0C46" />
+          <pciinfo vendorID="8086" deviceID="0C47" />
+          <pciinfo vendorID="8086" deviceID="0C48" />
+          <pciinfo vendorID="8086" deviceID="0C49" />
+          <pciinfo vendorID="8086" deviceID="0C60" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\CentSMB.inf-->
+          <driverversion>9.4.3.1008</driverversion>
+          <pciinfo vendorID="8086" deviceID="0C59" />
+          <pciinfo vendorID="8086" deviceID="0C5A" />
+          <pciinfo vendorID="8086" deviceID="0C5B" />
+          <pciinfo vendorID="8086" deviceID="0C5C" />
+          <pciinfo vendorID="8086" deviceID="0C5D" />
+          <pciinfo vendorID="8086" deviceID="0C5E" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\CentURT.inf-->
+          <driverversion>9.4.0.1021</driverversion>
+          <pciinfo vendorID="8086" deviceID="0C5F" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\cougahci.inf-->
+          <driverversion>9.2.0.1034</driverversion>
+          <pciinfo vendorID="8086" deviceID="1C02" />
+          <pciinfo vendorID="8086" deviceID="1C03" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\cougcore.inf-->
+          <driverversion>9.2.0.1034</driverversion>
+          <pciinfo vendorID="8086" deviceID="1C24" />
+          <pciinfo vendorID="8086" deviceID="1C25" />
+          <pciinfo vendorID="8086" deviceID="1C10" />
+          <pciinfo vendorID="8086" deviceID="1C12" />
+          <pciinfo vendorID="8086" deviceID="1C14" />
+          <pciinfo vendorID="8086" deviceID="1C16" />
+          <pciinfo vendorID="8086" deviceID="1C18" />
+          <pciinfo vendorID="8086" deviceID="1C1A" />
+          <pciinfo vendorID="8086" deviceID="1C1C" />
+          <pciinfo vendorID="8086" deviceID="1C1E" />
+          <pciinfo vendorID="8086" deviceID="1C40" />
+          <pciinfo vendorID="8086" deviceID="1C41" />
+          <pciinfo vendorID="8086" deviceID="1C42" />
+          <pciinfo vendorID="8086" deviceID="1C43" />
+          <pciinfo vendorID="8086" deviceID="1C44" />
+          <pciinfo vendorID="8086" deviceID="1C46" />
+          <pciinfo vendorID="8086" deviceID="1C47" />
+          <pciinfo vendorID="8086" deviceID="1C49" />
+          <pciinfo vendorID="8086" deviceID="1C4A" />
+          <pciinfo vendorID="8086" deviceID="1C4B" />
+          <pciinfo vendorID="8086" deviceID="1C4C" />
+          <pciinfo vendorID="8086" deviceID="1C4D" />
+          <pciinfo vendorID="8086" deviceID="1C4E" />
+          <pciinfo vendorID="8086" deviceID="1C4F" />
+          <pciinfo vendorID="8086" deviceID="1C50" />
+          <pciinfo vendorID="8086" deviceID="1C52" />
+          <pciinfo vendorID="8086" deviceID="1C54" />
+          <pciinfo vendorID="8086" deviceID="1C56" />
+          <pciinfo vendorID="8086" deviceID="1C58" />
+          <pciinfo vendorID="8086" deviceID="1C59" />
+          <pciinfo vendorID="8086" deviceID="1C5A" />
+          <pciinfo vendorID="8086" deviceID="1C5C" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\cougide.inf-->
+          <driverversion>9.2.0.1034</driverversion>
+          <pciinfo vendorID="8086" deviceID="1C00" />
+          <pciinfo vendorID="8086" deviceID="1C01" />
+          <pciinfo vendorID="8086" deviceID="1C08" />
+          <pciinfo vendorID="8086" deviceID="1C09" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\cougsmb.inf-->
+          <driverversion>9.2.0.1034</driverversion>
+          <pciinfo vendorID="8086" deviceID="1C22" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\cougusb.inf-->
+          <driverversion>9.2.0.1034</driverversion>
+          <pciinfo vendorID="8086" deviceID="1C26" />
+          <pciinfo vendorID="8086" deviceID="1C2D" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\couide2.inf-->
+          <driverversion>9.2.0.1034</driverversion>
+          <pciinfo vendorID="8086" deviceID="1C00" />
+          <pciinfo vendorID="8086" deviceID="1C01" />
+          <pciinfo vendorID="8086" deviceID="1C08" />
+          <pciinfo vendorID="8086" deviceID="1C09" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\CrysWell.inf-->
+          <driverversion>9.4.0.1021</driverversion>
+          <pciinfo vendorID="8086" deviceID="0D00" />
+          <pciinfo vendorID="8086" deviceID="0D01" />
+          <pciinfo vendorID="8086" deviceID="0D05" />
+          <pciinfo vendorID="8086" deviceID="0D09" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\DH89xxCC-ahci.inf-->
+          <driverversion>9.2.2.1038</driverversion>
+          <pciinfo vendorID="8086" deviceID="2323" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\DH89xxCC-cor.inf-->
+          <driverversion>9.2.2.1038</driverversion>
+          <pciinfo vendorID="8086" deviceID="2332" />
+          <pciinfo vendorID="8086" deviceID="2360" />
+          <pciinfo vendorID="8086" deviceID="2364" />
+          <pciinfo vendorID="8086" deviceID="2365" />
+          <pciinfo vendorID="8086" deviceID="0434" />
+          <pciinfo vendorID="8086" deviceID="043E" />
+          <pciinfo vendorID="8086" deviceID="2342" />
+          <pciinfo vendorID="8086" deviceID="2343" />
+          <pciinfo vendorID="8086" deviceID="2344" />
+          <pciinfo vendorID="8086" deviceID="2345" />
+          <pciinfo vendorID="8086" deviceID="2346" />
+          <pciinfo vendorID="8086" deviceID="2347" />
+          <pciinfo vendorID="8086" deviceID="2348" />
+          <pciinfo vendorID="8086" deviceID="2349" />
+          <pciinfo vendorID="8086" deviceID="2310" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\DH89xxCC-id2.inf-->
+          <driverversion>9.2.2.1038</driverversion>
+          <pciinfo vendorID="8086" deviceID="2321" />
+          <pciinfo vendorID="8086" deviceID="2326" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\DH89xxCC-ide.inf-->
+          <driverversion>9.2.2.1038</driverversion>
+          <pciinfo vendorID="8086" deviceID="2321" />
+          <pciinfo vendorID="8086" deviceID="2326" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\DH89xxCC-ME.inf-->
+          <driverversion>9.2.2.1038</driverversion>
+          <pciinfo vendorID="8086" deviceID="2364" />
+          <pciinfo vendorID="8086" deviceID="2365" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\DH89xxCC-smb.inf-->
+          <driverversion>9.2.2.1038</driverversion>
+          <pciinfo vendorID="8086" deviceID="2330" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\DH89xxCC-usb.inf-->
+          <driverversion>9.2.2.1038</driverversion>
+          <pciinfo vendorID="8086" deviceID="2334" />
+          <pciinfo vendorID="8086" deviceID="2335" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\E5100.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="65C0" />
+          <pciinfo vendorID="8086" deviceID="65E2" />
+          <pciinfo vendorID="8086" deviceID="65E3" />
+          <pciinfo vendorID="8086" deviceID="65E4" />
+          <pciinfo vendorID="8086" deviceID="65E5" />
+          <pciinfo vendorID="8086" deviceID="65E6" />
+          <pciinfo vendorID="8086" deviceID="65E7" />
+          <pciinfo vendorID="8086" deviceID="65F0" />
+          <pciinfo vendorID="8086" deviceID="65F1" />
+          <pciinfo vendorID="8086" deviceID="65F3" />
+          <pciinfo vendorID="8086" deviceID="65F5" />
+          <pciinfo vendorID="8086" deviceID="65F6" />
+          <pciinfo vendorID="8086" deviceID="65F7" />
+          <pciinfo vendorID="8086" deviceID="65F8" />
+          <pciinfo vendorID="8086" deviceID="65F9" />
+          <pciinfo vendorID="8086" deviceID="65FA" />
+          <pciinfo vendorID="8086" deviceID="65FF" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\E7220.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="032C" />
+          <pciinfo vendorID="8086" deviceID="2588" />
+          <pciinfo vendorID="8086" deviceID="2589" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\E7230.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="2778" />
+          <pciinfo vendorID="8086" deviceID="2779" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\E7300.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="3600" />
+          <pciinfo vendorID="8086" deviceID="3604" />
+          <pciinfo vendorID="8086" deviceID="3605" />
+          <pciinfo vendorID="8086" deviceID="3606" />
+          <pciinfo vendorID="8086" deviceID="3607" />
+          <pciinfo vendorID="8086" deviceID="3608" />
+          <pciinfo vendorID="8086" deviceID="3609" />
+          <pciinfo vendorID="8086" deviceID="360A" />
+          <pciinfo vendorID="8086" deviceID="360C" />
+          <pciinfo vendorID="8086" deviceID="360D" />
+          <pciinfo vendorID="8086" deviceID="360E" />
+          <pciinfo vendorID="8086" deviceID="360F" />
+          <pciinfo vendorID="8086" deviceID="3610" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\E7520.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="3590" />
+          <pciinfo vendorID="8086" deviceID="3591" />
+          <pciinfo vendorID="8086" deviceID="3592" />
+          <pciinfo vendorID="8086" deviceID="3593" />
+          <pciinfo vendorID="8086" deviceID="3594" />
+          <pciinfo vendorID="8086" deviceID="3595" />
+          <pciinfo vendorID="8086" deviceID="3596" />
+          <pciinfo vendorID="8086" deviceID="3597" />
+          <pciinfo vendorID="8086" deviceID="3598" />
+          <pciinfo vendorID="8086" deviceID="3599" />
+          <pciinfo vendorID="8086" deviceID="359A" />
+          <pciinfo vendorID="8086" deviceID="359B" />
+          <pciinfo vendorID="8086" deviceID="359E" />
+          <pciinfo vendorID="8086" deviceID="0326" />
+          <pciinfo vendorID="8086" deviceID="0327" />
+          <pciinfo vendorID="8086" deviceID="0329" />
+          <pciinfo vendorID="8086" deviceID="032A" />
+          <pciinfo vendorID="8086" deviceID="0330" />
+          <pciinfo vendorID="8086" deviceID="0331" />
+          <pciinfo vendorID="8086" deviceID="0332" />
+          <pciinfo vendorID="8086" deviceID="0333" />
+          <pciinfo vendorID="8086" deviceID="0334" />
+          <pciinfo vendorID="8086" deviceID="0370" />
+          <pciinfo vendorID="8086" deviceID="0371" />
+          <pciinfo vendorID="8086" deviceID="0372" />
+          <pciinfo vendorID="8086" deviceID="0373" />
+          <pciinfo vendorID="8086" deviceID="0374" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\E8500.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="2600" />
+          <pciinfo vendorID="8086" deviceID="2601" />
+          <pciinfo vendorID="8086" deviceID="2602" />
+          <pciinfo vendorID="8086" deviceID="2603" />
+          <pciinfo vendorID="8086" deviceID="2604" />
+          <pciinfo vendorID="8086" deviceID="2605" />
+          <pciinfo vendorID="8086" deviceID="2606" />
+          <pciinfo vendorID="8086" deviceID="2607" />
+          <pciinfo vendorID="8086" deviceID="2608" />
+          <pciinfo vendorID="8086" deviceID="2609" />
+          <pciinfo vendorID="8086" deviceID="260A" />
+          <pciinfo vendorID="8086" deviceID="260C" />
+          <pciinfo vendorID="8086" deviceID="2610" />
+          <pciinfo vendorID="8086" deviceID="2611" />
+          <pciinfo vendorID="8086" deviceID="2612" />
+          <pciinfo vendorID="8086" deviceID="2613" />
+          <pciinfo vendorID="8086" deviceID="2614" />
+          <pciinfo vendorID="8086" deviceID="2615" />
+          <pciinfo vendorID="8086" deviceID="2617" />
+          <pciinfo vendorID="8086" deviceID="2618" />
+          <pciinfo vendorID="8086" deviceID="2619" />
+          <pciinfo vendorID="8086" deviceID="261A" />
+          <pciinfo vendorID="8086" deviceID="261B" />
+          <pciinfo vendorID="8086" deviceID="261C" />
+          <pciinfo vendorID="8086" deviceID="261D" />
+          <pciinfo vendorID="8086" deviceID="261E" />
+          <pciinfo vendorID="8086" deviceID="2620" />
+          <pciinfo vendorID="8086" deviceID="2621" />
+          <pciinfo vendorID="8086" deviceID="2622" />
+          <pciinfo vendorID="8086" deviceID="2623" />
+          <pciinfo vendorID="8086" deviceID="2624" />
+          <pciinfo vendorID="8086" deviceID="2625" />
+          <pciinfo vendorID="8086" deviceID="2626" />
+          <pciinfo vendorID="8086" deviceID="2627" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\ESB2id2.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="2680" />
+          <pciinfo vendorID="8086" deviceID="269E" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\ESB2ide.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="2680" />
+          <pciinfo vendorID="8086" deviceID="269E" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\ESB2usb.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="2688" />
+          <pciinfo vendorID="8086" deviceID="2689" />
+          <pciinfo vendorID="8086" deviceID="268A" />
+          <pciinfo vendorID="8086" deviceID="268B" />
+          <pciinfo vendorID="8086" deviceID="268C" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\g33q35.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="29B0" />
+          <pciinfo vendorID="8086" deviceID="29B1" />
+          <pciinfo vendorID="8086" deviceID="29C0" />
+          <pciinfo vendorID="8086" deviceID="29C1" />
+          <pciinfo vendorID="8086" deviceID="29D0" />
+          <pciinfo vendorID="8086" deviceID="29D1" />
+          <pciinfo vendorID="8086" deviceID="29E0" />
+          <pciinfo vendorID="8086" deviceID="29E1" />
+          <pciinfo vendorID="8086" deviceID="29E9" />
+          <pciinfo vendorID="8086" deviceID="29F0" />
+          <pciinfo vendorID="8086" deviceID="29F1" />
+          <pciinfo vendorID="8086" deviceID="29F9" />
+          <pciinfo vendorID="8086" deviceID="8002" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\Haswell.inf-->
+          <driverversion>9.4.0.1021</driverversion>
+          <pciinfo vendorID="8086" deviceID="0C00" />
+          <pciinfo vendorID="8086" deviceID="0C04" />
+          <pciinfo vendorID="8086" deviceID="0C08" />
+          <pciinfo vendorID="8086" deviceID="0C01" />
+          <pciinfo vendorID="8086" deviceID="0C05" />
+          <pciinfo vendorID="8086" deviceID="0C09" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\HaswellE.inf-->
+          <driverversion>9.4.2.1011</driverversion>
+          <pciinfo vendorID="8086" deviceID="2F00" />
+          <pciinfo vendorID="8086" deviceID="2F01" />
+          <pciinfo vendorID="8086" deviceID="2F02" />
+          <pciinfo vendorID="8086" deviceID="2F03" />
+          <pciinfo vendorID="8086" deviceID="2F04" />
+          <pciinfo vendorID="8086" deviceID="2F05" />
+          <pciinfo vendorID="8086" deviceID="2F06" />
+          <pciinfo vendorID="8086" deviceID="2F07" />
+          <pciinfo vendorID="8086" deviceID="2F08" />
+          <pciinfo vendorID="8086" deviceID="2F09" />
+          <pciinfo vendorID="8086" deviceID="2F0A" />
+          <pciinfo vendorID="8086" deviceID="2F0B" />
+          <pciinfo vendorID="8086" deviceID="2F1D" />
+          <pciinfo vendorID="8086" deviceID="2F1E" />
+          <pciinfo vendorID="8086" deviceID="2F1F" />
+          <pciinfo vendorID="8086" deviceID="2F20" />
+          <pciinfo vendorID="8086" deviceID="2F21" />
+          <pciinfo vendorID="8086" deviceID="2F22" />
+          <pciinfo vendorID="8086" deviceID="2F23" />
+          <pciinfo vendorID="8086" deviceID="2F24" />
+          <pciinfo vendorID="8086" deviceID="2F25" />
+          <pciinfo vendorID="8086" deviceID="2F26" />
+          <pciinfo vendorID="8086" deviceID="2F27" />
+          <pciinfo vendorID="8086" deviceID="2F28" />
+          <pciinfo vendorID="8086" deviceID="2F29" />
+          <pciinfo vendorID="8086" deviceID="2F2A" />
+          <pciinfo vendorID="8086" deviceID="2F2C" />
+          <pciinfo vendorID="8086" deviceID="2F2E" />
+          <pciinfo vendorID="8086" deviceID="2F2F" />
+          <pciinfo vendorID="8086" deviceID="2F30" />
+          <pciinfo vendorID="8086" deviceID="2F32" />
+          <pciinfo vendorID="8086" deviceID="2F33" />
+          <pciinfo vendorID="8086" deviceID="2F34" />
+          <pciinfo vendorID="8086" deviceID="2F36" />
+          <pciinfo vendorID="8086" deviceID="2F37" />
+          <pciinfo vendorID="8086" deviceID="2F38" />
+          <pciinfo vendorID="8086" deviceID="2F39" />
+          <pciinfo vendorID="8086" deviceID="2F3A" />
+          <pciinfo vendorID="8086" deviceID="2F3E" />
+          <pciinfo vendorID="8086" deviceID="2F3F" />
+          <pciinfo vendorID="8086" deviceID="2F40" />
+          <pciinfo vendorID="8086" deviceID="2F41" />
+          <pciinfo vendorID="8086" deviceID="2F43" />
+          <pciinfo vendorID="8086" deviceID="2F45" />
+          <pciinfo vendorID="8086" deviceID="2F46" />
+          <pciinfo vendorID="8086" deviceID="2F47" />
+          <pciinfo vendorID="8086" deviceID="2F60" />
+          <pciinfo vendorID="8086" deviceID="2F68" />
+          <pciinfo vendorID="8086" deviceID="2F6A" />
+          <pciinfo vendorID="8086" deviceID="2F6B" />
+          <pciinfo vendorID="8086" deviceID="2F6C" />
+          <pciinfo vendorID="8086" deviceID="2F6D" />
+          <pciinfo vendorID="8086" deviceID="2F6E" />
+          <pciinfo vendorID="8086" deviceID="2F6F" />
+          <pciinfo vendorID="8086" deviceID="2F70" />
+          <pciinfo vendorID="8086" deviceID="2F71" />
+          <pciinfo vendorID="8086" deviceID="2F76" />
+          <pciinfo vendorID="8086" deviceID="2F78" />
+          <pciinfo vendorID="8086" deviceID="2F79" />
+          <pciinfo vendorID="8086" deviceID="2F7D" />
+          <pciinfo vendorID="8086" deviceID="2F7E" />
+          <pciinfo vendorID="8086" deviceID="2F80" />
+          <pciinfo vendorID="8086" deviceID="2F81" />
+          <pciinfo vendorID="8086" deviceID="2F83" />
+          <pciinfo vendorID="8086" deviceID="2F85" />
+          <pciinfo vendorID="8086" deviceID="2F86" />
+          <pciinfo vendorID="8086" deviceID="2F87" />
+          <pciinfo vendorID="8086" deviceID="2F88" />
+          <pciinfo vendorID="8086" deviceID="2F8A" />
+          <pciinfo vendorID="8086" deviceID="2F90" />
+          <pciinfo vendorID="8086" deviceID="2F93" />
+          <pciinfo vendorID="8086" deviceID="2F95" />
+          <pciinfo vendorID="8086" deviceID="2F96" />
+          <pciinfo vendorID="8086" deviceID="2F98" />
+          <pciinfo vendorID="8086" deviceID="2F99" />
+          <pciinfo vendorID="8086" deviceID="2F9A" />
+          <pciinfo vendorID="8086" deviceID="2F9C" />
+          <pciinfo vendorID="8086" deviceID="2FA0" />
+          <pciinfo vendorID="8086" deviceID="2FA8" />
+          <pciinfo vendorID="8086" deviceID="2FAA" />
+          <pciinfo vendorID="8086" deviceID="2FAB" />
+          <pciinfo vendorID="8086" deviceID="2FAC" />
+          <pciinfo vendorID="8086" deviceID="2FAD" />
+          <pciinfo vendorID="8086" deviceID="2FAE" />
+          <pciinfo vendorID="8086" deviceID="2FAF" />
+          <pciinfo vendorID="8086" deviceID="2FB0" />
+          <pciinfo vendorID="8086" deviceID="2FB1" />
+          <pciinfo vendorID="8086" deviceID="2FB2" />
+          <pciinfo vendorID="8086" deviceID="2FB3" />
+          <pciinfo vendorID="8086" deviceID="2FB4" />
+          <pciinfo vendorID="8086" deviceID="2FB5" />
+          <pciinfo vendorID="8086" deviceID="2FB6" />
+          <pciinfo vendorID="8086" deviceID="2FB7" />
+          <pciinfo vendorID="8086" deviceID="2FB8" />
+          <pciinfo vendorID="8086" deviceID="2FB9" />
+          <pciinfo vendorID="8086" deviceID="2FBA" />
+          <pciinfo vendorID="8086" deviceID="2FBB" />
+          <pciinfo vendorID="8086" deviceID="2FBC" />
+          <pciinfo vendorID="8086" deviceID="2FBD" />
+          <pciinfo vendorID="8086" deviceID="2FBE" />
+          <pciinfo vendorID="8086" deviceID="2FBF" />
+          <pciinfo vendorID="8086" deviceID="2FC0" />
+          <pciinfo vendorID="8086" deviceID="2FC1" />
+          <pciinfo vendorID="8086" deviceID="2FC2" />
+          <pciinfo vendorID="8086" deviceID="2FC3" />
+          <pciinfo vendorID="8086" deviceID="2FC4" />
+          <pciinfo vendorID="8086" deviceID="2FC5" />
+          <pciinfo vendorID="8086" deviceID="2FD0" />
+          <pciinfo vendorID="8086" deviceID="2FD1" />
+          <pciinfo vendorID="8086" deviceID="2FD2" />
+          <pciinfo vendorID="8086" deviceID="2FD3" />
+          <pciinfo vendorID="8086" deviceID="2FD4" />
+          <pciinfo vendorID="8086" deviceID="2FD5" />
+          <pciinfo vendorID="8086" deviceID="2FD6" />
+          <pciinfo vendorID="8086" deviceID="2FD7" />
+          <pciinfo vendorID="8086" deviceID="2FE0" />
+          <pciinfo vendorID="8086" deviceID="2FE1" />
+          <pciinfo vendorID="8086" deviceID="2FE2" />
+          <pciinfo vendorID="8086" deviceID="2FE3" />
+          <pciinfo vendorID="8086" deviceID="2FE4" />
+          <pciinfo vendorID="8086" deviceID="2FE5" />
+          <pciinfo vendorID="8086" deviceID="2FE6" />
+          <pciinfo vendorID="8086" deviceID="2FE7" />
+          <pciinfo vendorID="8086" deviceID="2FE8" />
+          <pciinfo vendorID="8086" deviceID="2FE9" />
+          <pciinfo vendorID="8086" deviceID="2FEA" />
+          <pciinfo vendorID="8086" deviceID="2FEB" />
+          <pciinfo vendorID="8086" deviceID="2FEC" />
+          <pciinfo vendorID="8086" deviceID="2FED" />
+          <pciinfo vendorID="8086" deviceID="2FEE" />
+          <pciinfo vendorID="8086" deviceID="2FEF" />
+          <pciinfo vendorID="8086" deviceID="2FF0" />
+          <pciinfo vendorID="8086" deviceID="2FF1" />
+          <pciinfo vendorID="8086" deviceID="2FF2" />
+          <pciinfo vendorID="8086" deviceID="2FF3" />
+          <pciinfo vendorID="8086" deviceID="2FF4" />
+          <pciinfo vendorID="8086" deviceID="2FF5" />
+          <pciinfo vendorID="8086" deviceID="2FF6" />
+          <pciinfo vendorID="8086" deviceID="2FF7" />
+          <pciinfo vendorID="8086" deviceID="2FF8" />
+          <pciinfo vendorID="8086" deviceID="2FF9" />
+          <pciinfo vendorID="8086" deviceID="2FFA" />
+          <pciinfo vendorID="8086" deviceID="2FFB" />
+          <pciinfo vendorID="8086" deviceID="2FFC" />
+          <pciinfo vendorID="8086" deviceID="2FFD" />
+          <pciinfo vendorID="8086" deviceID="2FFE" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\ibexahci.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="2821" />
+          <pciinfo vendorID="8086" deviceID="2824" />
+          <pciinfo vendorID="8086" deviceID="2829" />
+          <pciinfo vendorID="8086" deviceID="2922" />
+          <pciinfo vendorID="8086" deviceID="2923" />
+          <pciinfo vendorID="8086" deviceID="2929" />
+          <pciinfo vendorID="8086" deviceID="3A02" />
+          <pciinfo vendorID="8086" deviceID="3A03" />
+          <pciinfo vendorID="8086" deviceID="3A22" />
+          <pciinfo vendorID="8086" deviceID="3A23" />
+          <pciinfo vendorID="8086" deviceID="3B22" />
+          <pciinfo vendorID="8086" deviceID="3B23" />
+          <pciinfo vendorID="8086" deviceID="3B29" />
+          <pciinfo vendorID="8086" deviceID="3B2F" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\ibexcore.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="3B53" />
+          <pciinfo vendorID="8086" deviceID="0051" />
+          <pciinfo vendorID="8086" deviceID="3B42" />
+          <pciinfo vendorID="8086" deviceID="3B44" />
+          <pciinfo vendorID="8086" deviceID="3B46" />
+          <pciinfo vendorID="8086" deviceID="3B48" />
+          <pciinfo vendorID="8086" deviceID="3B4A" />
+          <pciinfo vendorID="8086" deviceID="3B4C" />
+          <pciinfo vendorID="8086" deviceID="3B4E" />
+          <pciinfo vendorID="8086" deviceID="3B50" />
+          <pciinfo vendorID="8086" deviceID="3B00" />
+          <pciinfo vendorID="8086" deviceID="3B01" />
+          <pciinfo vendorID="8086" deviceID="3B02" />
+          <pciinfo vendorID="8086" deviceID="3B03" />
+          <pciinfo vendorID="8086" deviceID="3B04" />
+          <pciinfo vendorID="8086" deviceID="3B05" />
+          <pciinfo vendorID="8086" deviceID="3B06" />
+          <pciinfo vendorID="8086" deviceID="3B07" />
+          <pciinfo vendorID="8086" deviceID="3B08" />
+          <pciinfo vendorID="8086" deviceID="3B09" />
+          <pciinfo vendorID="8086" deviceID="3B0A" />
+          <pciinfo vendorID="8086" deviceID="3B0B" />
+          <pciinfo vendorID="8086" deviceID="3B0C" />
+          <pciinfo vendorID="8086" deviceID="3B0D" />
+          <pciinfo vendorID="8086" deviceID="3B0E" />
+          <pciinfo vendorID="8086" deviceID="3B0F" />
+          <pciinfo vendorID="8086" deviceID="3B10" />
+          <pciinfo vendorID="8086" deviceID="3B11" />
+          <pciinfo vendorID="8086" deviceID="3B12" />
+          <pciinfo vendorID="8086" deviceID="3B13" />
+          <pciinfo vendorID="8086" deviceID="3B14" />
+          <pciinfo vendorID="8086" deviceID="3B15" />
+          <pciinfo vendorID="8086" deviceID="3B16" />
+          <pciinfo vendorID="8086" deviceID="3B17" />
+          <pciinfo vendorID="8086" deviceID="3B18" />
+          <pciinfo vendorID="8086" deviceID="3B19" />
+          <pciinfo vendorID="8086" deviceID="3B1A" />
+          <pciinfo vendorID="8086" deviceID="3B1B" />
+          <pciinfo vendorID="8086" deviceID="3B1C" />
+          <pciinfo vendorID="8086" deviceID="3B1D" />
+          <pciinfo vendorID="8086" deviceID="3B1E" />
+          <pciinfo vendorID="8086" deviceID="3B1F" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\ibexid2.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="2920" />
+          <pciinfo vendorID="8086" deviceID="2921" />
+          <pciinfo vendorID="8086" deviceID="2926" />
+          <pciinfo vendorID="8086" deviceID="2928" />
+          <pciinfo vendorID="8086" deviceID="292D" />
+          <pciinfo vendorID="8086" deviceID="3A00" />
+          <pciinfo vendorID="8086" deviceID="3A06" />
+          <pciinfo vendorID="8086" deviceID="3A20" />
+          <pciinfo vendorID="8086" deviceID="3A26" />
+          <pciinfo vendorID="8086" deviceID="3B20" />
+          <pciinfo vendorID="8086" deviceID="3B21" />
+          <pciinfo vendorID="8086" deviceID="3B2D" />
+          <pciinfo vendorID="8086" deviceID="3B2E" />
+          <pciinfo vendorID="8086" deviceID="3B26" />
+          <pciinfo vendorID="8086" deviceID="3B28" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\ibexide.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="2920" />
+          <pciinfo vendorID="8086" deviceID="2921" />
+          <pciinfo vendorID="8086" deviceID="2926" />
+          <pciinfo vendorID="8086" deviceID="2928" />
+          <pciinfo vendorID="8086" deviceID="292D" />
+          <pciinfo vendorID="8086" deviceID="3A00" />
+          <pciinfo vendorID="8086" deviceID="3A06" />
+          <pciinfo vendorID="8086" deviceID="3A20" />
+          <pciinfo vendorID="8086" deviceID="3A26" />
+          <pciinfo vendorID="8086" deviceID="3B20" />
+          <pciinfo vendorID="8086" deviceID="3B21" />
+          <pciinfo vendorID="8086" deviceID="3B2D" />
+          <pciinfo vendorID="8086" deviceID="3B2E" />
+          <pciinfo vendorID="8086" deviceID="3B26" />
+          <pciinfo vendorID="8086" deviceID="3B28" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\ibexsmb.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="283E" />
+          <pciinfo vendorID="8086" deviceID="2930" />
+          <pciinfo vendorID="8086" deviceID="3A30" />
+          <pciinfo vendorID="8086" deviceID="3A60" />
+          <pciinfo vendorID="8086" deviceID="3B30" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\ibexusb.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="3B34" />
+          <pciinfo vendorID="8086" deviceID="3B36" />
+          <pciinfo vendorID="8086" deviceID="3B37" />
+          <pciinfo vendorID="8086" deviceID="3B38" />
+          <pciinfo vendorID="8086" deviceID="3B39" />
+          <pciinfo vendorID="8086" deviceID="3B3A" />
+          <pciinfo vendorID="8086" deviceID="3B3B" />
+          <pciinfo vendorID="8086" deviceID="3B3C" />
+          <pciinfo vendorID="8086" deviceID="3B3E" />
+          <pciinfo vendorID="8086" deviceID="3B3F" />
+          <pciinfo vendorID="8086" deviceID="3B40" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\ich5core.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="24D0" />
+          <pciinfo vendorID="8086" deviceID="24DC" />
+          <pciinfo vendorID="8086" deviceID="24D3" />
+          <pciinfo vendorID="8086" deviceID="25A1" />
+          <pciinfo vendorID="8086" deviceID="25A4" />
+          <pciinfo vendorID="8086" deviceID="25AB" />
+          <pciinfo vendorID="8086" deviceID="25AE" />
+          <pciinfo vendorID="8086" deviceID="25AC" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\ich5id2.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="24D1" />
+          <pciinfo vendorID="8086" deviceID="24DB" />
+          <pciinfo vendorID="8086" deviceID="25A2" />
+          <pciinfo vendorID="8086" deviceID="25A3" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\ich5ide.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="24D1" />
+          <pciinfo vendorID="8086" deviceID="24DB" />
+          <pciinfo vendorID="8086" deviceID="25A2" />
+          <pciinfo vendorID="8086" deviceID="25A3" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\ich5usb.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="24D2" />
+          <pciinfo vendorID="8086" deviceID="24D4" />
+          <pciinfo vendorID="8086" deviceID="24D7" />
+          <pciinfo vendorID="8086" deviceID="24DE" />
+          <pciinfo vendorID="8086" deviceID="24DD" />
+          <pciinfo vendorID="8086" deviceID="25A9" />
+          <pciinfo vendorID="8086" deviceID="25AA" />
+          <pciinfo vendorID="8086" deviceID="25AD" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\ich6core.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="2640" />
+          <pciinfo vendorID="8086" deviceID="2641" />
+          <pciinfo vendorID="8086" deviceID="2642" />
+          <pciinfo vendorID="8086" deviceID="266A" />
+          <pciinfo vendorID="8086" deviceID="2660" />
+          <pciinfo vendorID="8086" deviceID="2662" />
+          <pciinfo vendorID="8086" deviceID="2664" />
+          <pciinfo vendorID="8086" deviceID="2666" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\ich6id2.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="2651" />
+          <pciinfo vendorID="8086" deviceID="2652" />
+          <pciinfo vendorID="8086" deviceID="2653" />
+          <pciinfo vendorID="8086" deviceID="266F" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\ich6ide.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="2651" />
+          <pciinfo vendorID="8086" deviceID="2652" />
+          <pciinfo vendorID="8086" deviceID="2653" />
+          <pciinfo vendorID="8086" deviceID="266F" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\ich6usb.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="2658" />
+          <pciinfo vendorID="8086" deviceID="2659" />
+          <pciinfo vendorID="8086" deviceID="265A" />
+          <pciinfo vendorID="8086" deviceID="265B" />
+          <pciinfo vendorID="8086" deviceID="265C" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\ich78id2.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="27C0" />
+          <pciinfo vendorID="8086" deviceID="27C4" />
+          <pciinfo vendorID="8086" deviceID="27DF" />
+          <pciinfo vendorID="8086" deviceID="2820" />
+          <pciinfo vendorID="8086" deviceID="2825" />
+          <pciinfo vendorID="8086" deviceID="2828" />
+          <pciinfo vendorID="8086" deviceID="2850" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\ich78ide.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="27C0" />
+          <pciinfo vendorID="8086" deviceID="27C4" />
+          <pciinfo vendorID="8086" deviceID="27DF" />
+          <pciinfo vendorID="8086" deviceID="2820" />
+          <pciinfo vendorID="8086" deviceID="2825" />
+          <pciinfo vendorID="8086" deviceID="2828" />
+          <pciinfo vendorID="8086" deviceID="2850" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\ich78usb.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="27C8" />
+          <pciinfo vendorID="8086" deviceID="27C9" />
+          <pciinfo vendorID="8086" deviceID="27CA" />
+          <pciinfo vendorID="8086" deviceID="27CB" />
+          <pciinfo vendorID="8086" deviceID="27CC" />
+          <pciinfo vendorID="8086" deviceID="2830" />
+          <pciinfo vendorID="8086" deviceID="2831" />
+          <pciinfo vendorID="8086" deviceID="2832" />
+          <pciinfo vendorID="8086" deviceID="2834" />
+          <pciinfo vendorID="8086" deviceID="2835" />
+          <pciinfo vendorID="8086" deviceID="2836" />
+          <pciinfo vendorID="8086" deviceID="283A" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\ich7core.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="27DA" />
+          <pciinfo vendorID="8086" deviceID="27D0" />
+          <pciinfo vendorID="8086" deviceID="27D2" />
+          <pciinfo vendorID="8086" deviceID="27D4" />
+          <pciinfo vendorID="8086" deviceID="27D6" />
+          <pciinfo vendorID="8086" deviceID="27E0" />
+          <pciinfo vendorID="8086" deviceID="27E2" />
+          <pciinfo vendorID="8086" deviceID="27B0" />
+          <pciinfo vendorID="8086" deviceID="27B8" />
+          <pciinfo vendorID="8086" deviceID="27B9" />
+          <pciinfo vendorID="8086" deviceID="27BD" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\ich8core.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="284F" />
+          <pciinfo vendorID="8086" deviceID="283F" />
+          <pciinfo vendorID="8086" deviceID="2841" />
+          <pciinfo vendorID="8086" deviceID="2843" />
+          <pciinfo vendorID="8086" deviceID="2845" />
+          <pciinfo vendorID="8086" deviceID="2847" />
+          <pciinfo vendorID="8086" deviceID="2849" />
+          <pciinfo vendorID="8086" deviceID="2810" />
+          <pciinfo vendorID="8086" deviceID="2811" />
+          <pciinfo vendorID="8086" deviceID="2812" />
+          <pciinfo vendorID="8086" deviceID="2814" />
+          <pciinfo vendorID="8086" deviceID="2815" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\ich9core.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="2932" />
+          <pciinfo vendorID="8086" deviceID="2A09" />
+          <pciinfo vendorID="8086" deviceID="2A19" />
+          <pciinfo vendorID="8086" deviceID="2A29" />
+          <pciinfo vendorID="8086" deviceID="2A39" />
+          <pciinfo vendorID="8086" deviceID="2A49" />
+          <pciinfo vendorID="8086" deviceID="2A59" />
+          <pciinfo vendorID="8086" deviceID="2A69" />
+          <pciinfo vendorID="8086" deviceID="2A79" />
+          <pciinfo vendorID="8086" deviceID="2A89" />
+          <pciinfo vendorID="8086" deviceID="2A99" />
+          <pciinfo vendorID="8086" deviceID="2AA9" />
+          <pciinfo vendorID="8086" deviceID="2AB9" />
+          <pciinfo vendorID="8086" deviceID="2AC9" />
+          <pciinfo vendorID="8086" deviceID="2AD9" />
+          <pciinfo vendorID="8086" deviceID="2AE9" />
+          <pciinfo vendorID="8086" deviceID="2AF9" />
+          <pciinfo vendorID="8086" deviceID="2940" />
+          <pciinfo vendorID="8086" deviceID="2942" />
+          <pciinfo vendorID="8086" deviceID="2944" />
+          <pciinfo vendorID="8086" deviceID="2946" />
+          <pciinfo vendorID="8086" deviceID="2948" />
+          <pciinfo vendorID="8086" deviceID="294A" />
+          <pciinfo vendorID="8086" deviceID="2910" />
+          <pciinfo vendorID="8086" deviceID="2911" />
+          <pciinfo vendorID="8086" deviceID="2912" />
+          <pciinfo vendorID="8086" deviceID="2914" />
+          <pciinfo vendorID="8086" deviceID="2916" />
+          <pciinfo vendorID="8086" deviceID="2917" />
+          <pciinfo vendorID="8086" deviceID="2918" />
+          <pciinfo vendorID="8086" deviceID="2919" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\ich9usb.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="2934" />
+          <pciinfo vendorID="8086" deviceID="2935" />
+          <pciinfo vendorID="8086" deviceID="2936" />
+          <pciinfo vendorID="8086" deviceID="2937" />
+          <pciinfo vendorID="8086" deviceID="2938" />
+          <pciinfo vendorID="8086" deviceID="2939" />
+          <pciinfo vendorID="8086" deviceID="293A" />
+          <pciinfo vendorID="8086" deviceID="293C" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\ichacore.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="3A32" />
+          <pciinfo vendorID="8086" deviceID="3A62" />
+          <pciinfo vendorID="8086" deviceID="3A51" />
+          <pciinfo vendorID="8086" deviceID="2E08" />
+          <pciinfo vendorID="8086" deviceID="2E18" />
+          <pciinfo vendorID="8086" deviceID="2E28" />
+          <pciinfo vendorID="8086" deviceID="2E38" />
+          <pciinfo vendorID="8086" deviceID="2E48" />
+          <pciinfo vendorID="8086" deviceID="2E58" />
+          <pciinfo vendorID="8086" deviceID="2E68" />
+          <pciinfo vendorID="8086" deviceID="2E78" />
+          <pciinfo vendorID="8086" deviceID="2E88" />
+          <pciinfo vendorID="8086" deviceID="2E98" />
+          <pciinfo vendorID="8086" deviceID="2EA8" />
+          <pciinfo vendorID="8086" deviceID="2EB8" />
+          <pciinfo vendorID="8086" deviceID="2EC8" />
+          <pciinfo vendorID="8086" deviceID="2ED8" />
+          <pciinfo vendorID="8086" deviceID="2EE8" />
+          <pciinfo vendorID="8086" deviceID="2EF8" />
+          <pciinfo vendorID="8086" deviceID="3A40" />
+          <pciinfo vendorID="8086" deviceID="3A42" />
+          <pciinfo vendorID="8086" deviceID="3A44" />
+          <pciinfo vendorID="8086" deviceID="3A46" />
+          <pciinfo vendorID="8086" deviceID="3A48" />
+          <pciinfo vendorID="8086" deviceID="3A4A" />
+          <pciinfo vendorID="8086" deviceID="3A70" />
+          <pciinfo vendorID="8086" deviceID="3A72" />
+          <pciinfo vendorID="8086" deviceID="3A74" />
+          <pciinfo vendorID="8086" deviceID="3A76" />
+          <pciinfo vendorID="8086" deviceID="3A78" />
+          <pciinfo vendorID="8086" deviceID="3A7A" />
+          <pciinfo vendorID="8086" deviceID="3A10" />
+          <pciinfo vendorID="8086" deviceID="3A14" />
+          <pciinfo vendorID="8086" deviceID="3A1A" />
+          <pciinfo vendorID="8086" deviceID="3A16" />
+          <pciinfo vendorID="8086" deviceID="3A18" />
+          <pciinfo vendorID="8086" deviceID="3A1E" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\ichausb.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="3A64" />
+          <pciinfo vendorID="8086" deviceID="3A65" />
+          <pciinfo vendorID="8086" deviceID="3A66" />
+          <pciinfo vendorID="8086" deviceID="3A67" />
+          <pciinfo vendorID="8086" deviceID="3A68" />
+          <pciinfo vendorID="8086" deviceID="3A69" />
+          <pciinfo vendorID="8086" deviceID="3A6A" />
+          <pciinfo vendorID="8086" deviceID="3A6C" />
+          <pciinfo vendorID="8086" deviceID="3A34" />
+          <pciinfo vendorID="8086" deviceID="3A35" />
+          <pciinfo vendorID="8086" deviceID="3A36" />
+          <pciinfo vendorID="8086" deviceID="3A37" />
+          <pciinfo vendorID="8086" deviceID="3A38" />
+          <pciinfo vendorID="8086" deviceID="3A39" />
+          <pciinfo vendorID="8086" deviceID="3A3A" />
+          <pciinfo vendorID="8086" deviceID="3A3C" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\ichXdev.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="537C" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\IntelCP2.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="2C50" />
+          <pciinfo vendorID="8086" deviceID="2C51" />
+          <pciinfo vendorID="8086" deviceID="2C52" />
+          <pciinfo vendorID="8086" deviceID="2C53" />
+          <pciinfo vendorID="8086" deviceID="2C54" />
+          <pciinfo vendorID="8086" deviceID="2C55" />
+          <pciinfo vendorID="8086" deviceID="2C56" />
+          <pciinfo vendorID="8086" deviceID="2C57" />
+          <pciinfo vendorID="8086" deviceID="2C81" />
+          <pciinfo vendorID="8086" deviceID="2C90" />
+          <pciinfo vendorID="8086" deviceID="2C91" />
+          <pciinfo vendorID="8086" deviceID="2C98" />
+          <pciinfo vendorID="8086" deviceID="2C99" />
+          <pciinfo vendorID="8086" deviceID="2C9C" />
+          <pciinfo vendorID="8086" deviceID="2CA0" />
+          <pciinfo vendorID="8086" deviceID="2CA1" />
+          <pciinfo vendorID="8086" deviceID="2CA2" />
+          <pciinfo vendorID="8086" deviceID="2CA3" />
+          <pciinfo vendorID="8086" deviceID="2CA8" />
+          <pciinfo vendorID="8086" deviceID="2CA9" />
+          <pciinfo vendorID="8086" deviceID="2CAA" />
+          <pciinfo vendorID="8086" deviceID="2CAB" />
+          <pciinfo vendorID="8086" deviceID="D130" />
+          <pciinfo vendorID="8086" deviceID="D131" />
+          <pciinfo vendorID="8086" deviceID="D132" />
+          <pciinfo vendorID="8086" deviceID="D133" />
+          <pciinfo vendorID="8086" deviceID="D134" />
+          <pciinfo vendorID="8086" deviceID="D135" />
+          <pciinfo vendorID="8086" deviceID="D136" />
+          <pciinfo vendorID="8086" deviceID="D137" />
+          <pciinfo vendorID="8086" deviceID="D138" />
+          <pciinfo vendorID="8086" deviceID="D139" />
+          <pciinfo vendorID="8086" deviceID="D13A" />
+          <pciinfo vendorID="8086" deviceID="D13B" />
+          <pciinfo vendorID="8086" deviceID="D150" />
+          <pciinfo vendorID="8086" deviceID="D151" />
+          <pciinfo vendorID="8086" deviceID="D155" />
+          <pciinfo vendorID="8086" deviceID="D156" />
+          <pciinfo vendorID="8086" deviceID="D157" />
+          <pciinfo vendorID="8086" deviceID="D158" />
+          <pciinfo vendorID="8086" deviceID="27BC" />
+          <pciinfo vendorID="8086" deviceID="A000" />
+          <pciinfo vendorID="8086" deviceID="A010" />
+          <pciinfo vendorID="8086" deviceID="0040" />
+          <pciinfo vendorID="8086" deviceID="0041" />
+          <pciinfo vendorID="8086" deviceID="0043" />
+          <pciinfo vendorID="8086" deviceID="0044" />
+          <pciinfo vendorID="8086" deviceID="0045" />
+          <pciinfo vendorID="8086" deviceID="0047" />
+          <pciinfo vendorID="8086" deviceID="0048" />
+          <pciinfo vendorID="8086" deviceID="0050" />
+          <pciinfo vendorID="8086" deviceID="2C61" />
+          <pciinfo vendorID="8086" deviceID="2C62" />
+          <pciinfo vendorID="8086" deviceID="2D01" />
+          <pciinfo vendorID="8086" deviceID="2D10" />
+          <pciinfo vendorID="8086" deviceID="2D11" />
+          <pciinfo vendorID="8086" deviceID="2D12" />
+          <pciinfo vendorID="8086" deviceID="2D13" />
+          <pciinfo vendorID="8086" deviceID="0049" />
+          <pciinfo vendorID="8086" deviceID="004B" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\IntelCPU.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="2C01" />
+          <pciinfo vendorID="8086" deviceID="2C10" />
+          <pciinfo vendorID="8086" deviceID="2C11" />
+          <pciinfo vendorID="8086" deviceID="2C14" />
+          <pciinfo vendorID="8086" deviceID="2C15" />
+          <pciinfo vendorID="8086" deviceID="2C18" />
+          <pciinfo vendorID="8086" deviceID="2C19" />
+          <pciinfo vendorID="8086" deviceID="2C1A" />
+          <pciinfo vendorID="8086" deviceID="2C1C" />
+          <pciinfo vendorID="8086" deviceID="2C20" />
+          <pciinfo vendorID="8086" deviceID="2C21" />
+          <pciinfo vendorID="8086" deviceID="2C22" />
+          <pciinfo vendorID="8086" deviceID="2C23" />
+          <pciinfo vendorID="8086" deviceID="2C28" />
+          <pciinfo vendorID="8086" deviceID="2C29" />
+          <pciinfo vendorID="8086" deviceID="2C2A" />
+          <pciinfo vendorID="8086" deviceID="2C2B" />
+          <pciinfo vendorID="8086" deviceID="2C30" />
+          <pciinfo vendorID="8086" deviceID="2C31" />
+          <pciinfo vendorID="8086" deviceID="2C32" />
+          <pciinfo vendorID="8086" deviceID="2C33" />
+          <pciinfo vendorID="8086" deviceID="2C40" />
+          <pciinfo vendorID="8086" deviceID="2C41" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\IntelIOH.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="3400" />
+          <pciinfo vendorID="8086" deviceID="3401" />
+          <pciinfo vendorID="8086" deviceID="3402" />
+          <pciinfo vendorID="8086" deviceID="3403" />
+          <pciinfo vendorID="8086" deviceID="3404" />
+          <pciinfo vendorID="8086" deviceID="3405" />
+          <pciinfo vendorID="8086" deviceID="3406" />
+          <pciinfo vendorID="8086" deviceID="3407" />
+          <pciinfo vendorID="8086" deviceID="3408" />
+          <pciinfo vendorID="8086" deviceID="3409" />
+          <pciinfo vendorID="8086" deviceID="340A" />
+          <pciinfo vendorID="8086" deviceID="340B" />
+          <pciinfo vendorID="8086" deviceID="340C" />
+          <pciinfo vendorID="8086" deviceID="340D" />
+          <pciinfo vendorID="8086" deviceID="340E" />
+          <pciinfo vendorID="8086" deviceID="340F" />
+          <pciinfo vendorID="8086" deviceID="3410" />
+          <pciinfo vendorID="8086" deviceID="3411" />
+          <pciinfo vendorID="8086" deviceID="3418" />
+          <pciinfo vendorID="8086" deviceID="3419" />
+          <pciinfo vendorID="8086" deviceID="3420" />
+          <pciinfo vendorID="8086" deviceID="3421" />
+          <pciinfo vendorID="8086" deviceID="3422" />
+          <pciinfo vendorID="8086" deviceID="3423" />
+          <pciinfo vendorID="8086" deviceID="3424" />
+          <pciinfo vendorID="8086" deviceID="3425" />
+          <pciinfo vendorID="8086" deviceID="3426" />
+          <pciinfo vendorID="8086" deviceID="3427" />
+          <pciinfo vendorID="8086" deviceID="3428" />
+          <pciinfo vendorID="8086" deviceID="342D" />
+          <pciinfo vendorID="8086" deviceID="342E" />
+          <pciinfo vendorID="8086" deviceID="342F" />
+          <pciinfo vendorID="8086" deviceID="3438" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\ioatdma.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="1A38" />
+          <pciinfo vendorID="8086" deviceID="360B" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\IvyBridg.inf-->
+          <driverversion>9.3.0.1028</driverversion>
+          <pciinfo vendorID="8086" deviceID="0150" />
+          <pciinfo vendorID="8086" deviceID="0154" />
+          <pciinfo vendorID="8086" deviceID="0158" />
+          <pciinfo vendorID="8086" deviceID="015C" />
+          <pciinfo vendorID="8086" deviceID="0151" />
+          <pciinfo vendorID="8086" deviceID="0155" />
+          <pciinfo vendorID="8086" deviceID="0159" />
+          <pciinfo vendorID="8086" deviceID="015D" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\IvyTown.inf-->
+          <driverversion>9.4.0.1021</driverversion>
+          <pciinfo vendorID="8086" deviceID="0E00" />
+          <pciinfo vendorID="8086" deviceID="0E01" />
+          <pciinfo vendorID="8086" deviceID="0E02" />
+          <pciinfo vendorID="8086" deviceID="0E03" />
+          <pciinfo vendorID="8086" deviceID="0E04" />
+          <pciinfo vendorID="8086" deviceID="0E05" />
+          <pciinfo vendorID="8086" deviceID="0E06" />
+          <pciinfo vendorID="8086" deviceID="0E07" />
+          <pciinfo vendorID="8086" deviceID="0E08" />
+          <pciinfo vendorID="8086" deviceID="0E09" />
+          <pciinfo vendorID="8086" deviceID="0E0A" />
+          <pciinfo vendorID="8086" deviceID="0E0B" />
+          <pciinfo vendorID="8086" deviceID="0E1C" />
+          <pciinfo vendorID="8086" deviceID="0E1D" />
+          <pciinfo vendorID="8086" deviceID="0E1E" />
+          <pciinfo vendorID="8086" deviceID="0E1F" />
+          <pciinfo vendorID="8086" deviceID="0E20" />
+          <pciinfo vendorID="8086" deviceID="0E21" />
+          <pciinfo vendorID="8086" deviceID="0E22" />
+          <pciinfo vendorID="8086" deviceID="0E23" />
+          <pciinfo vendorID="8086" deviceID="0E24" />
+          <pciinfo vendorID="8086" deviceID="0E25" />
+          <pciinfo vendorID="8086" deviceID="0E26" />
+          <pciinfo vendorID="8086" deviceID="0E27" />
+          <pciinfo vendorID="8086" deviceID="0E28" />
+          <pciinfo vendorID="8086" deviceID="0E29" />
+          <pciinfo vendorID="8086" deviceID="0E2A" />
+          <pciinfo vendorID="8086" deviceID="0E2C" />
+          <pciinfo vendorID="8086" deviceID="0E2E" />
+          <pciinfo vendorID="8086" deviceID="0E2F" />
+          <pciinfo vendorID="8086" deviceID="0E30" />
+          <pciinfo vendorID="8086" deviceID="0E32" />
+          <pciinfo vendorID="8086" deviceID="0E33" />
+          <pciinfo vendorID="8086" deviceID="0E34" />
+          <pciinfo vendorID="8086" deviceID="0E36" />
+          <pciinfo vendorID="8086" deviceID="0E37" />
+          <pciinfo vendorID="8086" deviceID="0E38" />
+          <pciinfo vendorID="8086" deviceID="0E3A" />
+          <pciinfo vendorID="8086" deviceID="0E3E" />
+          <pciinfo vendorID="8086" deviceID="0E3F" />
+          <pciinfo vendorID="8086" deviceID="0E40" />
+          <pciinfo vendorID="8086" deviceID="0E41" />
+          <pciinfo vendorID="8086" deviceID="0E43" />
+          <pciinfo vendorID="8086" deviceID="0E44" />
+          <pciinfo vendorID="8086" deviceID="0E60" />
+          <pciinfo vendorID="8086" deviceID="0E68" />
+          <pciinfo vendorID="8086" deviceID="0E6A" />
+          <pciinfo vendorID="8086" deviceID="0E6B" />
+          <pciinfo vendorID="8086" deviceID="0E6C" />
+          <pciinfo vendorID="8086" deviceID="0E6D" />
+          <pciinfo vendorID="8086" deviceID="0E71" />
+          <pciinfo vendorID="8086" deviceID="0E79" />
+          <pciinfo vendorID="8086" deviceID="0E80" />
+          <pciinfo vendorID="8086" deviceID="0E81" />
+          <pciinfo vendorID="8086" deviceID="0E83" />
+          <pciinfo vendorID="8086" deviceID="0E84" />
+          <pciinfo vendorID="8086" deviceID="0E90" />
+          <pciinfo vendorID="8086" deviceID="0E93" />
+          <pciinfo vendorID="8086" deviceID="0E94" />
+          <pciinfo vendorID="8086" deviceID="0EA0" />
+          <pciinfo vendorID="8086" deviceID="0EA8" />
+          <pciinfo vendorID="8086" deviceID="0EAA" />
+          <pciinfo vendorID="8086" deviceID="0EAB" />
+          <pciinfo vendorID="8086" deviceID="0EAC" />
+          <pciinfo vendorID="8086" deviceID="0EAD" />
+          <pciinfo vendorID="8086" deviceID="0EB0" />
+          <pciinfo vendorID="8086" deviceID="0EB1" />
+          <pciinfo vendorID="8086" deviceID="0EB2" />
+          <pciinfo vendorID="8086" deviceID="0EB3" />
+          <pciinfo vendorID="8086" deviceID="0EB4" />
+          <pciinfo vendorID="8086" deviceID="0EB5" />
+          <pciinfo vendorID="8086" deviceID="0EB7" />
+          <pciinfo vendorID="8086" deviceID="0EC0" />
+          <pciinfo vendorID="8086" deviceID="0EC1" />
+          <pciinfo vendorID="8086" deviceID="0EC2" />
+          <pciinfo vendorID="8086" deviceID="0EC3" />
+          <pciinfo vendorID="8086" deviceID="0EC4" />
+          <pciinfo vendorID="8086" deviceID="0EC8" />
+          <pciinfo vendorID="8086" deviceID="0EC9" />
+          <pciinfo vendorID="8086" deviceID="0ECA" />
+          <pciinfo vendorID="8086" deviceID="0ED8" />
+          <pciinfo vendorID="8086" deviceID="0ED9" />
+          <pciinfo vendorID="8086" deviceID="0EDC" />
+          <pciinfo vendorID="8086" deviceID="0EDD" />
+          <pciinfo vendorID="8086" deviceID="0EDE" />
+          <pciinfo vendorID="8086" deviceID="0EDF" />
+          <pciinfo vendorID="8086" deviceID="0EE0" />
+          <pciinfo vendorID="8086" deviceID="0EE1" />
+          <pciinfo vendorID="8086" deviceID="0EE2" />
+          <pciinfo vendorID="8086" deviceID="0EE3" />
+          <pciinfo vendorID="8086" deviceID="0EE4" />
+          <pciinfo vendorID="8086" deviceID="0EE5" />
+          <pciinfo vendorID="8086" deviceID="0EE6" />
+          <pciinfo vendorID="8086" deviceID="0EE7" />
+          <pciinfo vendorID="8086" deviceID="0EE8" />
+          <pciinfo vendorID="8086" deviceID="0EE9" />
+          <pciinfo vendorID="8086" deviceID="0EEA" />
+          <pciinfo vendorID="8086" deviceID="0EEB" />
+          <pciinfo vendorID="8086" deviceID="0EEC" />
+          <pciinfo vendorID="8086" deviceID="0EED" />
+          <pciinfo vendorID="8086" deviceID="0EEE" />
+          <pciinfo vendorID="8086" deviceID="0EF0" />
+          <pciinfo vendorID="8086" deviceID="0EF1" />
+          <pciinfo vendorID="8086" deviceID="0EF2" />
+          <pciinfo vendorID="8086" deviceID="0EF3" />
+          <pciinfo vendorID="8086" deviceID="0EF4" />
+          <pciinfo vendorID="8086" deviceID="0EF5" />
+          <pciinfo vendorID="8086" deviceID="0EF7" />
+          <pciinfo vendorID="8086" deviceID="0EF8" />
+          <pciinfo vendorID="8086" deviceID="0EF9" />
+          <pciinfo vendorID="8086" deviceID="0EFA" />
+          <pciinfo vendorID="8086" deviceID="0EFB" />
+          <pciinfo vendorID="8086" deviceID="0EFC" />
+          <pciinfo vendorID="8086" deviceID="0EFD" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\JakeTown.inf-->
+          <driverversion>9.2.3.1031</driverversion>
+          <pciinfo vendorID="8086" deviceID="3C00" />
+          <pciinfo vendorID="8086" deviceID="3C0D" />
+          <pciinfo vendorID="8086" deviceID="3C0E" />
+          <pciinfo vendorID="8086" deviceID="3C0F" />
+          <pciinfo vendorID="8086" deviceID="3C20" />
+          <pciinfo vendorID="8086" deviceID="3C21" />
+          <pciinfo vendorID="8086" deviceID="3C22" />
+          <pciinfo vendorID="8086" deviceID="3C23" />
+          <pciinfo vendorID="8086" deviceID="3C24" />
+          <pciinfo vendorID="8086" deviceID="3C25" />
+          <pciinfo vendorID="8086" deviceID="3C26" />
+          <pciinfo vendorID="8086" deviceID="3C27" />
+          <pciinfo vendorID="8086" deviceID="3C28" />
+          <pciinfo vendorID="8086" deviceID="3C2A" />
+          <pciinfo vendorID="8086" deviceID="3C2C" />
+          <pciinfo vendorID="8086" deviceID="3C2E" />
+          <pciinfo vendorID="8086" deviceID="3C2F" />
+          <pciinfo vendorID="8086" deviceID="3C40" />
+          <pciinfo vendorID="8086" deviceID="3C43" />
+          <pciinfo vendorID="8086" deviceID="3C44" />
+          <pciinfo vendorID="8086" deviceID="3C45" />
+          <pciinfo vendorID="8086" deviceID="3C46" />
+          <pciinfo vendorID="8086" deviceID="3C71" />
+          <pciinfo vendorID="8086" deviceID="3C80" />
+          <pciinfo vendorID="8086" deviceID="3C83" />
+          <pciinfo vendorID="8086" deviceID="3C84" />
+          <pciinfo vendorID="8086" deviceID="3C90" />
+          <pciinfo vendorID="8086" deviceID="3C93" />
+          <pciinfo vendorID="8086" deviceID="3C94" />
+          <pciinfo vendorID="8086" deviceID="3CA0" />
+          <pciinfo vendorID="8086" deviceID="3CA8" />
+          <pciinfo vendorID="8086" deviceID="3CAA" />
+          <pciinfo vendorID="8086" deviceID="3CAB" />
+          <pciinfo vendorID="8086" deviceID="3CAC" />
+          <pciinfo vendorID="8086" deviceID="3CAD" />
+          <pciinfo vendorID="8086" deviceID="3CAE" />
+          <pciinfo vendorID="8086" deviceID="3CB0" />
+          <pciinfo vendorID="8086" deviceID="3CB1" />
+          <pciinfo vendorID="8086" deviceID="3CB2" />
+          <pciinfo vendorID="8086" deviceID="3CB3" />
+          <pciinfo vendorID="8086" deviceID="3CB4" />
+          <pciinfo vendorID="8086" deviceID="3CB5" />
+          <pciinfo vendorID="8086" deviceID="3CB6" />
+          <pciinfo vendorID="8086" deviceID="3CB7" />
+          <pciinfo vendorID="8086" deviceID="3CB8" />
+          <pciinfo vendorID="8086" deviceID="3CC0" />
+          <pciinfo vendorID="8086" deviceID="3CC1" />
+          <pciinfo vendorID="8086" deviceID="3CC2" />
+          <pciinfo vendorID="8086" deviceID="3CD0" />
+          <pciinfo vendorID="8086" deviceID="3CE0" />
+          <pciinfo vendorID="8086" deviceID="3CE3" />
+          <pciinfo vendorID="8086" deviceID="3CE4" />
+          <pciinfo vendorID="8086" deviceID="3CE6" />
+          <pciinfo vendorID="8086" deviceID="3CE8" />
+          <pciinfo vendorID="8086" deviceID="3CE9" />
+          <pciinfo vendorID="8086" deviceID="3CEA" />
+          <pciinfo vendorID="8086" deviceID="3CEB" />
+          <pciinfo vendorID="8086" deviceID="3CEC" />
+          <pciinfo vendorID="8086" deviceID="3CED" />
+          <pciinfo vendorID="8086" deviceID="3CEE" />
+          <pciinfo vendorID="8086" deviceID="3CEF" />
+          <pciinfo vendorID="8086" deviceID="3CF4" />
+          <pciinfo vendorID="8086" deviceID="3CF5" />
+          <pciinfo vendorID="8086" deviceID="3CF6" />
+          <pciinfo vendorID="8086" deviceID="3C01" />
+          <pciinfo vendorID="8086" deviceID="3C02" />
+          <pciinfo vendorID="8086" deviceID="3C03" />
+          <pciinfo vendorID="8086" deviceID="3C04" />
+          <pciinfo vendorID="8086" deviceID="3C05" />
+          <pciinfo vendorID="8086" deviceID="3C06" />
+          <pciinfo vendorID="8086" deviceID="3C07" />
+          <pciinfo vendorID="8086" deviceID="3C08" />
+          <pciinfo vendorID="8086" deviceID="3C09" />
+          <pciinfo vendorID="8086" deviceID="3C0A" />
+          <pciinfo vendorID="8086" deviceID="3C0B" />
+          <pciinfo vendorID="8086" deviceID="3C41" />
+          <pciinfo vendorID="8086" deviceID="3C42" />
+          <pciinfo vendorID="8086" deviceID="3C86" />
+          <pciinfo vendorID="8086" deviceID="3C96" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\JasperFo.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="2C58" />
+          <pciinfo vendorID="8086" deviceID="2C59" />
+          <pciinfo vendorID="8086" deviceID="2C5A" />
+          <pciinfo vendorID="8086" deviceID="2C5B" />
+          <pciinfo vendorID="8086" deviceID="2C5C" />
+          <pciinfo vendorID="8086" deviceID="2C5D" />
+          <pciinfo vendorID="8086" deviceID="2C5E" />
+          <pciinfo vendorID="8086" deviceID="2C5F" />
+          <pciinfo vendorID="8086" deviceID="2CC1" />
+          <pciinfo vendorID="8086" deviceID="2CD0" />
+          <pciinfo vendorID="8086" deviceID="2CD1" />
+          <pciinfo vendorID="8086" deviceID="2CD4" />
+          <pciinfo vendorID="8086" deviceID="2CD5" />
+          <pciinfo vendorID="8086" deviceID="2CD8" />
+          <pciinfo vendorID="8086" deviceID="2CD9" />
+          <pciinfo vendorID="8086" deviceID="2CDA" />
+          <pciinfo vendorID="8086" deviceID="2CDC" />
+          <pciinfo vendorID="8086" deviceID="2CE0" />
+          <pciinfo vendorID="8086" deviceID="2CE1" />
+          <pciinfo vendorID="8086" deviceID="2CE2" />
+          <pciinfo vendorID="8086" deviceID="2CE3" />
+          <pciinfo vendorID="8086" deviceID="2CE8" />
+          <pciinfo vendorID="8086" deviceID="2CE9" />
+          <pciinfo vendorID="8086" deviceID="2CEA" />
+          <pciinfo vendorID="8086" deviceID="2CEB" />
+          <pciinfo vendorID="8086" deviceID="2CF0" />
+          <pciinfo vendorID="8086" deviceID="2CF1" />
+          <pciinfo vendorID="8086" deviceID="2CF2" />
+          <pciinfo vendorID="8086" deviceID="2CF3" />
+          <pciinfo vendorID="8086" deviceID="3700" />
+          <pciinfo vendorID="8086" deviceID="3701" />
+          <pciinfo vendorID="8086" deviceID="3702" />
+          <pciinfo vendorID="8086" deviceID="3703" />
+          <pciinfo vendorID="8086" deviceID="3704" />
+          <pciinfo vendorID="8086" deviceID="3705" />
+          <pciinfo vendorID="8086" deviceID="3706" />
+          <pciinfo vendorID="8086" deviceID="3707" />
+          <pciinfo vendorID="8086" deviceID="3708" />
+          <pciinfo vendorID="8086" deviceID="3709" />
+          <pciinfo vendorID="8086" deviceID="370A" />
+          <pciinfo vendorID="8086" deviceID="370B" />
+          <pciinfo vendorID="8086" deviceID="370C" />
+          <pciinfo vendorID="8086" deviceID="370D" />
+          <pciinfo vendorID="8086" deviceID="370E" />
+          <pciinfo vendorID="8086" deviceID="370F" />
+          <pciinfo vendorID="8086" deviceID="3710" />
+          <pciinfo vendorID="8086" deviceID="3711" />
+          <pciinfo vendorID="8086" deviceID="3712" />
+          <pciinfo vendorID="8086" deviceID="3713" />
+          <pciinfo vendorID="8086" deviceID="3714" />
+          <pciinfo vendorID="8086" deviceID="3715" />
+          <pciinfo vendorID="8086" deviceID="3716" />
+          <pciinfo vendorID="8086" deviceID="3717" />
+          <pciinfo vendorID="8086" deviceID="3718" />
+          <pciinfo vendorID="8086" deviceID="3719" />
+          <pciinfo vendorID="8086" deviceID="371A" />
+          <pciinfo vendorID="8086" deviceID="371B" />
+          <pciinfo vendorID="8086" deviceID="371D" />
+          <pciinfo vendorID="8086" deviceID="3720" />
+          <pciinfo vendorID="8086" deviceID="3721" />
+          <pciinfo vendorID="8086" deviceID="3722" />
+          <pciinfo vendorID="8086" deviceID="3723" />
+          <pciinfo vendorID="8086" deviceID="3724" />
+          <pciinfo vendorID="8086" deviceID="3725" />
+          <pciinfo vendorID="8086" deviceID="3726" />
+          <pciinfo vendorID="8086" deviceID="3727" />
+          <pciinfo vendorID="8086" deviceID="3728" />
+          <pciinfo vendorID="8086" deviceID="3729" />
+          <pciinfo vendorID="8086" deviceID="372A" />
+          <pciinfo vendorID="8086" deviceID="372B" />
+          <pciinfo vendorID="8086" deviceID="372C" />
+          <pciinfo vendorID="8086" deviceID="373F" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\LxLpAHCI.inf-->
+          <driverversion>9.4.0.1021</driverversion>
+          <pciinfo vendorID="8086" deviceID="9C02" />
+          <pciinfo vendorID="8086" deviceID="9C03" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\LxLpCore.inf-->
+          <driverversion>9.4.0.1021</driverversion>
+          <pciinfo vendorID="8086" deviceID="9C24" />
+          <pciinfo vendorID="8086" deviceID="9C23" />
+          <pciinfo vendorID="8086" deviceID="9C10" />
+          <pciinfo vendorID="8086" deviceID="9C11" />
+          <pciinfo vendorID="8086" deviceID="9C12" />
+          <pciinfo vendorID="8086" deviceID="9C13" />
+          <pciinfo vendorID="8086" deviceID="9C14" />
+          <pciinfo vendorID="8086" deviceID="9C15" />
+          <pciinfo vendorID="8086" deviceID="9C16" />
+          <pciinfo vendorID="8086" deviceID="9C17" />
+          <pciinfo vendorID="8086" deviceID="9C18" />
+          <pciinfo vendorID="8086" deviceID="9C19" />
+          <pciinfo vendorID="8086" deviceID="9C1A" />
+          <pciinfo vendorID="8086" deviceID="9C1B" />
+          <pciinfo vendorID="8086" deviceID="9C1C" />
+          <pciinfo vendorID="8086" deviceID="9C1D" />
+          <pciinfo vendorID="8086" deviceID="9C1E" />
+          <pciinfo vendorID="8086" deviceID="9C1F" />
+          <pciinfo vendorID="8086" deviceID="9C40" />
+          <pciinfo vendorID="8086" deviceID="9C41" />
+          <pciinfo vendorID="8086" deviceID="9C42" />
+          <pciinfo vendorID="8086" deviceID="9C43" />
+          <pciinfo vendorID="8086" deviceID="9C44" />
+          <pciinfo vendorID="8086" deviceID="9C45" />
+          <pciinfo vendorID="8086" deviceID="9C46" />
+          <pciinfo vendorID="8086" deviceID="9C47" />
+          <pciinfo vendorID="8086" deviceID="9C48" />
+          <pciinfo vendorID="8086" deviceID="9C49" />
+          <pciinfo vendorID="8086" deviceID="9C4A" />
+          <pciinfo vendorID="8086" deviceID="9C4B" />
+          <pciinfo vendorID="8086" deviceID="9C4C" />
+          <pciinfo vendorID="8086" deviceID="9C4D" />
+          <pciinfo vendorID="8086" deviceID="9C4E" />
+          <pciinfo vendorID="8086" deviceID="9C4F" />
+          <pciinfo vendorID="8086" deviceID="9C50" />
+          <pciinfo vendorID="8086" deviceID="9C51" />
+          <pciinfo vendorID="8086" deviceID="9C52" />
+          <pciinfo vendorID="8086" deviceID="9C53" />
+          <pciinfo vendorID="8086" deviceID="9C54" />
+          <pciinfo vendorID="8086" deviceID="9C55" />
+          <pciinfo vendorID="8086" deviceID="9C56" />
+          <pciinfo vendorID="8086" deviceID="9C57" />
+          <pciinfo vendorID="8086" deviceID="9C58" />
+          <pciinfo vendorID="8086" deviceID="9C59" />
+          <pciinfo vendorID="8086" deviceID="9C5A" />
+          <pciinfo vendorID="8086" deviceID="9C5B" />
+          <pciinfo vendorID="8086" deviceID="9C5C" />
+          <pciinfo vendorID="8086" deviceID="9C5D" />
+          <pciinfo vendorID="8086" deviceID="9C5E" />
+          <pciinfo vendorID="8086" deviceID="9C5F" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\LxLpId2.inf-->
+          <driverversion>9.4.0.1021</driverversion>
+          <pciinfo vendorID="8086" deviceID="9C00" />
+          <pciinfo vendorID="8086" deviceID="9C01" />
+          <pciinfo vendorID="8086" deviceID="9C08" />
+          <pciinfo vendorID="8086" deviceID="9C09" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\LxLpIde.inf-->
+          <driverversion>9.4.0.1021</driverversion>
+          <pciinfo vendorID="8086" deviceID="9C00" />
+          <pciinfo vendorID="8086" deviceID="9C01" />
+          <pciinfo vendorID="8086" deviceID="9C08" />
+          <pciinfo vendorID="8086" deviceID="9C09" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\LxLpSens.inf-->
+          <driverversion>9.4.0.1022</driverversion>
+          <pnpidstring>
+            <ACPIID>8087</ACPIID>
+            <PnPProductID>33D1</PnPProductID>
+          </pnpidstring>
+          <pnpidstring>
+            <PNPID>INT</PNPID>
+            <PnPProductID>33D1</PnPProductID>
+          </pnpidstring>
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\LxLpSMB.inf-->
+          <driverversion>9.4.0.1021</driverversion>
+          <pciinfo vendorID="8086" deviceID="9C22" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\LxLpUSB.inf-->
+          <driverversion>9.4.0.1021</driverversion>
+          <pciinfo vendorID="8086" deviceID="9C26" />
+          <pciinfo vendorID="8086" deviceID="9C2D" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\LxLpUSB3.inf-->
+          <driverversion>9.4.0.1021</driverversion>
+          <pciinfo vendorID="8086" deviceID="9C31" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\LxPtAHCI.inf-->
+          <driverversion>9.4.0.1021</driverversion>
+          <pciinfo vendorID="8086" deviceID="8C02" />
+          <pciinfo vendorID="8086" deviceID="8C03" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\LxPtCore.inf-->
+          <driverversion>9.4.0.1021</driverversion>
+          <pciinfo vendorID="8086" deviceID="8C24" />
+          <pciinfo vendorID="8086" deviceID="8C23" />
+          <pciinfo vendorID="8086" deviceID="8C10" />
+          <pciinfo vendorID="8086" deviceID="8C11" />
+          <pciinfo vendorID="8086" deviceID="8C12" />
+          <pciinfo vendorID="8086" deviceID="8C13" />
+          <pciinfo vendorID="8086" deviceID="8C14" />
+          <pciinfo vendorID="8086" deviceID="8C15" />
+          <pciinfo vendorID="8086" deviceID="8C16" />
+          <pciinfo vendorID="8086" deviceID="8C17" />
+          <pciinfo vendorID="8086" deviceID="8C18" />
+          <pciinfo vendorID="8086" deviceID="8C19" />
+          <pciinfo vendorID="8086" deviceID="8C1A" />
+          <pciinfo vendorID="8086" deviceID="8C1B" />
+          <pciinfo vendorID="8086" deviceID="8C1C" />
+          <pciinfo vendorID="8086" deviceID="8C1D" />
+          <pciinfo vendorID="8086" deviceID="8C1E" />
+          <pciinfo vendorID="8086" deviceID="8C1F" />
+          <pciinfo vendorID="8086" deviceID="8C40" />
+          <pciinfo vendorID="8086" deviceID="8C41" />
+          <pciinfo vendorID="8086" deviceID="8C42" />
+          <pciinfo vendorID="8086" deviceID="8C43" />
+          <pciinfo vendorID="8086" deviceID="8C44" />
+          <pciinfo vendorID="8086" deviceID="8C45" />
+          <pciinfo vendorID="8086" deviceID="8C46" />
+          <pciinfo vendorID="8086" deviceID="8C47" />
+          <pciinfo vendorID="8086" deviceID="8C48" />
+          <pciinfo vendorID="8086" deviceID="8C49" />
+          <pciinfo vendorID="8086" deviceID="8C4A" />
+          <pciinfo vendorID="8086" deviceID="8C4B" />
+          <pciinfo vendorID="8086" deviceID="8C4C" />
+          <pciinfo vendorID="8086" deviceID="8C4D" />
+          <pciinfo vendorID="8086" deviceID="8C4E" />
+          <pciinfo vendorID="8086" deviceID="8C4F" />
+          <pciinfo vendorID="8086" deviceID="8C50" />
+          <pciinfo vendorID="8086" deviceID="8C51" />
+          <pciinfo vendorID="8086" deviceID="8C52" />
+          <pciinfo vendorID="8086" deviceID="8C53" />
+          <pciinfo vendorID="8086" deviceID="8C54" />
+          <pciinfo vendorID="8086" deviceID="8C55" />
+          <pciinfo vendorID="8086" deviceID="8C56" />
+          <pciinfo vendorID="8086" deviceID="8C57" />
+          <pciinfo vendorID="8086" deviceID="8C58" />
+          <pciinfo vendorID="8086" deviceID="8C59" />
+          <pciinfo vendorID="8086" deviceID="8C5A" />
+          <pciinfo vendorID="8086" deviceID="8C5B" />
+          <pciinfo vendorID="8086" deviceID="8C5C" />
+          <pciinfo vendorID="8086" deviceID="8C5D" />
+          <pciinfo vendorID="8086" deviceID="8C5E" />
+          <pciinfo vendorID="8086" deviceID="8C5F" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\LxPtId2.inf-->
+          <driverversion>9.4.0.1021</driverversion>
+          <pciinfo vendorID="8086" deviceID="8C00" />
+          <pciinfo vendorID="8086" deviceID="8C01" />
+          <pciinfo vendorID="8086" deviceID="8C08" />
+          <pciinfo vendorID="8086" deviceID="8C09" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\LxPtIde.inf-->
+          <driverversion>9.4.0.1021</driverversion>
+          <pciinfo vendorID="8086" deviceID="8C00" />
+          <pciinfo vendorID="8086" deviceID="8C01" />
+          <pciinfo vendorID="8086" deviceID="8C08" />
+          <pciinfo vendorID="8086" deviceID="8C09" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\LxPtSMB.inf-->
+          <driverversion>9.4.0.1021</driverversion>
+          <pciinfo vendorID="8086" deviceID="8C22" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\LxPtUSB.inf-->
+          <driverversion>9.4.0.1021</driverversion>
+          <pciinfo vendorID="8086" deviceID="8C26" />
+          <pciinfo vendorID="8086" deviceID="8C2D" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\LxPtUSB3.inf-->
+          <driverversion>9.4.0.1021</driverversion>
+          <pciinfo vendorID="8086" deviceID="8C31" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\NehalMEX.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="2B00" />
+          <pciinfo vendorID="8086" deviceID="2B02" />
+          <pciinfo vendorID="8086" deviceID="2B04" />
+          <pciinfo vendorID="8086" deviceID="2B08" />
+          <pciinfo vendorID="8086" deviceID="2B0C" />
+          <pciinfo vendorID="8086" deviceID="2B10" />
+          <pciinfo vendorID="8086" deviceID="2B13" />
+          <pciinfo vendorID="8086" deviceID="2B14" />
+          <pciinfo vendorID="8086" deviceID="2B16" />
+          <pciinfo vendorID="8086" deviceID="2B18" />
+          <pciinfo vendorID="8086" deviceID="2B1B" />
+          <pciinfo vendorID="8086" deviceID="2B1C" />
+          <pciinfo vendorID="8086" deviceID="2B1E" />
+          <pciinfo vendorID="8086" deviceID="2B20" />
+          <pciinfo vendorID="8086" deviceID="2B22" />
+          <pciinfo vendorID="8086" deviceID="2B24" />
+          <pciinfo vendorID="8086" deviceID="2B28" />
+          <pciinfo vendorID="8086" deviceID="2B2A" />
+          <pciinfo vendorID="8086" deviceID="2B2C" />
+          <pciinfo vendorID="8086" deviceID="2B30" />
+          <pciinfo vendorID="8086" deviceID="2B34" />
+          <pciinfo vendorID="8086" deviceID="2B38" />
+          <pciinfo vendorID="8086" deviceID="2B3C" />
+          <pciinfo vendorID="8086" deviceID="2B40" />
+          <pciinfo vendorID="8086" deviceID="2B42" />
+          <pciinfo vendorID="8086" deviceID="2B44" />
+          <pciinfo vendorID="8086" deviceID="2B46" />
+          <pciinfo vendorID="8086" deviceID="2B48" />
+          <pciinfo vendorID="8086" deviceID="2B4C" />
+          <pciinfo vendorID="8086" deviceID="2B50" />
+          <pciinfo vendorID="8086" deviceID="2B52" />
+          <pciinfo vendorID="8086" deviceID="2B54" />
+          <pciinfo vendorID="8086" deviceID="2B56" />
+          <pciinfo vendorID="8086" deviceID="2B58" />
+          <pciinfo vendorID="8086" deviceID="2B5A" />
+          <pciinfo vendorID="8086" deviceID="2B5C" />
+          <pciinfo vendorID="8086" deviceID="2B5E" />
+          <pciinfo vendorID="8086" deviceID="2B60" />
+          <pciinfo vendorID="8086" deviceID="2B62" />
+          <pciinfo vendorID="8086" deviceID="2B64" />
+          <pciinfo vendorID="8086" deviceID="2B66" />
+          <pciinfo vendorID="8086" deviceID="2C70" />
+          <pciinfo vendorID="8086" deviceID="2D81" />
+          <pciinfo vendorID="8086" deviceID="2D90" />
+          <pciinfo vendorID="8086" deviceID="2D91" />
+          <pciinfo vendorID="8086" deviceID="2D92" />
+          <pciinfo vendorID="8086" deviceID="2D93" />
+          <pciinfo vendorID="8086" deviceID="2D94" />
+          <pciinfo vendorID="8086" deviceID="2D95" />
+          <pciinfo vendorID="8086" deviceID="2D98" />
+          <pciinfo vendorID="8086" deviceID="2D99" />
+          <pciinfo vendorID="8086" deviceID="2D9A" />
+          <pciinfo vendorID="8086" deviceID="2D9C" />
+          <pciinfo vendorID="8086" deviceID="2DA0" />
+          <pciinfo vendorID="8086" deviceID="2DA1" />
+          <pciinfo vendorID="8086" deviceID="2DA2" />
+          <pciinfo vendorID="8086" deviceID="2DA3" />
+          <pciinfo vendorID="8086" deviceID="2DA8" />
+          <pciinfo vendorID="8086" deviceID="2DA9" />
+          <pciinfo vendorID="8086" deviceID="2DAA" />
+          <pciinfo vendorID="8086" deviceID="2DAB" />
+          <pciinfo vendorID="8086" deviceID="2DB0" />
+          <pciinfo vendorID="8086" deviceID="2DB1" />
+          <pciinfo vendorID="8086" deviceID="2DB2" />
+          <pciinfo vendorID="8086" deviceID="2DB3" />
+          <pciinfo vendorID="8086" deviceID="2B68" />
+          <pciinfo vendorID="8086" deviceID="2B6C" />
+          <pciinfo vendorID="8086" deviceID="2C9A" />
+          <pciinfo vendorID="8086" deviceID="0069" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\PantAHCI.inf-->
+          <driverversion>9.3.0.1028</driverversion>
+          <pciinfo vendorID="8086" deviceID="1E02" />
+          <pciinfo vendorID="8086" deviceID="1E03" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\PantCore.inf-->
+          <driverversion>9.3.0.1028</driverversion>
+          <pciinfo vendorID="8086" deviceID="1E24" />
+          <pciinfo vendorID="8086" deviceID="1E10" />
+          <pciinfo vendorID="8086" deviceID="1E12" />
+          <pciinfo vendorID="8086" deviceID="1E14" />
+          <pciinfo vendorID="8086" deviceID="1E16" />
+          <pciinfo vendorID="8086" deviceID="1E18" />
+          <pciinfo vendorID="8086" deviceID="1E1A" />
+          <pciinfo vendorID="8086" deviceID="1E1C" />
+          <pciinfo vendorID="8086" deviceID="1E1E" />
+          <pciinfo vendorID="8086" deviceID="1E25" />
+          <pciinfo vendorID="8086" deviceID="1E41" />
+          <pciinfo vendorID="8086" deviceID="1E42" />
+          <pciinfo vendorID="8086" deviceID="1E43" />
+          <pciinfo vendorID="8086" deviceID="1E44" />
+          <pciinfo vendorID="8086" deviceID="1E46" />
+          <pciinfo vendorID="8086" deviceID="1E47" />
+          <pciinfo vendorID="8086" deviceID="1E48" />
+          <pciinfo vendorID="8086" deviceID="1E49" />
+          <pciinfo vendorID="8086" deviceID="1E4A" />
+          <pciinfo vendorID="8086" deviceID="1E53" />
+          <pciinfo vendorID="8086" deviceID="1E55" />
+          <pciinfo vendorID="8086" deviceID="1E56" />
+          <pciinfo vendorID="8086" deviceID="1E57" />
+          <pciinfo vendorID="8086" deviceID="1E58" />
+          <pciinfo vendorID="8086" deviceID="1E59" />
+          <pciinfo vendorID="8086" deviceID="1E5B" />
+          <pciinfo vendorID="8086" deviceID="1E5D" />
+          <pciinfo vendorID="8086" deviceID="1E5E" />
+          <pciinfo vendorID="8086" deviceID="1E5F" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\PantId2.inf-->
+          <driverversion>9.3.0.1028</driverversion>
+          <pciinfo vendorID="8086" deviceID="1E00" />
+          <pciinfo vendorID="8086" deviceID="1E01" />
+          <pciinfo vendorID="8086" deviceID="1E08" />
+          <pciinfo vendorID="8086" deviceID="1E09" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\PantIDE.inf-->
+          <driverversion>9.3.0.1028</driverversion>
+          <pciinfo vendorID="8086" deviceID="1E00" />
+          <pciinfo vendorID="8086" deviceID="1E01" />
+          <pciinfo vendorID="8086" deviceID="1E08" />
+          <pciinfo vendorID="8086" deviceID="1E09" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\PantSMB.inf-->
+          <driverversion>9.3.0.1028</driverversion>
+          <pciinfo vendorID="8086" deviceID="1E22" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\PantUSB.inf-->
+          <driverversion>9.3.0.1028</driverversion>
+          <pciinfo vendorID="8086" deviceID="1E26" />
+          <pciinfo vendorID="8086" deviceID="1E2D" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\PantUSB3.inf-->
+          <driverversion>9.3.0.1028</driverversion>
+          <pciinfo vendorID="8086" deviceID="1E31" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\patahci.inf-->
+          <driverversion>9.2.3.1031</driverversion>
+          <pciinfo vendorID="8086" deviceID="1D02" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\patcore.inf-->
+          <driverversion>9.2.3.1031</driverversion>
+          <pciinfo vendorID="8086" deviceID="1D24" />
+          <pciinfo vendorID="8086" deviceID="1D73" />
+          <pciinfo vendorID="8086" deviceID="1D76" />
+          <pciinfo vendorID="8086" deviceID="1D77" />
+          <pciinfo vendorID="8086" deviceID="1D10" />
+          <pciinfo vendorID="8086" deviceID="1D11" />
+          <pciinfo vendorID="8086" deviceID="1D12" />
+          <pciinfo vendorID="8086" deviceID="1D13" />
+          <pciinfo vendorID="8086" deviceID="1D14" />
+          <pciinfo vendorID="8086" deviceID="1D15" />
+          <pciinfo vendorID="8086" deviceID="1D16" />
+          <pciinfo vendorID="8086" deviceID="1D17" />
+          <pciinfo vendorID="8086" deviceID="1D18" />
+          <pciinfo vendorID="8086" deviceID="1D19" />
+          <pciinfo vendorID="8086" deviceID="1D1A" />
+          <pciinfo vendorID="8086" deviceID="1D1B" />
+          <pciinfo vendorID="8086" deviceID="1D1C" />
+          <pciinfo vendorID="8086" deviceID="1D1D" />
+          <pciinfo vendorID="8086" deviceID="1D1E" />
+          <pciinfo vendorID="8086" deviceID="1D1F" />
+          <pciinfo vendorID="8086" deviceID="1D25" />
+          <pciinfo vendorID="8086" deviceID="1D3E" />
+          <pciinfo vendorID="8086" deviceID="1D3F" />
+          <pciinfo vendorID="8086" deviceID="1D74" />
+          <pciinfo vendorID="8086" deviceID="1D40" />
+          <pciinfo vendorID="8086" deviceID="1D41" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\patid2.inf-->
+          <driverversion>9.2.3.1031</driverversion>
+          <pciinfo vendorID="8086" deviceID="1D00" />
+          <pciinfo vendorID="8086" deviceID="1D08" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\patide.inf-->
+          <driverversion>9.2.3.1031</driverversion>
+          <pciinfo vendorID="8086" deviceID="1D00" />
+          <pciinfo vendorID="8086" deviceID="1D08" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\patsmb.inf-->
+          <driverversion>9.2.3.1031</driverversion>
+          <pciinfo vendorID="8086" deviceID="1D22" />
+          <pciinfo vendorID="8086" deviceID="1D70" />
+          <pciinfo vendorID="8086" deviceID="1D71" />
+          <pciinfo vendorID="8086" deviceID="1D72" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\patusb.inf-->
+          <driverversion>9.2.3.1031</driverversion>
+          <pciinfo vendorID="8086" deviceID="1D26" />
+          <pciinfo vendorID="8086" deviceID="1D2D" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\pm45gm45.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="2A40" />
+          <pciinfo vendorID="8086" deviceID="2A41" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\qd3nodrv.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="3430" />
+          <pciinfo vendorID="8086" deviceID="3431" />
+          <pciinfo vendorID="8086" deviceID="3432" />
+          <pciinfo vendorID="8086" deviceID="3433" />
+          <pciinfo vendorID="8086" deviceID="3429" />
+          <pciinfo vendorID="8086" deviceID="342A" />
+          <pciinfo vendorID="8086" deviceID="342B" />
+          <pciinfo vendorID="8086" deviceID="342C" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\SNB2009.inf-->
+          <driverversion>9.2.0.1034</driverversion>
+          <pciinfo vendorID="8086" deviceID="0100" />
+          <pciinfo vendorID="8086" deviceID="0104" />
+          <pciinfo vendorID="8086" deviceID="0108" />
+          <pciinfo vendorID="8086" deviceID="0101" />
+          <pciinfo vendorID="8086" deviceID="0105" />
+          <pciinfo vendorID="8086" deviceID="0109" />
+          <pciinfo vendorID="8086" deviceID="010D" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\Tcreek.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="4114" />
+          <pciinfo vendorID="8086" deviceID="4115" />
+          <pciinfo vendorID="8086" deviceID="4116" />
+          <pciinfo vendorID="8086" deviceID="4117" />
+          <pciinfo vendorID="8086" deviceID="8183" />
+          <pciinfo vendorID="8086" deviceID="8180" />
+          <pciinfo vendorID="8086" deviceID="8181" />
+          <pciinfo vendorID="8086" deviceID="8184" />
+          <pciinfo vendorID="8086" deviceID="8185" />
+          <pciinfo vendorID="8086" deviceID="8186" />
+          <pciinfo vendorID="8086" deviceID="8800" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\Tcrkahci.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="880B" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\TcrkSD.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="8809" />
+          <pciinfo vendorID="8086" deviceID="880A" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\tcrkusb.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pciinfo vendorID="8086" deviceID="8804" />
+          <pciinfo vendorID="8086" deviceID="8805" />
+          <pciinfo vendorID="8086" deviceID="8806" />
+          <pciinfo vendorID="8086" deviceID="880C" />
+          <pciinfo vendorID="8086" deviceID="880D" />
+          <pciinfo vendorID="8086" deviceID="880E" />
+          <pciinfo vendorID="8086" deviceID="8807" />
+          <pciinfo vendorID="8086" deviceID="880F" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\Wellahci.inf-->
+          <driverversion>9.4.2.1011</driverversion>
+          <pciinfo vendorID="8086" deviceID="8D02" />
+          <pciinfo vendorID="8086" deviceID="8D62" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\Wellcore.inf-->
+          <driverversion>9.4.2.1011</driverversion>
+          <pciinfo vendorID="8086" deviceID="8D10" />
+          <pciinfo vendorID="8086" deviceID="8D11" />
+          <pciinfo vendorID="8086" deviceID="8D12" />
+          <pciinfo vendorID="8086" deviceID="8D13" />
+          <pciinfo vendorID="8086" deviceID="8D14" />
+          <pciinfo vendorID="8086" deviceID="8D15" />
+          <pciinfo vendorID="8086" deviceID="8D16" />
+          <pciinfo vendorID="8086" deviceID="8D17" />
+          <pciinfo vendorID="8086" deviceID="8D18" />
+          <pciinfo vendorID="8086" deviceID="8D19" />
+          <pciinfo vendorID="8086" deviceID="8D1A" />
+          <pciinfo vendorID="8086" deviceID="8D1B" />
+          <pciinfo vendorID="8086" deviceID="8D1C" />
+          <pciinfo vendorID="8086" deviceID="8D1E" />
+          <pciinfo vendorID="8086" deviceID="8D1F" />
+          <pciinfo vendorID="8086" deviceID="8D24" />
+          <pciinfo vendorID="8086" deviceID="8D40" />
+          <pciinfo vendorID="8086" deviceID="8D41" />
+          <pciinfo vendorID="8086" deviceID="8D42" />
+          <pciinfo vendorID="8086" deviceID="8D43" />
+          <pciinfo vendorID="8086" deviceID="8D44" />
+          <pciinfo vendorID="8086" deviceID="8D45" />
+          <pciinfo vendorID="8086" deviceID="8D46" />
+          <pciinfo vendorID="8086" deviceID="8D47" />
+          <pciinfo vendorID="8086" deviceID="8D48" />
+          <pciinfo vendorID="8086" deviceID="8D49" />
+          <pciinfo vendorID="8086" deviceID="8D4A" />
+          <pciinfo vendorID="8086" deviceID="8D4B" />
+          <pciinfo vendorID="8086" deviceID="8D4C" />
+          <pciinfo vendorID="8086" deviceID="8D4D" />
+          <pciinfo vendorID="8086" deviceID="8D4E" />
+          <pciinfo vendorID="8086" deviceID="8D4F" />
+          <pciinfo vendorID="8086" deviceID="8D50" />
+          <pciinfo vendorID="8086" deviceID="8D51" />
+          <pciinfo vendorID="8086" deviceID="8D52" />
+          <pciinfo vendorID="8086" deviceID="8D53" />
+          <pciinfo vendorID="8086" deviceID="8D54" />
+          <pciinfo vendorID="8086" deviceID="8D55" />
+          <pciinfo vendorID="8086" deviceID="8D56" />
+          <pciinfo vendorID="8086" deviceID="8D57" />
+          <pciinfo vendorID="8086" deviceID="8D58" />
+          <pciinfo vendorID="8086" deviceID="8D59" />
+          <pciinfo vendorID="8086" deviceID="8D5A" />
+          <pciinfo vendorID="8086" deviceID="8D5B" />
+          <pciinfo vendorID="8086" deviceID="8D5C" />
+          <pciinfo vendorID="8086" deviceID="8D5D" />
+          <pciinfo vendorID="8086" deviceID="8D5E" />
+          <pciinfo vendorID="8086" deviceID="8D5F" />
+          <pciinfo vendorID="8086" deviceID="8D7C" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\Wellid2.inf-->
+          <driverversion>9.4.2.1011</driverversion>
+          <pciinfo vendorID="8086" deviceID="8D00" />
+          <pciinfo vendorID="8086" deviceID="8D08" />
+          <pciinfo vendorID="8086" deviceID="8D60" />
+          <pciinfo vendorID="8086" deviceID="8D68" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\Wellide.inf-->
+          <driverversion>9.4.2.1011</driverversion>
+          <pciinfo vendorID="8086" deviceID="8D00" />
+          <pciinfo vendorID="8086" deviceID="8D08" />
+          <pciinfo vendorID="8086" deviceID="8D60" />
+          <pciinfo vendorID="8086" deviceID="8D68" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\Wellsmb.inf-->
+          <driverversion>9.4.2.1011</driverversion>
+          <pciinfo vendorID="8086" deviceID="8D22" />
+          <pciinfo vendorID="8086" deviceID="8D7D" />
+          <pciinfo vendorID="8086" deviceID="8D7E" />
+          <pciinfo vendorID="8086" deviceID="8D7F" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\Wellusb.inf-->
+          <driverversion>9.4.2.1011</driverversion>
+          <pciinfo vendorID="8086" deviceID="8D26" />
+          <pciinfo vendorID="8086" deviceID="8D2D" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\whed_dev.inf-->
+          <driverversion>9.1.9.1004</driverversion>
+          <pnpidstring>
+            <PNPID>PNP</PNPID>
+            <PnPProductID>0C33</PnPProductID>
+          </pnpidstring>
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\whtpI2C.inf-->
+          <driverversion>9.2.2.1038</driverversion>
+          <pciinfo vendorID="8086" deviceID="0803" />
+          <pciinfo vendorID="8086" deviceID="0804" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\whtpI2C2.inf-->
+          <driverversion>9.2.2.1038</driverversion>
+          <pciinfo vendorID="8086" deviceID="0802" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\whtpoint.inf-->
+          <driverversion>9.2.2.1038</driverversion>
+          <pciinfo vendorID="8086" deviceID="4110" />
+          <pciinfo vendorID="8086" deviceID="0800" />
+          <pciinfo vendorID="8086" deviceID="0801" />
+          <pciinfo vendorID="8086" deviceID="080D" />
+          <pciinfo vendorID="8086" deviceID="0813" />
+          <pciinfo vendorID="8086" deviceID="0815" />
+          <pciinfo vendorID="8086" deviceID="0817" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\whtptsd.inf-->
+          <driverversion>9.2.2.1038</driverversion>
+          <pciinfo vendorID="8086" deviceID="0807" />
+          <pciinfo vendorID="8086" deviceID="0808" />
+          <pciinfo vendorID="8086" deviceID="0812" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\wptahci.inf-->
+          <driverversion>9.2.2.1038</driverversion>
+          <pciinfo vendorID="8086" deviceID="0816" />
+        </pnpdevice>
+        <pnpdevice>
+          <!--filename: \All\wptusb.inf-->
+          <driverversion>9.2.2.1038</driverversion>
+          <pciinfo vendorID="8086" deviceID="0806" />
+          <pciinfo vendorID="8086" deviceID="0811" />
+        </pnpdevice>
+      </pnpids>
+    </extractdriversidentifier>
+    <fullpackageidentifier>
+      <registrykeys>
+        <registrykey>
+          <name>HKEY_LOCAL_MACHINE\SOFTWARE\Dell\ManageableUpdatePackage\Intel\Version\</name>
+          <value>9.4.3.1008</value>
+        </registrykey>
+      </registrykeys>
+    </fullpackageidentifier>
+  </inventorymetadata>
+</MUPDefinition>

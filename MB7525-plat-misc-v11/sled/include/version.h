@@ -1,0 +1,3 @@
+#define PLATFORM_NAME "MB-7551"
+#define CODE_VERSION "V1.2 2013-10-02"
+

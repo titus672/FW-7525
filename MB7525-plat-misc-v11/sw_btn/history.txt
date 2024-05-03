@@ -1,0 +1,6 @@
+Version history
+
+Version	Date						Description
+======= =============== ========================================================
+V2.0		2011/04/21	    1. Rebuid code for error system date.
+V1.0		Oct 21, 2010    1. Initial version, support DOS/FreeBSD 8.0 and Linux 2.4 and 2.6

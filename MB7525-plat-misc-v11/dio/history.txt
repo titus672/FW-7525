@@ -1,0 +1,8 @@
+Version history
+
+Version	Date		Description
+======= ========================================================================
+V1.1	Mar 9, 2012    1. modify code to support kernel version above 2.6.36
+
+V1.0	March 1, 2011    1. Initial version, support DOS/FreeBSD 8.0 and
+			   Linux 2.4 and 2.6
